@@ -1,9 +1,9 @@
 ---
 templateKey: index-page
-title: Kogo Test
+title: KOGO
 image: /img/home-jumbotron.jpg
 heading: 'Great coffee with a conscience '
-subheading: Support sustainable farming while enjoying a cup
+subheading: Organic Ground Coffee Cherries
 mainpitch:
   title: Why Kaldi
   description: >
