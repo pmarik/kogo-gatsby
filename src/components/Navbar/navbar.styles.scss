@@ -3,4 +3,17 @@
     background-color: white;
     position: relative;
     z-index: 30;
+
+    .container {
+        #navMenu{
+            align-items: center;
+            justify-content: center;
+
+
+            .navbar-start{
+                justify-content: space-between;
+            }
+
+        }
+    }
 }
