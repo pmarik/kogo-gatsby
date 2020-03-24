@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Kogo Test blog
+title: Story Behind Kogo
 date: 2020-03-17T21:46:11.676Z
 description: Lorem ipsum sweggy daddy do
 featuredpost: true
