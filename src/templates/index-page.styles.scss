@@ -1,0 +1,24 @@
+.top-banner{
+  background: linear-gradient(262.98deg, rgba(255, 255, 255, 0.639098) -17.92%, #FFFFFF -17.92%, rgba(255, 255, 255, 0.473069) -6.27%, rgba(255, 255, 255, 0.203765) 32.58%, rgba(255, 255, 255, 0) 100.99%), #E9A812;
+
+ .top-banner-container{
+    display: flex;
+    line-height: 1;
+    justify-content: space-around;
+    width: 100%;
+    border: 1px solid green;
+
+    .top-banner-tagline{
+        box-shadow: rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px;
+        background-color: rgb(255, 68, 0);
+        color: white;
+        line-height: 1;
+        padding: 0.25em;
+    }
+
+    .top-banner-image{
+        min-width: 300px;
+        height: auto;
+    }
+ }
+}

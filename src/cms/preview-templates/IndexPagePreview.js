@@ -30,3 +30,4 @@ IndexPagePreview.propTypes = {
 }
 
 export default IndexPagePreview
+ 
