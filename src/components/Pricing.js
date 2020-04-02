@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 const Pricing = ({ data }) => (
   <div className="columns">
     {data.map(price => (
-      <div key={price.plan} className="column">
+      <div key={price.option} className="column">
         <section className="section">
           <h4 className="has-text-centered has-text-weight-semibold">
-            {price.plan}
+            {price.option}
           </h4>
           <h2 className="is-size-1 has-text-weight-bold has-text-primary has-text-centered">
             ${price.price}
@@ -29,7 +29,7 @@ const Pricing = ({ data }) => (
 Pricing.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      plan: PropTypes.string,
+      option: PropTypes.string,
       price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       description: PropTypes.string,
       items: PropTypes.array,
