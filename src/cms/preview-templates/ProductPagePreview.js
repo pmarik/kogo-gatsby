@@ -9,7 +9,7 @@ const ProductPagePreview = ({ entry, getAsset }) => {
   const entryTestimonials = entry.getIn(['data', 'testimonials'])
   const testimonials = entryTestimonials ? entryTestimonials.toJS() : []
 
-  const entryPricingPlans = entry.getIn(['data', 'pricing', 'plans'])
+  const entryPricingPlans = entry.getIn(['data', 'pricing', 'options'])
   const pricingPlans = entryPricingPlans ? entryPricingPlans.toJS() : []
 
   return (
@@ -40,7 +40,7 @@ const ProductPagePreview = ({ entry, getAsset }) => {
       pricing={{
         heading: entry.getIn(['data', 'pricing', 'heading']),
         description: entry.getIn(['data', 'pricing', 'description']),
-        plans: pricingPlans,
+        options: pricingPlans,
       }}
     />
   )
