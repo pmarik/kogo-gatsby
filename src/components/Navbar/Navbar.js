@@ -43,7 +43,7 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Kogo">
-              <img src={logo} alt="Kogo" style={{ width: '120px' }} />
+              <img src={logo} alt="Kogo" style={{ width: '150px' }} />
             </Link>
             {/* Hamburger menu */}
             <div
@@ -60,29 +60,30 @@ const Navbar = class extends React.Component {
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
-            <div className="navbar-start has-text-centered">
+            <div className="navbar-links">
 
-              <Link className="navbar-item" to="/">
+              <Link className="navbar-item-link" to="/">
                 Home
               </Link>
 
-              <Link className="navbar-item" to="/mission">
+              <Link className="navbar-item-link" to="/mission">
                 Mission
               </Link>
 
-              <Link className="navbar-item" to="/blog">
+              <Link className="navbar-item-link" to="/blog">
                 Blog
               </Link>
 
-              <Link className="navbar-item" to="/products">
+              <Link className="navbar-item-link" to="/products">
                 Shop
               </Link>
               
             </div>
-            <div className="navbar-end has-text-centered">
-              <Link className="navbar-item" to="/products">
+            <div className="nav-cart">
+              <Link className="navbar-item nav-your-cart" to="/products">
                 <span className="icon">
                   <img src={cart} alt="Cart" />
+                  Your Cart
                 </span>
               </Link>
             </div>

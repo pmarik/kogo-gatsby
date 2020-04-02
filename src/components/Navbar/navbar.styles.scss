@@ -3,15 +3,65 @@
     background-color: white;
     position: relative;
     z-index: 30;
+    color: #8A120F;
+
+    .navbar-item-link, .navbar-item{
+        line-height: 1.5;
+        position: relative;
+        padding: 0.5rem 2rem;
+        color: inherit;
+
+        &:hover{
+            color: #FB604E;
+        }
+    }
 
     .container {
+
+        .navbar-brand{
+            min-height: 5rem;
+
+            .navbar-item{
+                img{
+                    max-height: 4rem;
+                }
+            }
+
+            .navbar-burger{
+                height: inherit;
+            }
+        }
+
         #navMenu{
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
 
-
-            .navbar-start{
+            .navbar-links{
+                display: flex;
                 justify-content: space-between;
+                flex-direction: column;
+                text-align: center;
+                margin: 0 1.5rem 0 0;
+
+                @media screen and (min-width: 1024px){
+                    flex-direction: row;
+                }
+            }
+
+            .nav-your-cart{
+                margin: 0 auto;
+                
+                .icon{
+                    margin: 0 auto;
+                    height: 1.5rem;
+                    width: 6.5em;
+                    display: flex;
+                    justify-content: space-between;
+
+                    img{
+                        height: 1.3rem;
+                    }
+                }
             }
 
         }

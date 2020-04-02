@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import './footer.styles.scss';
 
-import logo from '../../img/logo.svg'
+import logo from '../../img/kogoWhite.svg'
 import facebook from '../../img/social/facebook.svg'
 import instagram from '../../img/social/instagram.svg'
 import twitter from '../../img/social/twitter.svg'
@@ -12,7 +12,7 @@ import vimeo from '../../img/social/vimeo.svg'
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
+      <footer className="footer">
         <div className="content has-text-centered">
           <img
             src={logo}
@@ -55,7 +55,7 @@ const Footer = class extends React.Component {
                   <ul className="menu-list">
                     <li>
                       <Link className="navbar-item" to="/blog">
-                        Latest Stories
+                        Blog
                       </Link>
                     </li>
                     

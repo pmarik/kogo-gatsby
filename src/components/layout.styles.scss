@@ -1,3 +1,13 @@
 h1{
     color: #674B42;
 }
+
+a{
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+
+    a:hover{
+        color: #674B42;
+    }
+}
