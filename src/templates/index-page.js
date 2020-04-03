@@ -16,7 +16,6 @@ export const IndexPageTemplate = ({
   heading,
   subheading,
   mainpitch,
-  description,
   intro,
 }) => (
   <div>
@@ -41,19 +40,29 @@ export const IndexPageTemplate = ({
         // }} 
         className="top-banner-container"
       >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen top-banner-tagline"
-          // style={{
-          //   boxShadow:
-          //     'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-          //   backgroundColor: 'rgb(255, 68, 0)',
-          //   color: 'white',
-          //   lineHeight: '1',
-          //   padding: '0.25em',
-          // }}
-        >
-          {heading}
-        </h1>
+        <div>
+          <h1
+            className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen top-banner-tagline"
+            // style={{
+            //   boxShadow:
+            //     'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
+            //   backgroundColor: 'rgb(255, 68, 0)',
+            //   color: 'white',
+            //   lineHeight: '1',
+            //   padding: '0.25em',
+            // }}
+          >
+            {heading}
+          </h1>
+
+          <div className="subheading-link">
+            <Link to="/products">
+              {subheading}
+            </Link>
+          </div>
+        </div>
+      
+
         {/* <h3
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen top-banner-image"
           style={{
@@ -97,7 +106,6 @@ export const IndexPageTemplate = ({
                     <h3 className="has-text-weight-semibold is-size-2">
                       {subheading}
                     </h3>
-                    <p>{description}</p>
                   </div>
                 </div>
                 <div className="content">
@@ -142,7 +150,6 @@ IndexPageTemplate.propTypes = {
   heading: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
-  description: PropTypes.string,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
@@ -159,7 +166,6 @@ const IndexPage = ({ data }) => {
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
         intro={frontmatter.intro}
       />
     </Layout>
@@ -194,7 +200,6 @@ export const pageQuery = graphql`
           title
           description
         }
-        description
         intro {
           blurbs {
             image {
