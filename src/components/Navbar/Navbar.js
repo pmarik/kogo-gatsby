@@ -40,13 +40,9 @@ const Navbar = class extends React.Component {
         role="navigation"
         aria-label="main-navigation"
       >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Kogo">
-              <img src={logo} alt="Kogo" style={{ width: '150px' }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
+        <div className="container-nav">
+        {/* Hamburger menu */}
+        <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
@@ -55,10 +51,9 @@ const Navbar = class extends React.Component {
               <span />
               <span />
             </div>
-          </div>
-          <div
+        <div
             id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
+            className={` ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-links">
 
@@ -77,17 +72,25 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item-link" to="/products">
                 Shop
               </Link>
-              
             </div>
-            <div className="nav-cart">
+          
+          </div>
+
+          <div className="navbar-brand">
+            <Link to="/" className="navbar-item" title="Kogo">
+              <img src={logo} alt="Kogo" style={{ width: '150px' }} />
+            </Link>
+          </div>
+
+          <div className="nav-cart">
               <Link className="navbar-item nav-your-cart" to="/products">
                 <span className="icon">
                   <img src={cart} alt="Cart" />
-                  Your Cart
+                  <span className="your-cart-text">Your Cart</span>
                 </span>
               </Link>
-            </div>
           </div>
+      
         </div>
       </nav>
     )

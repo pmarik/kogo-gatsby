@@ -1,25 +1,40 @@
 .navbar{
-    min-height: 5rem;
+    min-height: 3.25rem;
     background-color: white;
     position: relative;
     z-index: 30;
     color: #8A120F;
+    
 
-    .navbar-item-link, .navbar-item{
-        line-height: 1.5;
+    .container-nav {
+        display: flex;
+        align-items: center;
+        min-height: 3.25rem;
+        width: 100%;
+        margin: 0 auto;
         position: relative;
-        padding: 0.5rem 2rem;
-        color: inherit;
-
-        &:hover{
-            color: #FB604E;
+       
+        @media screen and (min-width: 1024px){
+            max-width: 980px;
         }
-    }
 
-    .container {
+        @media screen and (min-width: 1216px){
+            max-width: 1152px;
+        }
+
+        @media screen and (min-width: 1408px){
+            max-width: 1344px;
+        }
+
+        .navbar-burger {
+            margin-left: 0;
+        }
 
         .navbar-brand{
             min-height: 5rem;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
 
             .navbar-item{
                 img{
@@ -33,20 +48,70 @@
         }
 
         #navMenu{
-            align-items: center;
-            justify-content: flex-end;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background: #728C5B;
+            top: 3.5rem;
+
+            @media screen and (min-width: 1024px){
+                top: auto;
+                background: none;
+                width: 28%;
+                max-height: 1000px;
+            }
 
             .navbar-links{
-                display: flex;
+                overflow: hidden;
+                max-height: 0;
                 justify-content: space-between;
                 flex-direction: column;
                 text-align: center;
-                margin: 0 1.5rem 0 0;
+                margin: 0;
+                
 
                 @media screen and (min-width: 1024px){
                     flex-direction: row;
+                    display: flex;
+                    max-height: 1000px;
+                }
+
+                .navbar-item-link, .navbar-item{
+                    line-height: 1.5;
+                    position: relative;
+                    padding: 2% 1%;
+                    color: inherit;
+                    height: 5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+            
+                    &:hover{
+                        color: #FB604E;
+                    }
+
+                    @media screen and (min-width: 1024px){
+                        height: inherit;
+                    }
                 }
             }
+
+            
+            &.is-active{
+                .navbar-links{
+                    display: flex;
+                    max-height: 1000px;
+                    transition: max-height 900ms ease-out;
+                }
+            }
+
+            
+        }
+
+
+        .nav-cart{
+            position: absolute;
+            right: 0;
 
             .nav-your-cart{
                 margin: 0 auto;
@@ -59,11 +124,24 @@
                     justify-content: space-between;
 
                     img{
-                        height: 1.3rem;
+                        height: 1.2em;
+                        display: block;
+                        margin-left: 0;
                     }
+
+                    @media screen and (max-width: 1024px){
+
+                        img{
+                            margin-left: auto;
+                        }
+
+                        .your-cart-text{
+                            display: none;
+                        }
+                    }
+                  
                 }
             }
-
         }
     }
 }

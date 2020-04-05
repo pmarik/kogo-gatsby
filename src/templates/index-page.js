@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
 
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
@@ -16,19 +15,11 @@ export const IndexPageTemplate = ({
   heading,
   subheading,
   mainpitch,
-  intro,
+  image_2,
+ 
 }) => (
   <div>
-    <div
-      className="full-width-image margin-top-0 top-banner"
-      // style={{
-      //   backgroundImage: `url(${
-      //     !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-      //   })`,
-      //   backgroundPosition: `top left`,
-      //   backgroundAttachment: `fixed`,
-      // }}
-    >
+    <div className="full-width-image margin-top-0 top-banner">
       <div
         // style={{
         //   display: 'flex',
@@ -110,14 +101,25 @@ export const IndexPageTemplate = ({
                     <h3 className="subtitle">{mainpitch.description}</h3>
                   </div>
                 </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
+
+                <div className="content">
+                  <div className="tile">
+                    <h1 className="title">{mainpitch.title_2}</h1>
+                  </div>
+                  <div className="tile">
+                    <h3 className="subtitle">{mainpitch.description_2}</h3>
                   </div>
                 </div>
+
+                <Link to="/products" style={{padding: '20px', backgroundColor: 'pink'}}>
+                  {mainpitch.button_text}
+                </Link>
+
+                <div style={{width: '50%', marginTop: '30px', height: '300px', border: '2px solid black', position: 'relative', overflow: 'hidden'}}>
+                  <PreviewCompatibleImage imageInfo={mainpitch.image1} />
+                </div>
+
+               
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
@@ -125,7 +127,7 @@ export const IndexPageTemplate = ({
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/blog">
-                      Read more
+                      Read more from the blog
                     </Link>
                   </div>
                 </div>
@@ -193,6 +195,19 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+          title_2
+          description_2
+          button_text
+          image1 {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 526, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
         intro {
           blurbs {
