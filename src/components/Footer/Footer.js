@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import './footer.styles.scss';
 
-import logo from '../../img/kogoWhite.svg'
+import logo from '../../img/kogoWhiteSimp.svg'
 import facebook from '../../img/social/facebook.svg'
 import instagram from '../../img/social/instagram.svg'
 import twitter from '../../img/social/twitter.svg'

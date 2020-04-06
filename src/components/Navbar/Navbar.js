@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import cart from '../../img/cart.svg';
-import logo from '../../img/logo.svg'
+import cart from '../../img/cartWhite.svg';
+import logo from '../../img/kogoWhiteSimp.svg'
 import './navbar.styles.scss';
 
 const Navbar = class extends React.Component {
@@ -27,7 +27,7 @@ const Navbar = class extends React.Component {
               navBarActiveClass: 'is-active',
             })
           : this.setState({
-              navBarActiveClass: '',
+              navBarActiveClass: 'is-closed',
             })
       }
     )
@@ -41,55 +41,64 @@ const Navbar = class extends React.Component {
         aria-label="main-navigation"
       >
         <div className="container-nav">
-        {/* Hamburger menu */}
-        <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
+          {/* Hamburger menu */}
+          <div
+                role='button'
+                className={`menu-toggle ${this.state.navBarActiveClass}`}
+                data-target="navMenu"
+                onClick={() => this.toggleHamburger()}
+              >
+               <div className="hamburger"></div>
+          </div>
+
+          <div
+              id="navMenu"
+              className={` ${this.state.navBarActiveClass}`}
             >
-              <span />
-              <span />
-              <span />
+              <div className="navbar-links">
+
+                <Link className="navbar-item-link" to="/">
+                  <span className="nav-text">Home</span>
+                </Link>
+
+                <Link className="navbar-item-link" to="/about">
+                  <span className="nav-text">About</span>
+                </Link>
+
+                <Link className="navbar-item-link" to="/blog">
+                  <span className="nav-text">Blog</span>
+                </Link>
+
+                <Link className="navbar-item-link" to="/products">
+                  <span className="nav-text">Shop</span>
+                </Link>
+
+                <Link className="navbar-item-link hide-link" to="/contact">
+                  <span className="nav-text">Contact</span>
+                </Link>
+
+                <Link className="navbar-item-link hide-link" to="/products">
+                  <span className="nav-text">Your Cart</span>
+                </Link>
+
+              </div>
+            
+          </div>
+
+            <div className="navbar-brand">
+              <Link to="/" className="navbar-item" title="Kogo">
+                <img src={logo} alt="Kogo" style={{ width: '150px' }} />
+              </Link>
             </div>
-        <div
-            id="navMenu"
-            className={` ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-links">
 
-              <Link className="navbar-item-link" to="/">
-                Home
-              </Link>
-
-              <Link className="navbar-item-link" to="/about">
-                About
-              </Link>
-
-              <Link className="navbar-item-link" to="/blog">
-                Blog
-              </Link>
-
-              <Link className="navbar-item-link" to="/products">
-                Shop
-              </Link>
+            <div className="nav-cart">
+                <Link className="navbar-item nav-your-cart" to="/products">
+                  <span className="icon">
+                    <img src={cart} alt="Cart" />
+                    <span className="your-cart-text">Your Cart</span>
+                  </span>
+                </Link>
             </div>
-          
-          </div>
-
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Kogo">
-              <img src={logo} alt="Kogo" style={{ width: '150px' }} />
-            </Link>
-          </div>
-
-          <div className="nav-cart">
-              <Link className="navbar-item nav-your-cart" to="/products">
-                <span className="icon">
-                  <img src={cart} alt="Cart" />
-                  <span className="your-cart-text">Your Cart</span>
-                </span>
-              </Link>
-          </div>
       
         </div>
       </nav>
