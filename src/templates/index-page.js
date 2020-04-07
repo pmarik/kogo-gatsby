@@ -19,14 +19,14 @@ export const IndexPageTemplate = ({
  
 }) => (
   <div>
-    <div className="full-width-image top-banner">
+    <div className="full-width-image top-banner container-custom">
       <div className="top-banner-container">
-        <div>
+        <div className="top-banner-text-container">
           <h1
-            className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen top-banner-tagline">
+            className="top-banner-tagline">
             {heading}
           </h1>
-          <div className="subheading-link">
+          <div className="subheading-link" >
             <Link to="/products">
               {subheading}
             </Link>
@@ -44,42 +44,45 @@ export const IndexPageTemplate = ({
           
       </div>
     </div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
+    <section className="section-home-container ">
+      <div className="container-section">
               <div className="content">
             
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
+                <div class="mid-section">
+                  <div className="left-mid-section">
+                    <div className="content">
+                      <div className="tile">
+                        <h2 className="title">{mainpitch.title}</h2>
+                      </div>
+                      <div className="tile">
+                        <p className="subtitle">{mainpitch.description}</p>
+                      </div>
+                    </div>
+
+                    <div className="content">
+                      <div className="tile">
+                        <h2 className="title">{mainpitch.title_2}</h2>
+                      </div>
+                      <div className="tile">
+                        <p className="subtitle">{mainpitch.description_2}</p>
+                      </div>
+                    </div>
+
+                    <button>
+                      <Link to="/products">
+                        {mainpitch.button_text}
+                      </Link>
+                    </button>
+                   
                   </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
+
+                  <div className="mid-section-img">
+                    <PreviewCompatibleImage imageInfo={mainpitch.image1} />
                   </div>
                 </div>
-
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title_2}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description_2}</h3>
-                  </div>
-                </div>
-
-                <Link to="/products" style={{padding: '20px', backgroundColor: 'pink'}}>
-                  {mainpitch.button_text}
-                </Link>
-
-                <div style={{width: '50%', marginTop: '30px', height: '300px', border: '2px solid black', position: 'relative', overflow: 'hidden'}}>
-                  <PreviewCompatibleImage imageInfo={mainpitch.image1} />
-                </div>
-
                
                 <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
+                  <h3 className="blog-roll-title">
                     Latest stories
                   </h3>
                   <BlogRoll />
@@ -90,9 +93,7 @@ export const IndexPageTemplate = ({
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+           
       </div>
     </section>
   </div>

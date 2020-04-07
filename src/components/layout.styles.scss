@@ -2,9 +2,29 @@ body{
     overscroll-behavior: contain;
 }
 
-h1{
-    color: #674B42;
+h1, h2, h3{
+    color: #8A120F !important;
 }
+
+button{
+    border: none;
+    width: auto;
+    color: white;
+    padding: 20px 0;
+    background: #FB604E;
+    font-weight: bold;
+    font-size: 1.1em;
+    &:hover{
+        background: #8A120F;
+    }
+    a{
+        padding: 20px 50px;
+        &:hover{
+            color: white;
+        }
+    }
+}
+
 
 a{
     color: inherit;
