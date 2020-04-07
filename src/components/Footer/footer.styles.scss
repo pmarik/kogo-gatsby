@@ -1,13 +1,14 @@
 footer.footer{
     background:#728C5B;
     padding: 0 10%;
-    padding-bottom: 2em;
+    padding-bottom: 5em;
 
 
     .footer-container{
         border: 1px solid blue;
 
         .top-footer-section{
+            
             position: relative;
             display: flex; 
             justify-content: flex-start;
@@ -57,6 +58,7 @@ footer.footer{
 
 
         .footer-menu-copyright-container{
+            margin-top: 3em;
             display: flex;
             justify-content: space-between;
 
@@ -67,12 +69,11 @@ footer.footer{
 
             .footer-menu{
                 width: 100%;
-                border: 1px solid orange;
                 max-width: 800px;
                 .footer-menu-list{
                     display: flex;
                     align-items: center;
-                    justify-content: space-evenly;
+                    justify-content: space-between;
                     border-bottom: 1px solid white;
                     li{
                         a{
@@ -93,7 +94,6 @@ footer.footer{
             .copyright{
                 padding: 0.5rem 0.75rem;
                 text-align: center;
-                border: 1px solid pink;
                 width: 20%;
                 min-width: 150px;
                 font-size: 0.9em;
