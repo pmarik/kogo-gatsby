@@ -2,8 +2,9 @@
 templateKey: index-page
 title: KOGO
 image: /img/kogopackage.png
-heading: All natural ultra energy for the body
-subheading: 'Organic ground coffee cherries'
+heading: Organic ground coffee cherries
+subheading: 'Get all-natural sustained energy, and help support independent growers'
+button_text_1: Power Up Now
 # description: >-
 #   Kaldi is the ultimate spot for coffee lovers who want to learn about their
 #   java’s origin and support the farmers that grew it. We take coffee production,
@@ -16,7 +17,7 @@ mainpitch:
   title_2: Healthy and natural
   description_2: >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-  button_text: Power Up Now
+  button_text_2: ABOUT KOGO
   image1:
     alt: Kogo ground coffee cherries
     image: /img/coffeeground.png

@@ -14,74 +14,70 @@ export const IndexPageTemplate = ({
   title,
   heading,
   subheading,
+  button_text_1,
   mainpitch,
-  image_2,
- 
 }) => (
-  <div>
-    <div className="full-width-image top-banner container-custom">
-      <div className="top-banner-container">
-        <div className="top-banner-text-container">
-          <h1
-            className="top-banner-tagline">
-            {heading}
-          </h1>
-          <div className="subheading-link" >
-            <Link to="/products">
-              {subheading}
-            </Link>
-          </div>
-        </div>
+  <main className="main-content">
+    <div className="main-content-container">
+        <section className="top-banner-grid">
 
-        <div className="top-banner-image">
+          <div className="landing-heading">
+            <h1>{heading}</h1>
+          </div>
+          
+          <div className="top-banner-image">
           <PreviewCompatibleImage  
                 imageInfo={{
                   image: image,
                   alt: title,
                 }}
               />
-        </div>
-          
-      </div>
-    </div>
-    <section className="section-home-container ">
-      <div className="container-section">
-              <div className="content">
-            
-                <div class="mid-section">
-                  <div className="left-mid-section">
-                    <div className="content">
+          </div>
+
+          <div className="landing-subheading" >
+              <h3>{subheading}</h3>
+          </div>
+
+          <button className="landing-btn">
+            <Link to="/products">
+              {button_text_1}
+            </Link>
+          </button>
+        </section>
+
+        <section className="section-home-container">
+          <div className="content">
+              <div class="mid-section">
+                  <div className="content">
                       <div className="tile">
                         <h2 className="title">{mainpitch.title}</h2>
                       </div>
                       <div className="tile">
                         <p className="subtitle">{mainpitch.description}</p>
                       </div>
-                    </div>
+                  </div>
 
-                    <div className="content">
+                  <div className="content">
                       <div className="tile">
                         <h2 className="title">{mainpitch.title_2}</h2>
                       </div>
                       <div className="tile">
                         <p className="subtitle">{mainpitch.description_2}</p>
                       </div>
-                    </div>
+                  </div>
 
-                    <button>
+                  <button>
                       <Link to="/products">
-                        {mainpitch.button_text}
+                        {mainpitch.button_text_2}
                       </Link>
-                    </button>
-                   
-                  </div>
-
+                  </button>
+                    
                   <div className="mid-section-img">
-                    <PreviewCompatibleImage imageInfo={mainpitch.image1} />
+                      <PreviewCompatibleImage imageInfo={mainpitch.image1} />
                   </div>
-                </div>
-               
-                <div className="column is-12">
+              </div>
+                  
+              <div className="column is-12">
                   <h3 className="blog-roll-title">
                     Latest stories
                   </h3>
@@ -91,12 +87,11 @@ export const IndexPageTemplate = ({
                       Read more from the blog
                     </Link>
                   </div>
-                </div>
               </div>
-           
-      </div>
-    </section>
-  </div>
+          </div>               
+        </section>
+    </div>
+  </main>
 )
 
 IndexPageTemplate.propTypes = {
@@ -104,6 +99,7 @@ IndexPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
+  button_text_1: PropTypes.string,
   mainpitch: PropTypes.object,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
@@ -120,6 +116,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
+        button_text_1={frontmatter.button_text_1}
         mainpitch={frontmatter.mainpitch}
         intro={frontmatter.intro}
       />
@@ -151,12 +148,13 @@ export const pageQuery = graphql`
         }
         heading
         subheading
+        button_text_1
         mainpitch {
           title
           description
           title_2
           description_2
-          button_text
+          button_text_2
           image1 {
             alt
             image {

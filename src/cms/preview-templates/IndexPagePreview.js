@@ -12,12 +12,13 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         title={data.title}
         heading={data.heading}
         subheading={data.subheading}
+        button_text_1={data.button_text_1}
         mainpitch={{
           title: data.title,
           description: data.description,
           title_2: data.title_2,
           description_2: data.description_2,
-          button_text: data.button_text,
+          button_text_2: data.button_text_2,
           image1: {
             image: getAsset(entry.getIn(['data', 'mainpitch', 'image1', 'image'])),
             alt: entry.getIn(['data', 'mainpitch', 'image1', 'alt']),

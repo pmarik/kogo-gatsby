@@ -3,23 +3,34 @@ body{
     overflow-x: hidden;
 }
 
-h1, h2, h3{
+h1, h2{
     color: #8A120F !important;
 }
 
+.content h2{
+    font-size: 1.75rem !important;
+    font-weight: 700;
+}
+
 button{
+    display: inline;
     border: none;
-    width: auto;
     color: white;
     padding: 20px 0;
     background: #FB604E;
     font-weight: bold;
     font-size: 1.1em;
+    margin: 20px 0 30px 0;
+    border-radius: 5px;
+    box-shadow: inset -4px -4px 4px rgba(0, 0, 0, 0.25);
+
     &:hover{
         background: #8A120F;
     }
     a{
+        display: inline;
         padding: 20px 50px;
+        text-transform: uppercase;
         &:hover{
             color: white;
         }
@@ -34,5 +45,20 @@ a{
 
     a:hover{
         color: #674B42;
+    }
+}
+
+.main-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5% 0 0 0;
+
+    .main-content-container{
+        border: 2px solid blue;
+        width: 100%;
+        margin: 0 8%;
+        max-width: 1024px;
+        position: relative;
     }
 }
