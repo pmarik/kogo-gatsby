@@ -24,6 +24,14 @@ const IndexPagePreview = ({ entry, getAsset }) => {
             alt: entry.getIn(['data', 'mainpitch', 'image1', 'alt']),
           }
         }}
+        bottom_page_content={{
+          image1: {
+            image: getAsset(entry.getIn(['data', 'bottom_page_content', 'image1', 'image'])),
+            alt: entry.getIn(['data', 'bottom_page_content', 'image1', 'alt']),
+          },
+          heading: data.heading,
+          description: data.description
+        }}
   
         
       />

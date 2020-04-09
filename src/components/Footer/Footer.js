@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import FooterForm from './FooterForm';
 import './footer.styles.scss';
 
 import logo from '../../img/kogoWhiteSimp.svg'
@@ -23,10 +24,8 @@ const Footer = class extends React.Component {
         <div className="footer-container">
 
               <div className="top-footer-section">
-                  <div className="footer-form" style={{width: '200px', height: '100px', border: '1px solid black'}}>
-                    <p>Sign up to our Newsletter -form section</p>
-                  </div>
 
+                  <FooterForm />
 
                   <div className="footer-social-links-container">
                     <p style={{textAlign: 'center'}}>Keep up with Kogo</p>

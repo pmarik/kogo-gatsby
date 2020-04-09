@@ -16,6 +16,7 @@ export const IndexPageTemplate = ({
   subheading,
   button_text_1,
   mainpitch,
+  bottom_page_content
 }) => (
   <main className="main-content">
     <div className="main-content-container">
@@ -88,6 +89,24 @@ export const IndexPageTemplate = ({
                     </Link>
                   </div>
               </div>
+
+              <section className="bottom-content">
+                  <div className="bottom-section-img">
+                        <h2 className="bottom-section-header">{bottom_page_content.heading}</h2>
+                        <PreviewCompatibleImage  
+                          imageInfo={{
+                            image: bottom_page_content.image1.image,
+                            alt: bottom_page_content.image1.alt,
+                          }}
+                        />
+                  </div>
+
+                  <div className="bottom-section-description">
+                    <p>{bottom_page_content.description}</p>
+                  </div>
+
+              </section>
+
           </div>               
         </section>
     </div>
@@ -101,9 +120,7 @@ IndexPageTemplate.propTypes = {
   subheading: PropTypes.string,
   button_text_1: PropTypes.string,
   mainpitch: PropTypes.object,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  bottom_page_content: PropTypes.object,
 }
 
 const IndexPage = ({ data }) => {
@@ -118,7 +135,7 @@ const IndexPage = ({ data }) => {
         subheading={frontmatter.subheading}
         button_text_1={frontmatter.button_text_1}
         mainpitch={frontmatter.mainpitch}
-        intro={frontmatter.intro}
+        bottom_page_content={frontmatter.bottom_page_content}
       />
     </Layout>
   )
@@ -166,16 +183,16 @@ export const pageQuery = graphql`
             }
           }
         }
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+        bottom_page_content {
+          image1{
+            alt
+            image{
+              childImageSharp{
+                fluid(maxWidth: 1024, quality: 95){
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-            text
           }
           heading
           description

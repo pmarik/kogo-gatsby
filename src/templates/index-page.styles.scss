@@ -149,7 +149,7 @@
            }
         
     .blog-preview-list{
-        margin-bottom: 15%;
+        margin-bottom: 12%;
         display: flex; 
         justify-content: center;
         align-items: center;
@@ -161,6 +161,39 @@
         }
         .blog-link{
             margin: 3em auto 0 auto;
+        }
+    }
+
+    .bottom-content{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+
+        .bottom-section-img{
+            position: relative;
+            width: 150%;
+
+            @media screen and (min-width: 678px){
+                width: 100%;
+            }
+            
+            .bottom-section-header{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 10;
+                background: #FB604E;
+                color: white !important;
+                padding: 1em 2em;
+            }
+
+        }
+
+        .bottom-section-description{
+            margin-top: 3rem;
         }
     }
    
