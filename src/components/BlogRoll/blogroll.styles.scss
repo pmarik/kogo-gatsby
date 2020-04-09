@@ -13,6 +13,21 @@
             padding: 1.25rem 2.5rem 1.25rem 1.5rem;
             background: transparent;
 
+            .blog-header{
+                .post-meta{
+                    display: flex;
+                    flex-direction: column;
+                    .title{
+                        color: #FB604E !important;
+
+                        &:hover{
+                            color: #8A120F !important;
+                        }
+                    }
+
+                }
+            }
+
             .button{
                 color: #8A120F;
                 background: transparent;
