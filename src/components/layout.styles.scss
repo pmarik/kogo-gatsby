@@ -17,15 +17,22 @@ button{
     border: none;
     color: white;
     padding: 20px 0;
-    background: #FB604E;
+    // background: #FB604E;
     font-weight: bold;
     font-size: 1.1em;
     margin: 20px 0 30px 0;
-    border-radius: 5px;
+    // border-radius: 5px;
+    // box-shadow: inset -4px -4px 4px rgba(0, 0, 0, 0.25);
+    
+
+    background: linear-gradient(100deg, #8A120F 0%, rgba(251, 96, 78, 0) 100%), #FB604E;
     box-shadow: inset -4px -4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    transition: background 500ms ease-in;
 
     &:hover{
         background: #8A120F;
+        box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
     }
     a{
         display: inline;
@@ -34,6 +41,16 @@ button{
         &:hover{
             color: white;
         }
+    }
+}
+
+.btn{
+    border-bottom: 2px solid #8A120F;
+    box-shadow: none;
+    border-radius: 0;
+
+    &:hover{
+        color: #FB604E;
     }
 }
 
@@ -55,10 +72,14 @@ a{
     margin: 5% 0 0 0;
 
     .main-content-container{
-        border: 2px solid blue;
+        //border: 2px solid blue;
         width: 100%;
         margin: 0 8%;
         max-width: 1024px;
         position: relative;
+
+        @media screen and (max-width: 678px){
+            text-align: center;
+        }
     }
 }

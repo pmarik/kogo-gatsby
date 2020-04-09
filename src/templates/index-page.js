@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import BlogRoll from '../components/BlogRoll'
+import BlogRoll from '../components/BlogRoll/BlogRoll'
 
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
@@ -47,8 +47,8 @@ export const IndexPageTemplate = ({
 
         <section className="section-home-container">
           <div className="content">
-              <div class="mid-section">
-                  <div className="content">
+              <div class="mid-section-grid">
+                  <div className="content content-1">
                       <div className="tile">
                         <h2 className="title">{mainpitch.title}</h2>
                       </div>
@@ -57,32 +57,32 @@ export const IndexPageTemplate = ({
                       </div>
                   </div>
 
-                  <div className="content">
+                  <div className="mid-section-img">
+                      <PreviewCompatibleImage imageInfo={mainpitch.image1} />
+                  </div>
+
+                  <div className="content content-2">
                       <div className="tile">
                         <h2 className="title">{mainpitch.title_2}</h2>
                       </div>
                       <div className="tile">
                         <p className="subtitle">{mainpitch.description_2}</p>
                       </div>
-                  </div>
 
-                  <button>
-                      <Link to="/products">
-                        {mainpitch.button_text_2}
-                      </Link>
-                  </button>
-                    
-                  <div className="mid-section-img">
-                      <PreviewCompatibleImage imageInfo={mainpitch.image1} />
+                      <button>
+                        <Link to="/products">
+                          {mainpitch.button_text_2}
+                        </Link>
+                      </button>
                   </div>
               </div>
                   
-              <div className="column is-12">
+              <div className="blog-preview-list">
                   <h3 className="blog-roll-title">
                     Latest stories
                   </h3>
                   <BlogRoll />
-                  <div className="column is-12 has-text-centered">
+                  <div className="blog-link">
                     <Link className="btn" to="/blog">
                       Read more from the blog
                     </Link>
