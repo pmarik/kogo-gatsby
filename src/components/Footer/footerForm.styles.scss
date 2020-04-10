@@ -1,5 +1,25 @@
 .footer-form-wrapper{
-    border: 1px dotted purple;
-    width: 500px;
-    height: 200px;
+    padding: 0 0 4rem 0;
+
+    p{
+        font-size: 1.3em !important;
+        font-weight: bold;
+        color: white !important;
+        letter-spacing: 1px;
+    }
+
+    form{
+        input{
+            height: 2rem;
+            background: transparent;
+            border: 0;
+            border-bottom: 2px solid white;
+            color: white !important;
+            font-size: 1.2rem;
+
+            input::placeholder{
+                color: pink !important;
+            }
+        }
+    }
 }

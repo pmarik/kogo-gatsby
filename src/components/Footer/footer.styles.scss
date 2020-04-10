@@ -1,14 +1,15 @@
 footer.footer{
     background:#728C5B;
-    padding: 0 10%;
-    padding-bottom: 5em;
+    padding: 0 0 3em 0;
+
+    @media screen and (min-width: 468px){
+        padding: 0 10% 5em 10%;
+    }
 
 
     .footer-container{
-        border: 1px solid blue;
-
         .top-footer-section{
-            
+            margin-bottom: 8%;
             position: relative;
             display: flex; 
             justify-content: space-evenly;
@@ -19,19 +20,16 @@ footer.footer{
             }
 
             .footer-form{
-                width: 100%;
-                min-width: 350px;
+               justify-self: flex-start;
             }
 
             .footer-social-links-container{
                 p{
-                    font-size: 1.2em !important;
+                    font-size: 1.3em !important;
                     font-weight: bold;
                     color: white !important;
                     letter-spacing: 1px;
                 }
-
-                border: 1px solid red;
 
                 @media screen and (min-width: 980px){
                     align-self: flex-start;
