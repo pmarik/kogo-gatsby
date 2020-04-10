@@ -17,11 +17,12 @@ class FooterForm extends React.Component{
         Object.keys(this.refs).map(key => (formData[key] = this.refs[key].value))
 
         console.log('this ref: ',this.refs);
-        console.log('path location prop ', this.props.location);
+        //console.log('path location prop ', this.props.location);
         console.log('window current: ', window.location.href);
    
         const axiosOptions = {
-          url: this.props.location.pathname,
+        //   url: this.props.location.pathname,
+          url: window.location.href,
           method: "post",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           data: qs.stringify(formData),

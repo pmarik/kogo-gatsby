@@ -16,9 +16,11 @@ export const IndexPageTemplate = ({
   subheading,
   button_text_1,
   mainpitch,
-  bottom_page_content
+  bottom_page_content,
+  location
 }) => (
   <main className="main-content">
+    {console.log("location from index-pageJS: ", location)}
     <div className="main-content-container">
         <section className="top-banner-grid">
 
