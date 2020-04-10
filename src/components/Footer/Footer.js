@@ -97,7 +97,7 @@ const Footer = class extends React.Component {
                   </ul>
                 </section>
 
-                <div className="copyright">© KOGO 2020</div>
+                <div className="copyright">© 2020 KOGO</div>
               </div>
         </div>
       </footer>

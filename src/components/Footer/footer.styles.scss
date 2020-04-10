@@ -12,23 +12,30 @@ footer.footer{
             margin-bottom: 8%;
             position: relative;
             display: flex; 
-            justify-content: space-evenly;
+            justify-content: space-between;
             align-items: center;
 
             @media screen and (max-width: 980px){
                 flex-direction: column;
             }
 
-            .footer-form{
-               justify-self: flex-start;
-            }
-
             .footer-social-links-container{
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+
+                @media screen and (max-width: 1024px){
+                    position: relative;
+                    left: 0;
+                    transform: none;
+                }
+
                 p{
                     font-size: 1.3em !important;
                     font-weight: bold;
                     color: white !important;
                     letter-spacing: 1px;
+                    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 }
 
                 @media screen and (min-width: 980px){
