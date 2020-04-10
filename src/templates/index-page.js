@@ -128,7 +128,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      {console.log('location from index-pageJS', this.location)}
+      {console.log('location from index-pageJS', this.props.location)}
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
