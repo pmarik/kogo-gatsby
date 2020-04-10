@@ -25,7 +25,7 @@ const Footer = class extends React.Component {
 
               <div className="top-footer-section">
 
-                  {console.log('from footer js location var:', location)}
+                  {console.log('from footer js location var:', this.location)}
                   <FooterForm location={this.location} />
 
                   <div className="footer-social-links-container">

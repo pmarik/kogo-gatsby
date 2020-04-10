@@ -128,6 +128,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
+      {console.log('location from index-pageJS', this.location)}
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
