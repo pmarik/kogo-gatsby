@@ -11,6 +11,7 @@ import twitter from '../../img/social/twitter.svg'
 import vimeo from '../../img/social/vimeo.svg'
 
 const Footer = class extends React.Component {
+
   render() {
     return (
       <footer className="footer">
@@ -25,7 +26,7 @@ const Footer = class extends React.Component {
 
               <div className="top-footer-section">
 
-                  {console.log('from footer js location var:', this.location)}
+                  {console.log('from footer js location var:', this.props.location)}
                   <FooterForm location={this.location} />
 
                   <div className="footer-social-links-container">

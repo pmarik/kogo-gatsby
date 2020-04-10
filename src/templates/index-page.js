@@ -126,9 +126,6 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
-
-  console.log('location from index-pageJS', this.props.location);
-
   return (
     <Layout>
       <IndexPageTemplate
