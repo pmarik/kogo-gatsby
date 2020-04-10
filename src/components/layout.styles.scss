@@ -5,6 +5,10 @@ body, html{
     overflow-x: hidden;
 }
 
+.testy-boi{
+    background: pink;
+}
+
 h1, h2, .blog-roll-title {
     color: #FB604E !important;
     font-family: 'Montserrat', sans-serif;
@@ -97,4 +101,12 @@ a{
             text-align: center;
         }
     }
+}
+
+.fade-in{
+    background: pink;
+}
+
+.fade-out{
+    background: blue;
 }

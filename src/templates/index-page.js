@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import VisibilitySensor from '../components/VisibilitySensor';
 
 import Layout from '../components/Layout'
 import BlogRoll from '../components/BlogRoll/BlogRoll'
-
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
 import './index-page.styles.scss';
@@ -17,23 +17,37 @@ export const IndexPageTemplate = ({
   button_text_1,
   mainpitch,
   bottom_page_content,
-}) => (
+}) =>  {
+
+  
+  return(
   <main className="main-content">
     <div className="main-content-container">
         <section className="top-banner-grid">
 
-          <div className="landing-heading">
+          <div className="landing-heading" 
+               data-sal="fade-in"
+               data-sal-delay="300"
+               data-sal-easing="ease">
             <h1>{heading}</h1>
           </div>
           
-          <div className="top-banner-image">
-          <PreviewCompatibleImage  
-                imageInfo={{
-                  image: image,
-                  alt: title,
-                }}
-              />
-          </div>
+          <VisibilitySensor 
+            once
+            partialVisibility
+            minTopValue="100"
+          > 
+            {({ isVisible }) => (
+              <div className={`top-banner-image ${isVisible ? 'fade-out' : ''} `}>
+                <PreviewCompatibleImage  
+                    imageInfo={{
+                        image: image,
+                        alt: title,
+                    }}
+                />
+              </div>
+            )}
+          </VisibilitySensor>
 
           <div className="landing-subheading" >
               <h3>{subheading}</h3>
@@ -48,7 +62,7 @@ export const IndexPageTemplate = ({
 
         <section className="section-home-container">
           <div className="content">
-              <div class="mid-section-grid">
+              <div className="mid-section-grid">
                   <div className="content content-1">
                       <div className="tile">
                         <h2 className="title">{mainpitch.title}</h2>
@@ -58,9 +72,17 @@ export const IndexPageTemplate = ({
                       </div>
                   </div>
 
-                  <div className="mid-section-img">
-                      <PreviewCompatibleImage imageInfo={mainpitch.image1} />
-                  </div>
+                  <VisibilitySensor 
+                      once
+                      partialVisibility
+                      minTopValue="180"
+                  > 
+                    {({ isVisible }) => (
+                        <div className={`mid-section-img ${isVisible ? "fade-in" : ''}`} style={{border: '2px solid black'}}>
+                          <PreviewCompatibleImage imageInfo={mainpitch.image1} />
+                        </div>
+                    )}
+                  </VisibilitySensor>
 
                   <div className="content content-2">
                       <div className="tile">
@@ -111,7 +133,7 @@ export const IndexPageTemplate = ({
         </section>
     </div>
   </main>
-)
+)}
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
