@@ -71,7 +71,7 @@ export const IndexPageTemplate = ({
                       </div>
 
                       <button>
-                        <Link to="/products">
+                        <Link to="/about">
                           {mainpitch.button_text_2}
                         </Link>
                       </button>
