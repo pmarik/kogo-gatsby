@@ -25,7 +25,8 @@ const Footer = class extends React.Component {
 
               <div className="top-footer-section">
 
-                  <FooterForm />
+                  {console.log('from footer js location var:', location)}
+                  <FooterForm location={this.location} />
 
                   <div className="footer-social-links-container">
                     <p style={{textAlign: 'center'}}>Keep up with Kogo</p>

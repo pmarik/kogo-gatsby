@@ -15,6 +15,10 @@ class FooterForm extends React.Component{
         event.preventDefault()
         const formData = {}
         Object.keys(this.refs).map(key => (formData[key] = this.refs[key].value))
+
+        console.log('this ref: ',this.refs);
+        console.log('path location prop ', this.props.location);
+        console.log('window current: ', window.location.href);
    
         const axiosOptions = {
           url: this.props.location.pathname,
@@ -48,7 +52,7 @@ class FooterForm extends React.Component{
                     <input ref="form-name" type="hidden" name="form-name" value="Newsletter Form" />
                         {/* <!-- ... --> */}
 
-                    <input ref="email" type="email" name="email" placeholder="Your Email Here" />
+                    <input ref="email" type="email" name="email" placeholder="Your Email Here" required/>
                         {/* <!-- ... --> */}
                     {/* <textarea ref="message" name="message" /> */}
                         {/* <!-- ... --> */}
