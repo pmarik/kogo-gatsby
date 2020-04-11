@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:800|Roboto:500&display=swap');
+@import './animate.styles.scss';
 
 body, html{
     overscroll-behavior: none;
@@ -18,6 +19,11 @@ h1, h2, .blog-roll-title {
 p, h3{
     font-family: 'Roboto', sans-serif;
     color: #674B42 !important;
+}
+
+.navbar, .footer-menu-list{
+    font-size: 0.9em;
+    font-family: 'Roboto', sans-serif;
 }
 
 p{
@@ -103,10 +109,4 @@ a{
     }
 }
 
-.fade-in{
-    background: pink;
-}
 
-.fade-out{
-    background: blue;
-}

@@ -5,7 +5,7 @@
     grid-template-rows: 65px 150px auto 80px auto;
     width: 100%;
     justify-content: center;
-    margin-bottom: 10%;
+    margin-bottom: 20%;
     height: auto;
 
     @media screen and (min-width: 678px){
@@ -20,10 +20,6 @@
 
         h1{
             line-height: 1;
-            // background: -webkit-linear-gradient(right, #FB604E, #8A120F);
-            // background-clip: text;
-            // -webkit-background-clip: text;
-            // -webkit-text-fill-color: transparent;
             font-weight: 700;
             font-size: 1.75rem;
             height: auto;
@@ -109,13 +105,14 @@
                 @media screen and (min-width: 980px){
                     display: grid;
                     grid-template-columns: repeat(8, 1fr);
-                    grid-template-rows: repeat(5, 20%);
+                    grid-template-rows: repeat(5, auto);
                     gap: 1em;
                 }
 
                .content-1{
                    grid-column: 1 / 5;
                    grid-row: 1 / 4;
+                   align-self: start;
                }
 
                .content-2{

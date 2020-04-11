@@ -60,14 +60,14 @@
                 content: '';
                 display: block;
                 background: white;
-                height: 3px;
-                width: 2rem;
+                height: 2px;
+                width: 1.75rem;
                 border-radius: 5px;
                 transition: all ease-in-out 500ms;
             }
 
             .hamburger::before{
-                transform: translateY(-8px);
+                transform: translateY(-7px);
             }
 
             .hamburger::after{
@@ -175,7 +175,7 @@
                 .navbar-links{
                     .navbar-item-link{
                         opacity: 0;
-                        animation: fadeIn ease-in-out 750ms forwards;
+                        animation: fadeInNav ease-in-out 750ms forwards;
                         &:nth-child(1){ animation-delay: 50ms; }
                         &:nth-child(2){ animation-delay: 100ms; }
                         &:nth-child(3){ animation-delay: 150ms; }
@@ -204,7 +204,7 @@
                 }
             }
 
-            @keyframes fadeIn {
+            @keyframes fadeInNav {
                 0% { opacity: 0; transform: translateX(-200px);}
                 100%{ opacity: 1; transform: translateX(0px);}
             }

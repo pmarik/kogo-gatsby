@@ -22,7 +22,7 @@ export const IndexPageTemplate = ({
   
   return(
   <main className="main-content">
-    <div className="main-content-container">
+    <div className="main-content-container anim-start-0 fadeIn">
         <section className="top-banner-grid">
 
           <div className="landing-heading" 
@@ -32,22 +32,15 @@ export const IndexPageTemplate = ({
             <h1>{heading}</h1>
           </div>
           
-          <VisibilitySensor 
-            once
-            partialVisibility
-            minTopValue="100"
-          > 
-            {({ isVisible }) => (
-              <div className={`top-banner-image ${isVisible ? 'fade-out' : ''} `}>
-                <PreviewCompatibleImage  
-                    imageInfo={{
-                        image: image,
-                        alt: title,
-                    }}
-                />
-              </div>
-            )}
-          </VisibilitySensor>
+          <div className="top-banner-image">
+            <PreviewCompatibleImage  
+                imageInfo={{
+                    image: image,
+                    alt: title,
+                  }}
+            />
+          </div>
+          
 
           <div className="landing-subheading" >
               <h3>{subheading}</h3>
@@ -63,34 +56,46 @@ export const IndexPageTemplate = ({
         <section className="section-home-container">
           <div className="content">
               <div className="mid-section-grid">
-                  <div className="content content-1">
-                      <div className="tile">
-                        <h2 className="title">{mainpitch.title}</h2>
-                      </div>
-                      <div className="tile">
-                        <p className="subtitle">{mainpitch.description}</p>
-                      </div>
-                  </div>
 
-                  <VisibilitySensor 
-                      once
-                      partialVisibility
-                      minTopValue="180"
-                  > 
-                    {({ isVisible }) => (
-                        <div className={`mid-section-img ${isVisible ? "fade-in" : ''}`} style={{border: '2px solid black'}}>
-                          <PreviewCompatibleImage imageInfo={mainpitch.image1} />
-                        </div>
+                <VisibilitySensor 
+                  once
+                  partialVisibility
+                  minTopValue="25"
+                > 
+                  {({ isVisible }) => (
+                      <div className={`content content-1 anim-start-0 ${isVisible ? "fadeInLeft" : ''}`}>
+                          <div className="tile">
+                            <h2 className="title">{mainpitch.title}</h2>
+                          </div>
+                          <div className="tile">
+                            <p className="subtitle">{mainpitch.description}</p>
+                          </div>
+                      </div>
                     )}
                   </VisibilitySensor>
 
+                        <div className="mid-section-img">
+                          <PreviewCompatibleImage imageInfo={mainpitch.image1} />
+                        </div>
+                    
+
                   <div className="content content-2">
-                      <div className="tile">
-                        <h2 className="title">{mainpitch.title_2}</h2>
-                      </div>
-                      <div className="tile">
-                        <p className="subtitle">{mainpitch.description_2}</p>
-                      </div>
+                        <VisibilitySensor 
+                            once
+                            partialVisibility
+                            minTopValue="25"
+                        > 
+                          {({ isVisible }) => (
+                            <div className={`anim-start-0 ${isVisible ? 'fadeInLeft' : ''}`}>
+                              <div className="tile">
+                                <h2 className="title">{mainpitch.title_2}</h2>
+                              </div>
+                              <div className="tile">
+                                <p className="subtitle">{mainpitch.description_2}</p>
+                              </div>
+                            </div>
+                        )}
+                      </VisibilitySensor>
 
                       <button>
                         <Link to="/about">
