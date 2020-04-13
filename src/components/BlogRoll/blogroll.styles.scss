@@ -14,6 +14,11 @@
             background: transparent;
 
             .blog-header{
+                .featured-thumbnail{
+                    @media screen and (max-width: 678px){
+                        margin: 0 auto 20px auto;
+                    }
+                }
                 .post-meta{
                     display: flex;
                     flex-direction: column;

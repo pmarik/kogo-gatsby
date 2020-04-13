@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: Health Benefits
-date: 2016-12-17T15:04:10.000Z
+date: 2020-04-08T15:04:10.000Z
 description: 'Antioxidants, Immune System'
 featuredpost: false
 featuredimage: /img/flavor_wheel.jpg

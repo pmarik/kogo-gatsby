@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: Story Behind Kogo
-date: 2020-03-17T21:46:11.676Z
+date: 2020-04-04T21:46:11.676Z
 description: See the story behind Kogo
 featuredpost: true
 featuredimage: /img/blog-index.jpg
