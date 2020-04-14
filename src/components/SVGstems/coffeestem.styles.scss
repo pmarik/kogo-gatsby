@@ -25,6 +25,19 @@
     } 
 }
 
+@keyframes leafgrowHorizontal{  
+    0%{
+        transform: scalex(0);
+        opacity: 0;
+        visibility: hidden;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+        transform: scalex(1);
+    } 
+}  
+
 #stem2{
     position: relative;
 }
@@ -46,7 +59,7 @@
     visibility: hidden;
 }
 
-.leaf2_1, .leaf2_2{
+.leaf2_1, .leaf2_2, .leaf2_3, .leaf2_4, .leaf2_5, .leaf2_6, .leaf2_7, .leaf2_8, .leaf2_9{
     width: 85px;
     height: auto;
     position: absolute;
@@ -65,4 +78,62 @@
     top: 115px;
     animation: leafgrow 500ms forwards;
     animation-delay: 1000ms;
+}
+
+.leaf2_3{
+    width: 60px;
+    left: 250px;
+    top: -30px;
+    animation: leafgrow 500ms forwards;
+    animation-delay: 1200ms;
+}
+
+.leaf2_4{
+    width: 90px;
+    left: 265px;
+    top: 68px;
+    animation: leafgrowHorizontal 500ms forwards;
+    animation-delay: 1400ms;
+}
+
+ 
+.leaf2_5{
+    width: 70px;
+    left: 320px;
+    top: -14px;
+    animation: leafgrowHorizontal 500ms forwards;
+    animation-delay: 1600ms;
+}
+
+
+.leaf2_6{
+    width: 60px;
+    left: 390px;
+    top: 68px;
+    animation: leafgrowHorizontal 500ms forwards;
+    animation-delay: 1700ms;
+}
+
+.leaf2_7{
+    width: 45px;
+    left: 420px;
+    top: -24px;
+    animation: leafgrow 500ms forwards;
+    animation-delay: 1900ms;
+}
+
+.leaf2_8{
+    width: 55px;
+    left: 490px;
+    top: 20px;
+    animation: leafgrowHorizontal 500ms forwards;
+    animation-delay: 2000ms;
+}
+
+.leaf2_9{
+    width: 15px;
+    left: 530px;
+    top: -17px;
+    animation: leafgrow 500ms forwards;
+    animation-delay: 2100ms;
 }
