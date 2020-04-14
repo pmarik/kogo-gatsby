@@ -21,7 +21,7 @@ class BlogRoll extends React.Component {
               minTopValue="25"
             > 
               {({ isVisible }) => (
-                <div className={`blog-preview-wrap anim-start-0 ${isVisible ? 'blog-list-fade' : ''} `} key={post.id}>
+                <div className={`blog-preview-wrap anim-start-0 ${isVisible ? 'fadeIn' : ''} `} key={post.id}>
                   <article
                     className={`blog-list-item is-child notification blog-article-list ${
                       post.frontmatter.featuredpost ? 'is-featured' : ''

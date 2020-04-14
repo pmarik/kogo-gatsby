@@ -28,7 +28,7 @@ const CoffeeStem = () => {
          <VisibilitySensor
             once 
             partialVisibility
-            minTopValue="50">
+            >
                {({ isVisible }) => (
                <div class="drawing2" id="stem2">
                            <Leaf1 className={`${isVisible ? "leaf2_1" : ""} stem2_leaf` } />
