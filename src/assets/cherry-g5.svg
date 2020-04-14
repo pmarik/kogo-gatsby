@@ -1,0 +1,78 @@
+
+ <svg 
+                        viewBox="0 0 7.3206789 5.0807848">
+                        <defs
+                        id="defs2">
+                       <linearGradient
+                          id="linearGradient2551">
+                         <stop
+                            style="stop-color:#728c5b;stop-opacity:1"
+                            offset="0"
+                            id="stop2547" />
+                         <stop
+                            style="stop-color:#ce2828;stop-opacity:1"
+                            offset="1"
+                            id="stop2549" />
+                       </linearGradient>
+                       <linearGradient
+                          id="linearGradient1750">
+                         <stop
+                            style="stop-color:#8a120f;stop-opacity:1"
+                            offset="0"
+                            id="stop1746" />
+                         <stop
+                            style="stop-color:#fb604e;stop-opacity:1"
+                            offset="1"
+                            id="stop1748" />
+                       </linearGradient>
+                       <linearGradient
+                          gradientUnits="userSpaceOnUse"
+                          y2="109.928"
+                          x2="579.42798"
+                          y1="439.02399"
+                          x1="641.86298"
+                          id="paint0_linear">
+                         <stop
+                            id="stop2207"
+                            stop-color="#728C5B" />
+                         <stop
+                            id="stop2209"
+                            stop-color="#79D12C"
+                            offset="1" />
+                       </linearGradient>
+                       <linearGradient
+                        
+                          id="linearGradient2449"
+                          gradientUnits="userSpaceOnUse"
+                          x1="1914.3741"
+                          y1="-790.74664"
+                          x2="1970.3147"
+                          y2="-790.74664"
+                          gradientTransform="matrix(0.0779934,0,0,0.04650779,-151.98656,40.602829)" />
+                       <linearGradient
+                          id="linearGradient2661"
+                          gradientUnits="userSpaceOnUse"
+                          x1="1911.9794"
+                          y1="-787.39624"
+                          x2="1970.3147"
+                          y2="-790.74664"
+                          gradientTransform="matrix(0.07097449,0,0,0.04236675,-132.3413,34.560347)" />
+                     </defs>
+                     <ellipse
+                        transform="matrix(-0.94009761,0.34090538,0.46163642,0.88706923,0,0)"
+                        ry="1.9160931"
+                        rx="2.181494"
+                        cy="3.8269515"
+                        cx="-0.49652401"
+                        id="ellipse2445"
+                        style="opacity:1;fill:url(#linearGradient2449);fill-opacity:1;stroke:none;stroke-width:0.25084576;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+                     <ellipse
+                        transform="matrix(0.87347459,0.48686974,0.51737341,-0.85575975,0,0)"
+                        ry="1.7454848"
+                        rx="1.9851732"
+                        cy="1.0589776"
+                        cx="5.5155888"
+                        id="ellipse2657"
+                        style="opacity:1;fill:url(#linearGradient2661);fill-opacity:1;stroke:none;stroke-width:0.22839086;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+                   
+                        </svg>

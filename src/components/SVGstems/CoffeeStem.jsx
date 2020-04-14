@@ -9,6 +9,14 @@ import Leaf6 from '../../assets/leaf6.min.svg';
 import Leaf7 from '../../assets/leaf7.min.svg';
 import Leaf8 from '../../assets/leaf8.min.svg';
 import Leaf9 from '../../assets/leaf9.min.svg';
+import CherryG1 from '../../assets/cherry-g1.min.svg';
+import CherryG2 from '../../assets/cherry-g2.min.svg';
+import CherryG3 from '../../assets/cherry-g3.min.svg';
+import CherryG4 from '../../assets/cherry-g4.min.svg';
+import CherryG5 from '../../assets/cherry-g5.min.svg';
+
+
+
 
 import './coffeestem.styles.scss';
 import VisibilitySensor from '../VisibilitySensor';
@@ -32,6 +40,13 @@ const CoffeeStem = () => {
                            <Leaf7 className={`${isVisible ? "leaf2_7" : ""} stem2_leaf` }/>
                            <Leaf8 className={`${isVisible ? "leaf2_8" : ""} stem2_leaf` }/>
                            <Leaf9 className={`${isVisible ? "leaf2_9" : ""} stem2_leaf` }/>
+
+                           <CherryG1 className={`${isVisible ? "leaf2_10" : ""} stem2_leaf` } />
+                           <CherryG2 className={`${isVisible ? "leaf2_11" : ""} stem2_leaf` } />
+                           <CherryG3 className={`${isVisible ? "leaf2_12" : ""} stem2_leaf` } />
+                           <CherryG4 className={`${isVisible ? "leaf2_13" : ""} stem2_leaf` } />
+                           <CherryG5 className={`${isVisible ? "leaf2_14" : ""} stem2_leaf` } />
+
 
                            <Stem 
                               style={{

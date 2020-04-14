@@ -6,6 +6,7 @@ import VisibilitySensor from '../components/VisibilitySensor';
 import Layout from '../components/Layout'
 import BlogRoll from '../components/BlogRoll/BlogRoll'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import CoffeeStem from '../components/SVGstems/CoffeeStem';
 
 import './index-page.styles.scss';
 
@@ -33,7 +34,7 @@ export const IndexPageTemplate = ({
           </div>
           
           <div className="top-banner-image">
-            <PreviewCompatibleImage  
+            <PreviewCompatibleImage 
                 imageInfo={{
                     image: image,
                     alt: title,
@@ -51,6 +52,8 @@ export const IndexPageTemplate = ({
               {button_text_1}
             </Link>
           </button>
+
+          <CoffeeStem />
         </section>
 
         <section className="section-home-container">

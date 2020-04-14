@@ -1,0 +1,27 @@
+<svg viewBox="0 0 22.02052 17.32201">
+  <defs>
+    <linearGradient id="a"> 
+        <stop
+            style="stop-color:#728c5b;stop-opacity:1"
+            offset="0"
+          />
+        <stop
+            style="stop-color:#ce2828;stop-opacity:1"
+            offset="1"
+          />
+    </linearGradient>
+
+    <linearGradient id="c" x1="1911.9794" x2="1970.3147" y1="-787.39624" y2="-790.74664" gradientTransform="matrix(.11919 0 0 .0763 -244.74825 61.95054)" gradientUnits="userSpaceOnUse"/>
+    <linearGradient id="d" x1="1911.9794" x2="1970.3147" y1="-787.39624" y2="-790.74664" gradientTransform="matrix(.11919 0 0 .0763 -242.94485 64.96422)" gradientUnits="userSpaceOnUse"/>
+    <linearGradient id="e" x1="1911.9794" x2="1970.3147" y1="-787.39624" y2="-790.74664" gradientTransform="matrix(.11919 0 0 .0763 -249.90785 61.15579)" gradientUnits="userSpaceOnUse"/>
+    <linearGradient id="f" x1="1911.9794" x2="1970.3147" y1="-787.39624" y2="-790.74664" gradientTransform="matrix(.11919 0 0 .0763 -248.79635 66.86924)" gradientUnits="userSpaceOnUse"/>
+    <linearGradient id="g" x1="1911.9794" x2="1970.3147" y1="-787.39624" y2="-790.74664" gradientTransform="matrix(.11919 0 0 .0763 -254.48365 64.03587)" gradientUnits="userSpaceOnUse"/>
+  </defs>
+  <ellipse cx="-8.22127" cy="-.63435" fill="url(#a)" rx="3.33372" ry="3.14359" transform="matrix(-.88487 -.46583 -.41624 .90925 0 0)"/>
+  <ellipse cx="-5.78768" cy="4.55087" fill="url(#a)" rx="3.33372" ry="3.14359" transform="matrix(-.88487 -.46583 -.41624 .90925 0 0)"/>
+  <ellipse cx="-13.24373" cy="1.61507" fill="url(#a)" rx="3.33372" ry="3.14359" transform="matrix(-.88487 -.46583 -.41624 .90925 0 0)"/>
+  <ellipse cx="-11.44039" cy="4.62875" fill="url(#a)" rx="3.33372" ry="3.14359" transform="matrix(-.88487 -.46583 -.41624 .90925 0 0)"/>
+  <ellipse cx="-18.4034" cy=".82032" fill="url(#a)" rx="3.33372" ry="3.14359" transform="matrix(-.88487 -.46583 -.41624 .90925 0 0)"/>
+  <ellipse cx="-17.29183" cy="6.53377" fill="url(#a)" rx="3.33372" ry="3.14359" transform="matrix(-.88487 -.46583 -.41624 .90925 0 0)"/>
+  <ellipse cx="-22.97921" cy="3.70041" fill="url(#a)" rx="3.33372" ry="3.14359" transform="matrix(-.88487 -.46583 -.41624 .90925 0 0)"/>
+</svg>

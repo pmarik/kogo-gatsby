@@ -1,0 +1,28 @@
+<svg viewBox="0 0 7.32068 5.08078">
+  <defs>
+   <linearGradient id="a" >
+        <stop
+          style="stop-color:#728c5b;stop-opacity:1"
+          offset="0"
+        />
+        <stop
+          style="stop-color:#ce2828;stop-opacity:1"
+          offset="1"
+        />
+    </linearGradient>
+
+
+    <linearGradient id="b">
+      <stop
+        style="stop-color:#8a120f;stop-opacity:1"
+        offset="0"
+      />
+      <stop
+        style="stop-color:#fb604e;stop-opacity:1"
+        offset="1"
+      />
+    </linearGradient>
+  </defs>
+  <ellipse cx="-.49652" cy="3.82695" fill="url(#a)" rx="2.18149" ry="1.91609" transform="matrix(-.9401 .3409 .46164 .88707 0 0)"/>
+  <ellipse cx="5.51559" cy="1.05898" fill="url(#b)" rx="1.98517" ry="1.74548" transform="matrix(.87347 .48687 .51737 -.85576 0 0)"/>
+</svg>

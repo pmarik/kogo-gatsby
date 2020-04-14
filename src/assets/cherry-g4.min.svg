@@ -1,0 +1,32 @@
+<svg viewBox="0 0 15.70428 8.17489">
+  <defs/>
+  <defs>
+   <linearGradient id="a" >
+        <stop
+          style="stop-color:#728c5b;stop-opacity:1"
+          offset="0"
+        />
+        <stop
+          style="stop-color:#ce2828;stop-opacity:1"
+          offset="1"
+        />
+    </linearGradient>
+
+
+    <linearGradient id="b">
+      <stop
+        style="stop-color:#8a120f;stop-opacity:1"
+        offset="0"
+      />
+      <stop
+        style="stop-color:#fb604e;stop-opacity:1"
+        offset="1"
+      />
+    </linearGradient>
+  </defs>
+  <ellipse cx="-4.82286" cy="4.5995" fill="url(#a)" rx="2.84678" ry="2.50958" transform="matrix(-.9395 .34255 .45966 .8881 0 0)"/>
+  <ellipse cx="-4.13578" cy="8.06093" fill="url(#b)" rx="2.84678" ry="2.50958" transform="matrix(-.9395 .34255 .45966 .8881 0 0)"/>
+  <ellipse cx="-9.23075" cy="8.96144" fill="url(#a)" rx="2.84678" ry="2.50958" transform="matrix(-.9395 .34255 .45966 .8881 0 0)"/>
+  <ellipse cx="-4.74822" cy="3.25056" fill="url(#a)" rx="2.84139" ry="2.49832" transform="matrix(-.9052 -.425 -.45665 .88964 0 0)"/>
+  <ellipse cx="10.10491" cy="2.57365" fill="url(#b)" rx="2.43367" ry="2.13983" transform="matrix(.87347 .48687 .51737 -.85576 0 0)"/>
+</svg>
