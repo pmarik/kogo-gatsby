@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import CoffeeStem from '../components/SVGstems/CoffeeStem';
 
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
@@ -10,12 +11,17 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   return (
     <main className="main-content">
       <div className="main-content-container anim-start-0 fadeIn">
+
+              
+
               <section className="about-story">
                 <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                   {title}
                 </h2>
                 <PageContent className="content" content={content} />
               </section>
+
+              <CoffeeStem />
 
               <section className="about-mission">
                 <h2 className="title is-size-3 has-text-weight-bold is-bold-light">

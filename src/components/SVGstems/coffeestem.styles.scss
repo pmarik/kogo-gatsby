@@ -1,0 +1,68 @@
+.theOverlay {
+    stroke-dasharray: 850;
+    stroke-dashoffset: 850;
+    animation: draw 4s ease-in forwards;
+  }
+
+  @keyframes draw { 
+    to {
+      stroke-dashoffset: 0;
+      color: #728C5B;
+    }
+  }
+
+@keyframes leafgrow{  
+    0%{
+        transform: scaley(0);
+        opacity: 0;
+        visibility: hidden;
+        transform-origin: bottom left;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+        transform: scaley(1);
+    } 
+}
+
+#stem2{
+    position: relative;
+}
+
+.drawing2{
+    border: 2px solid pink;
+}
+
+.svgContain{
+    width: 600px !important;
+    height: auto;
+    background: transparent;
+    visibility: hidden;
+    box-shadow: 0px 0px 4px blue;
+}
+
+
+.stem2_leaf{
+    visibility: hidden;
+}
+
+.leaf2_1, .leaf2_2{
+    width: 85px;
+    height: auto;
+    position: absolute;
+    left: 130px;
+    top: 30px;
+    transform-origin: 0% 100%;
+    animation: leafgrow 500ms;
+    animation-fill-mode: forwards;
+    animation-delay: 900ms;
+    z-index: 0;
+}
+
+.leaf2_2{
+    width: 85px;
+    left: 200px;
+    top: 115px;
+    animation: leafgrow 500ms forwards;
+    animation-delay: 1000ms;
+}
