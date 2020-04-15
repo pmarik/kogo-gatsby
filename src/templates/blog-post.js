@@ -19,7 +19,7 @@ export const BlogPostTemplate = ({
   return (
     <main className="main-content">
       {helmet || ''}
-      <section className="main-content-container">
+      <section className="main-content-container  anim-start-0 fadeIn">
         
           <div className="">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
