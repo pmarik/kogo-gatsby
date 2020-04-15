@@ -1,5 +1,10 @@
 footer.footer{
-    background: linear-gradient(180deg, #79D12C -48.28%, #728C5B 85.84%, #749B51 156.16%, #79D12C 269.47%), #728C5B;
+    // background: linear-gradient(180deg, #79D12C -48.28%, #728C5B 85.84%, #749B51 156.16%, #79D12C 269.47%), #728C5B;
+    // background: #85BB56;
+    // background: #70B037;
+    //background: #7a9e5c;
+    // background: #728C5B;
+    background: #799850;
     padding: 0 0 3em 0;
 
     @media screen and (min-width: 468px){
@@ -20,11 +25,12 @@ footer.footer{
             }
 
             .footer-social-links-container{
+                padding: 1em 2em 2em 2em;
                 position: absolute;
                 left: 50%;
                 transform: translate(-50%);
 
-                @media screen and (max-width: 1024px){
+                @media screen and (max-width: 1190px){
                     position: relative;
                     left: 0;
                     transform: none;

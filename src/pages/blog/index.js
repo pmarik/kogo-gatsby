@@ -11,9 +11,9 @@ export default class BlogIndexPage extends React.Component {
           <div className="main-content-container anim-start-0 fadeIn">
             <h1
               className="has-text-weight-bold is-size-1"
-              style={{marginBottom: '3%'}}
+              style={{marginBottom: '5%', lineHeight: '1'}}
             >
-              Latest Stories
+              Latest Articles
             </h1>
           
             <section >

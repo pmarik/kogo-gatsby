@@ -24,6 +24,7 @@ export const IndexPageTemplate = ({
   return(
   <main className="main-content">
     <div className="main-content-container anim-start-0 fadeIn">
+      
         <section className="top-banner-grid">
 
           <div className="landing-heading" 

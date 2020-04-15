@@ -11,6 +11,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   return (
     <main className="main-content">
       <div className="main-content-container anim-start-0 fadeIn">
+        
 
               
 

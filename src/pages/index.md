@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: KOGO
-image: /img/kogopackage.png
+image: /img/kogopackage.min.png
 heading: Organic ground coffee cherries
 subheading: 'Get all-natural sustained energy, and help support independent growers'
 button_text_1: Power Up Now
