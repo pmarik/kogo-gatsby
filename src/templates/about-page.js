@@ -5,11 +5,24 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import './about-page.styles.scss';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import remark from 'remark';
+import recommended from 'remark-preset-lint-recommended';
+import remarkHtml from 'remark-html';
 
 
 
-export const AboutPageTemplate = ({ title, title2, missionContent, midImage, storyContent, content, contentComponent }) => {
+export const AboutPageTemplate = ({ title, title2, missionContent, midImage, storyContent, contentComponent }) => {
   const PageContent = contentComponent || Content
+
+  storyContent = remark()
+                  .use(recommended)
+                  .use(remarkHtml)
+                  .processSync(storyContent).toString();
+
+  missionContent = remark()
+                    .use(recommended)
+                    .use(remarkHtml)
+                    .processSync(missionContent).toString();
 
   return (
     <main className="main-content">
@@ -17,30 +30,37 @@ export const AboutPageTemplate = ({ title, title2, missionContent, midImage, sto
               
 
               <section className="about-story">
-                <h2 className="title about-title has-text-weight-bold is-bold-light">
-                  {title}
-                </h2>
-                <div>
+                <div className="top-about-nav-container">
+                  <h2 className="title about-title has-text-weight-bold is-bold-light">
+                    {title}
+                  </h2>
+
+                  <a href="#mission" className="mission-page-scroll">view mission</a>
+                </div>
+                
+                <div className="article-padding">
                   <PageContent className="content" content={storyContent} />
                 </div>
 
+                <div className="about-mid-img">
                   <PreviewCompatibleImage 
                   imageInfo={{
                       image: midImage,
                       alt: title,
                     }}
                   />
+                </div>
+
               </section>
 
 
-              <section className="about-mission">
+              <section id="mission" className="about-mission">
                 <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                   {title2}
                 </h2>
                 <div>
-                  {missionContent}
+                  <PageContent className="content" content={missionContent} />
                 </div>
-                <PageContent className="content" content={content} />
               </section>
 
       </div>
@@ -50,15 +70,11 @@ export const AboutPageTemplate = ({ title, title2, missionContent, midImage, sto
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
 
 const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data
-
-  console.log('from about-page ', post.frontmatter.about_section_1.content)
-
 
   return (
     <Layout>
@@ -69,7 +85,6 @@ const AboutPage = ({ data }) => {
         midImage={post.frontmatter.mid_image}
         title2={post.frontmatter.about_section_2.title}
         missionContent={post.frontmatter.about_section_2.content}
-        content={post.html}
       />
     </Layout>
   )
@@ -84,7 +99,6 @@ export default AboutPage
 export const aboutPageQuery = graphql`
   query aboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      html
       frontmatter {
         about_section_1 {
           title

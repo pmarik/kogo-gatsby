@@ -1,14 +1,12 @@
 ---
 templateKey: 'product-page'
 path: /products
-title: Our Coffee
-image: /img/jumbotron.jpg
-heading: Great coffee with a conscience
+title: Kogo - 12 oz. Pouch
+image: /img/kogopackage.min.png
+price: $17
 description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+  Experience the sustained focus of Kogo organic ground coffee cherries with our signature pouch. Lorem ipsum sold akedi  dlkja dken fkge slaid fov ke sold akedi  dlkja dken fkge slaid fov ke sold akedi  dlkja dken fkge slaid fov ke sold akedi  dlkja dken fkge slaid fov ke
+
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -61,14 +59,12 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 testimonials:
-  - author: Elisabeth Kaurismäki
+  - author: Jane Doe
     quote: >-
-      The first time I tried Kaldi’s coffee, I couldn’t even believe that was
-      the same thing I’ve been drinking every morning.
-  - author: Philipp Trommler
+      Kogo is dank my guy! Real talk its grrrreeeat!Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - author: John Smith
     quote: >-
-      Kaldi is the place to go if you want the best quality coffee. I love their
-      stance on empowering farmers and transparency.
+      Empowers farmers economically and tastes super denk.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
 full_image: /img/products-full-width.jpg
 pricing:
   heading: Monthly subscriptions

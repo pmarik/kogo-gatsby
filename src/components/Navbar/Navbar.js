@@ -77,7 +77,7 @@ const Navbar = class extends React.Component {
                   <span className="nav-text">Contact</span>
                 </Link>
 
-                <Link className="navbar-item-link hide-link" to="/products" activeClassName="active">
+                <Link className="navbar-item-link hide-link" to="/cart" activeClassName="active">
                   <span className="nav-text">Your Cart</span>
                 </Link>
 
@@ -92,7 +92,7 @@ const Navbar = class extends React.Component {
             </div>
 
             <div className="nav-cart">
-                <Link className="navbar-item nav-your-cart" to="/products">
+                <Link className="navbar-item nav-your-cart" to="/cart">
                   <span className="icon">
                     <img src={cart} alt="Cart" />
                     <span className="your-cart-text">Your Cart</span>

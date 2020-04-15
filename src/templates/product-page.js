@@ -1,16 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import Testimonials from '../components/Testimonials'
 import Pricing from '../components/Pricing'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import './product-page.styles.scss';
 
 export const ProductPageTemplate = ({
   image,
   title,
-  heading,
+  price,
   description,
   intro,
   main,
@@ -19,36 +20,49 @@ export const ProductPageTemplate = ({
   pricing,
 }) => (
   <main className="main-content">
-    <div className="content main-content-container anim-start-0 fadeIn">
-      <div
-        className="full-width-image-container margin-top-0"
-        style={{
-          backgroundImage: `url(${
-            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-          })`,
-        }}
-      >
-        <h2
-          className="has-text-weight-bold is-size-1"
-          style={{
-            boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-            backgroundColor: '#f40',
-            color: 'white',
-            padding: '1rem',
-          }}
-        >
+    <div className="main-content-container anim-start-0 fadeIn">
+      <div className="product-top-grid">
+        
+        <div className="product-image">
+            <PreviewCompatibleImage 
+                imageInfo={{
+                    image: image,
+                    alt: title,
+                  }}
+            />
+        </div>
+
+        <h2 className="product-title">
           {title}
         </h2>
+
+        <h3 className="item-price">{price}</h3>
+
+        <div className="item-desc-quant-add-container">
+          <p>{description}</p>
+          <div className="item-quantity">
+              + -
+          </div>
+
+          <button className="landing-btn">
+            <Link to="/products">
+              Add to Cart
+            </Link>
+          </button>
+
+        </div>
       </div>
+
+      <section>
+        <div className="testimonials">
+          <Testimonials testimonials={testimonials} />
+        </div>
+      </section>
+
+
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
-            <div className="columns">
-              <div className="column is-7 is-offset-1">
-                <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
-                <p>{description}</p>
-              </div>
-            </div>
             <div className="columns">
               <div className="column is-10 is-offset-1">
                 <Features gridItems={intro.blurbs} />
@@ -81,7 +95,6 @@ export const ProductPageTemplate = ({
                     </div>
                   </div>
                 </div>
-                <Testimonials testimonials={testimonials} />
                 <div
                   className="full-width-image-container"
                   style={{
@@ -109,7 +122,7 @@ export const ProductPageTemplate = ({
 ProductPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
+  price: PropTypes.string,
   description: PropTypes.string,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
@@ -138,7 +151,7 @@ const ProductPage = ({ data }) => {
       <ProductPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
+        price={frontmatter.price}
         description={frontmatter.description}
         intro={frontmatter.intro}
         main={frontmatter.main}
@@ -172,7 +185,7 @@ export const productPageQuery = graphql`
             }
           }
         }
-        heading
+        price
         description
         intro {
           blurbs {
