@@ -1,24 +1,56 @@
 ---
 templateKey: product-post
-title: Product Post Test 3
-price: $3.02
-description: Improve small scale farmers capacity to generate income
-featuredpost: true
+title: Product 4
+description: Whether you are tyring Kogo for the first time or a big fan, we have the right size bag for you.
+images:
+    - image: /img/coffee.png
+      alt: >
+        coffee picture mane
+    - image: /img/coffee-gear.png
+      alt: >
+        another coffee picture
+pricing:
+  heading: Select Size
+  description: >-
+    sweggy
+  options:
+    - description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
+      items:
+        - 3 lbs of coffee per month
+        - Green or roasted beans"
+        - One or two varieties of beans"
+      option: Small
+      price: '9'
+    - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
+      items:
+        - 6 lbs of coffee per month
+        - Green or roasted beans
+        - Up to 4 different varieties of beans
+      option: Medium
+      price: '12'
+    - description: Want a few tiny batches from different varieties? Try our custom plan
+      items:
+        - Whatever you need
+        - Green or roasted beans
+        - Unlimited varieties
+      option: Large
+      price: '18'
 featuredimage: /img/coffee-cherryClump.jpg
+testimonials:
+  - author: Jane Doe
+    quote: >-
+      Kogo is dank my guy! Real talk its grrrreeeat!Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - author: John Smith
+    quote: >-
+      Empowers farmers economically and tastes super denk.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
 tags:
   - Kogo
-  - Jobs
-  - Sustainability
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam porttitor facilisis. Etiam condimentum nisl ac nisl posuere, in imperdiet quam viverra. Mauris eget dolor ante. Phasellus dapibus tellus sit amet volutpat consequat. Nulla accumsan mauris id est sollicitudin, eu dignissim neque mollis. Ut dignissim vestibulum congue. Suspendisse faucibus auctor magna molestie condimentum. Sed eu diam at lorem bibendum ultricies non vitae dui. Nam at purus nec nulla bibendum rhoncus. Vivamus sit amet tincidunt magna. Suspendisse nibh mi, rhoncus ac pharetra quis, faucibus eget justo. Praesent ut tristique sem. Nunc non est sit amet orci volutpat pellentesque a non lorem.
 
 
 
-
-
-## Create Jobs
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam porttitor facilisis. Etiam condimentum nisl ac nisl posuere, in imperdiet quam viverra. Mauris eget dolor ante. Phasellus dapibus tellus sit amet volutpat consequat. Nulla accumsan mauris id est sollicitudin, eu dignissim neque mollis. Ut dignissim vestibulum congue. Suspendisse faucibus auctor magna molestie condimentum. Sed eu diam at lorem bibendum ultricies non vitae dui. Nam at purus nec nulla bibendum rhoncus. Vivamus sit amet tincidunt magna. Suspendisse nibh mi, rhoncus ac pharetra quis, faucibus eget justo. Praesent ut tristique sem. Nunc non est sit amet orci volutpat pellentesque a non lorem.
+![Kogo Bag](/img/kogo-package-mockup-12.png "Kogo Bag")
 
 Integer fringilla dolor vel scelerisque hendrerit. Proin sit amet ligula aliquam, molestie dui in, malesuada ex. Pellentesque leo urna, bibendum vel hendrerit ac, accumsan eu nibh. Nulla facilisi. Donec ultricies justo ut nibh volutpat ultrices. Fusce et sem eget felis rutrum sagittis. Mauris venenatis massa sit amet nunc feugiat elementum. Morbi nunc ligula, faucibus vitae feugiat elementum, faucibus at ipsum. Quisque pretium tellus lacinia ex volutpat semper eu et tellus. Ut vel eros ultricies, cursus nisl nec, luctus felis. Duis ac purus in arcu tempus fringilla eget ac magna. Pellentesque ante sem, sagittis ac nulla non, molestie tempus ipsum. Cras rhoncus dui ac velit lacinia efficitur. Etiam efficitur aliquam urna eu cursus. Proin placerat suscipit augue et lacinia. Phasellus molestie erat velit.
 
