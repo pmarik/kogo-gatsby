@@ -39,8 +39,8 @@ main:
     alt: Ground coffee
     image: /img/products-grid3.jpg
   image2:
-    alt: Coffee plant field
-    image: /img/coffee-field.jpg
+    alt: Coffee cherries and stem
+    image: /img/coffee-cherryClump.jpg
   image3:
     alt: Coffee plant field
     image: /img/coffee-field.jpg
