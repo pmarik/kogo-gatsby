@@ -60,20 +60,21 @@ export const ProductPageTemplate = ({
       </section>
 
 
-      <section className="section section--gradient">
-        <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-7">
+      <section className=" section--gradient">
+         
+          <div className="column is-10 is-offset-1">
+              <Features gridItems={intro.blurbs} />
+
+                <div className="product-extra-info">
+                
                     <h3 className="has-text-weight-semibold is-size-3">
                       {main.heading}
                     </h3>
                     <p>{main.description}</p>
-                  </div>
+                  
                 </div>
+
+
                 <div className="tile is-ancestor">
                   <div className="tile is-vertical">
                     <div className="tile">
@@ -110,10 +111,8 @@ export const ProductPageTemplate = ({
                 </h2>
                 <p className="is-size-5">{pricing.description}</p>
                 <Pricing data={pricing.options} />
-              </div>
-            </div>
-          </div>
         </div>
+        
       </section>
     </div>
   </main>

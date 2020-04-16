@@ -30,7 +30,7 @@ const CoffeeStem = () => {
             partialVisibility
             >
                {({ isVisible }) => (
-               <div class="drawing2" id="stem2">
+               <div className="drawing2" id="stem2">
                            <Leaf1 className={`${isVisible ? "leaf2_1" : ""} stem2_leaf` } />
                            <Leaf2 className={`${isVisible ? "leaf2_2" : ""} stem2_leaf` }/>
                            <Leaf3 className={`${isVisible ? "leaf2_3" : ""} stem2_leaf` }/>
