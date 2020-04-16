@@ -5,7 +5,10 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import './blog-post.styles.scss';
+import Pricing from '../components/Pricing';
+import ProductImages from '../components/ProductImages/ProductImages';
+import Testimonials from '../components/Testimonials';
+import './product-post.styles.scss';
 
 export const ProductTemplate = ({
   content,
@@ -14,6 +17,9 @@ export const ProductTemplate = ({
   tags,
   title,
   helmet,
+  pricing,
+  images,
+  testimonials
 }) => {
   const PostContent = contentComponent || Content
 
@@ -22,11 +28,27 @@ export const ProductTemplate = ({
       {helmet || ''}
       <section className="main-content-container  anim-start-0 fadeIn">
         
-          <div className="blog-post">
+          <div className="product-post">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>{description}</p>
+            <div>
+
+              <div className="product-img-component">
+                <ProductImages images={images} />
+              </div>
+
+              <p>{description}</p>
+
+              <p>{pricing.heading}{pricing.description}</p>
+
+              <Pricing data={pricing.options} />
+
+              <div className="testimonials">
+                <Testimonials testimonials={testimonials} />
+              </div>
+            </div>
+
             <div className="blog-post-body">
               <PostContent content={content} />
             </div>
@@ -55,6 +77,13 @@ ProductTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  pricing: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+    options: PropTypes.array,
+  }),
+  images: PropTypes.array,
+  testimonials: PropTypes.array,
 }
 
 const ProductPost = ({ data }) => {
@@ -66,6 +95,8 @@ const ProductPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
+        images={post.frontmatter.images}
+        pricing={post.frontmatter.pricing}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -75,6 +106,7 @@ const ProductPost = ({ data }) => {
             />
           </Helmet>
         }
+        testimonials={post.frontmatter.testimonials}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
@@ -96,9 +128,32 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         title
         description
+        images {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 240, quality: 64) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          alt
+        }
+        pricing {
+          heading
+          description
+          options {
+            description
+            items
+            option
+            price
+          }
+        }
+        testimonials {
+          author
+          quote
+        }
         tags
       }
     }

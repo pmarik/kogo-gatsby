@@ -56,14 +56,15 @@ collections:
     label: "Products"
     folder: "src/pages/store"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
+      - {label: "Product Images", name: images, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}
+      - {label: "Pricing", name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Options, name: options, widget: list, fields: [{label: Option, name: option, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
       - {label: "Featured Image", name: "featuredimage", widget: image}
+      - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}  
 
@@ -83,13 +84,3 @@ collections:
       - {label: "Tags", name: "tags", widget: "list"}
 
     
-
-# - name: "products"
-# - label: "Products" 
-#   folder: "/src/pages/products"
-#   create: true
-#   slug: "product-{{year}}-{{month}}-{{day}}-{{slug}}"
-#   fields: 
-#     - { label: 'Title', name: 'title', widget: 'string' }
-#     - { label: 'Date', name: 'date', widget: 'datetime' }
-#     - { label: 'Description', name: 'description', widget: 'text' }

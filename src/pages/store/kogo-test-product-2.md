@@ -1,7 +1,7 @@
 ---
 templateKey: product-post
 title: Product Post test 4
-date: 2020-04-15T15:04:10.000Z
+price: $10.45
 description: Reduce waste
 featuredpost: false
 featuredimage: /img/coffee-field.jpg

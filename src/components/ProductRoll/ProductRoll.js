@@ -46,7 +46,7 @@ class ProductRoll extends React.Component {
                           {post.frontmatter.title}
                         </Link>
                         <span className="subtitle is-size-6 is-block">
-                          {post.frontmatter.date}
+                          {post.frontmatter.price}
                         </span>
                       </p>
                     </header>
@@ -93,9 +93,8 @@ export default () => (
               }
               frontmatter {
                 title
+                price
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
-                featuredpost
                 featuredimage {
                   childImageSharp {
                     fluid(maxWidth: 120, quality: 100) {

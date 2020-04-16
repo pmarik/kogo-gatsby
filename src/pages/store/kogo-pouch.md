@@ -1,10 +1,48 @@
 ---
 templateKey: product-post
 title: Product title test
-date: 2020-04-04T21:46:11.676Z
-description: See the story behind Kogo
-featuredpost: true
-featuredimage: /img/blog-index.jpg
+description: Whether you are tyring Kogo for the first time or a big fan, we have the right size bag for you.
+images:
+    - image: /img/coffee.png
+      alt: >
+        coffee picture mane
+    - image: /img/coffee-gear.png
+      alt: >
+        another coffee picture
+pricing:
+  heading: Select Size
+  description: >-
+    sweggy
+  options:
+    - description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
+      items:
+        - 3 lbs of coffee per month
+        - Green or roasted beans"
+        - One or two varieties of beans"
+      option: Small
+      price: '9'
+    - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
+      items:
+        - 6 lbs of coffee per month
+        - Green or roasted beans
+        - Up to 4 different varieties of beans
+      option: Medium
+      price: '12'
+    - description: Want a few tiny batches from different varieties? Try our custom plan
+      items:
+        - Whatever you need
+        - Green or roasted beans
+        - Unlimited varieties
+      option: Large
+      price: '18'
+featuredimage: /img/kogopackage.min.png
+testimonials:
+  - author: Jane Doe
+    quote: >-
+      Kogo is dank my guy! Real talk its grrrreeeat!Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - author: John Smith
+    quote: >-
+      Empowers farmers economically and tastes super denk.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
 tags:
   - Kogo
 ---

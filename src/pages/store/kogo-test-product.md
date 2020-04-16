@@ -1,7 +1,7 @@
 ---
 templateKey: product-post
 title: Product Post Test 3
-date: 2020-04-13T15:04:10.000Z
+price: $3.02
 description: Improve small scale farmers capacity to generate income
 featuredpost: true
 featuredimage: /img/coffee-cherryClump.jpg

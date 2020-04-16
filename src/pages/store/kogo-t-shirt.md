@@ -1,9 +1,8 @@
 ---
 templateKey: product-post
 title: Product title test 2
-date: 2020-04-08T15:04:10.000Z
+price: $26
 description: 'Antioxidants, Immune System'
-featuredpost: false
 featuredimage: /img/flavor_wheel.jpg
 tags:
   - flavor
