@@ -15,8 +15,10 @@ const ProductImages = ({ images }) => {
 
     return (
         <div className="product-images-container">
-            <div className="top-img">
-                <PreviewCompatibleImage imageInfo={featuredImg} />
+            <div className="top-img-container">
+                <div className="top-img">
+                    <PreviewCompatibleImage imageInfo={featuredImg} />
+                </div>
             </div>
             <div className="product-image-roll">
                 {images.map((item, indx) => (

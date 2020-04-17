@@ -3,10 +3,10 @@ templateKey: product-post
 title: Kogo Ground Coffee Cherries
 description: Whether you are tyring Kogo for the first time or a big fan, we have the right size bag for you.
 images:
-    - image: /img/coffee.png
+    - image: /img/kogopackage.min.png
       alt: >
         coffee picture mane
-    - image: /img/coffee-gear.png
+    - image: /img/coffeeground.png
       alt: >
         another coffee picture
 pricing:

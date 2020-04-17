@@ -1,16 +1,23 @@
 .pricing-container{
-    border: 2px solid peru;
     padding: 5% 0;
     text-align: center;
 
+    @media screen and (min-width: 780px){
+        text-align: left;
+    }
+
     .variant-section{
-        border: 2px solid red;
         display: flex;
         padding: 5% 0;
         justify-content: space-evenly;
         align-items: center;
 
+        @media screen and (min-width: 780px){
+            justify-content: flex-start;
+        }
+        
         .variant-option{
+            margin: 0 20px 0 0;
             button{
 
                 padding: 10px 20px;
@@ -37,13 +44,19 @@
 
     .variant-price-section{
         font-size: 1.5em;
+        h2{
+            color: #799850 !important;
+        }
     }
 
     .item-quantity{
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 2px solid blue;
+
+        @media screen and (min-width: 780px){
+            align-items: flex-start;
+        }
 
         label{
             color: #674B42;

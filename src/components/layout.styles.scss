@@ -96,7 +96,11 @@ a{
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 5% 0 0 0;
+    margin: 8% 0 0 0;
+
+    @media screen and (min-width: 468px){
+        margin: 5% 0 0 0;
+    }
 
     .main-content-container{
         width: 100%;

@@ -31,25 +31,28 @@ export const ProductTemplate = ({
       <section className="main-content-container  anim-start-0 fadeIn">
         
           <div className="product-post">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <div>
+            <section className="product-post-grid">
+              <h1 className="title has-text-weight-bold is-bold-light">
+                {title}
+              </h1>
 
               <div className="product-img-component">
                 <ProductImages images={images} />
               </div>
 
-              <p>{description}</p>
+              <p className="product-post-description">{description}</p>
 
               <Pricing data={pricing} />
+
+            </section>
+             
+            <div>
+              <Features gridItems={blurbs} />
 
               <div className="testimonials">
                 <h2>See what others are saying</h2>
                 <Testimonials testimonials={testimonials} />
               </div>
-
-              <Features gridItems={blurbs} />
             </div>
 
             <div className="blog-post-body">
@@ -137,7 +140,7 @@ export const pageQuery = graphql`
         images {
           image {
             childImageSharp {
-              fluid(maxWidth: 240, quality: 64) {
+              fluid(maxWidth: 675, quality: 64) {
                 ...GatsbyImageSharpFluid
               }
             }
