@@ -1,0 +1,67 @@
+.pricing-container{
+    border: 2px solid peru;
+    padding: 5% 0;
+    text-align: center;
+
+    .variant-section{
+        border: 2px solid red;
+        display: flex;
+        padding: 5% 0;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .variant-option{
+            button{
+
+                padding: 10px 20px;
+                background: rgb(219, 219, 219);
+                box-shadow: none;
+                border: 1px solid #674B42;
+                margin: 0;
+                transition: none;
+
+
+                .variant-name{
+                    color: #674B42;
+                }
+            }
+
+            .variant-selected{
+                background: #FB604E;
+                .variant-name{
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .variant-price-section{
+        font-size: 1.5em;
+    }
+
+    .item-quantity{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid blue;
+
+        label{
+            color: #674B42;
+            padding-top: 20px;
+            font-weight: bold;
+        }
+
+        input{
+            margin-top: 10px;
+            height: 2rem;
+            width: 70px;
+            border-radius: 5px;
+            padding: 0 10px;
+        }
+
+        button{
+            //border-radius: 5px;
+            padding: 10px 20px;
+        }
+    }
+}

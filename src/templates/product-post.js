@@ -5,9 +5,10 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import Pricing from '../components/Pricing';
+import Pricing from '../components/Pricing/Pricing';
 import ProductImages from '../components/ProductImages/ProductImages';
 import Testimonials from '../components/Testimonials';
+import Features from '../components/Features';
 import './product-post.styles.scss';
 
 export const ProductTemplate = ({
@@ -19,7 +20,8 @@ export const ProductTemplate = ({
   helmet,
   pricing,
   images,
-  testimonials
+  testimonials,
+  blurbs
 }) => {
   const PostContent = contentComponent || Content
 
@@ -40,13 +42,14 @@ export const ProductTemplate = ({
 
               <p>{description}</p>
 
-              <p>{pricing.heading}{pricing.description}</p>
-
-              <Pricing data={pricing.options} />
+              <Pricing data={pricing} />
 
               <div className="testimonials">
+                <h2>See what others are saying</h2>
                 <Testimonials testimonials={testimonials} />
               </div>
+
+              <Features gridItems={blurbs} />
             </div>
 
             <div className="blog-post-body">
@@ -109,6 +112,7 @@ const ProductPost = ({ data }) => {
         testimonials={post.frontmatter.testimonials}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        blurbs={post.frontmatter.blurbs}
       />
     </Layout>
   )
@@ -153,6 +157,16 @@ export const pageQuery = graphql`
         testimonials {
           author
           quote
+        }
+        blurbs {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 240, quality: 64) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          text
         }
         tags
       }

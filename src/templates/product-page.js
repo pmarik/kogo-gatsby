@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import Testimonials from '../components/Testimonials'
-import Pricing from '../components/Pricing'
+import Pricing from '../components/Pricing/Pricing'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import './product-page.styles.scss';
 
@@ -110,7 +110,7 @@ export const ProductPageTemplate = ({
                   {pricing.heading}
                 </h2>
                 <p className="is-size-5">{pricing.description}</p>
-                <Pricing data={pricing.options} />
+                {/* <Pricing data={pricing.options} /> */}
         </div>
         
       </section>
