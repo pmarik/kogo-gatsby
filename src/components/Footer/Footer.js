@@ -78,7 +78,7 @@ const Footer = class extends React.Component {
                       </Link>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/store">
+                      <Link className="navbar-item" to="/shop">
                         Products
                       </Link>
                     </li>

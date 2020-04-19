@@ -69,7 +69,7 @@ const Navbar = class extends React.Component {
                   <span className="nav-text">Blog</span>
                 </Link>
 
-                <Link className="navbar-item-link" to="/products" activeClassName="active">
+                <Link className="navbar-item-link" to="/shop" activeClassName="active" getProps={({ isPartiallyCurrent }) => isPartiallyCurrent ? { className: "navbar-item-link active" } : null } >
                   <span className="nav-text">Shop</span>
                 </Link>
 

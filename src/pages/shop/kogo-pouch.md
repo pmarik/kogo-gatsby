@@ -1,11 +1,15 @@
 ---
 templateKey: product-post
-title: Kogo t-shirt
-description: Represent Kogo where ever you go
+title: Kogo Ground Coffee Cherries
+description: Experience the sustained focus of Kogo organic ground coffee cherries with our signature pouch. Whether you are tyring Kogo for the first time or a big fan, we have the right size bag for you.
+price: TEST PRICE
 images:
-    - image: "/img/kogo t-shirt.png"
+    - image: /img/kogopackage.min.png
       alt: >
-        kogo t-shirt
+        coffee picture mane
+    - image: /img/coffeeground.png
+      alt: >
+        another coffee picture
 pricing:
   heading: Select Size
   description: >-
@@ -16,23 +20,16 @@ pricing:
         - 3 lbs of coffee per month
         - Green or roasted beans"
         - One or two varieties of beans"
-      option: Small
+      option: 10oz
       price: '9'
     - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
       items:
         - 6 lbs of coffee per month
         - Green or roasted beans
         - Up to 4 different varieties of beans
-      option: Medium
+      option: 16oz
       price: '15'
-    - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
-      items:
-        - 6 lbs of coffee per month
-        - Green or roasted beans
-        - Up to 4 different varieties of beans
-      option: Large
-      price: '15'  
-featuredimage: "/img/kogo t-shirt.png"
+featuredimage: /img/kogopackage.min.png
 blurbs:
     - image: /img/coffee.png
       text: >
@@ -53,7 +50,7 @@ testimonials:
       Kogo is dank my guy! Real talk its grrrreeeat!Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - author: John Smith
     quote: >-
-      Empowers farmers economically and tastes super denk.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      Empowers farmers economically and tastes super denk.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
 main:
   heading: Great coffee with no compromises
   description: >
@@ -69,7 +66,7 @@ main:
     image: /img/coffee-cherryClump.jpg
   image3:
     alt: Coffee plant field
-    image: /img/coffee-field.jpg 
+    image: /img/coffee-field.jpg
 full_image: /img/cherries-stretch.jpg
 tags:
   - Kogo
@@ -78,7 +75,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam porttito
 
 
 
-![Kogo Bag](/img/kogo-package-mockup-12.png "Kogo Bag")
+![Kogo Bag](/img/coffeeground.png "Kogo Grounds")
 
 Integer fringilla dolor vel scelerisque hendrerit. Proin sit amet ligula aliquam, molestie dui in, malesuada ex. Pellentesque leo urna, bibendum vel hendrerit ac, accumsan eu nibh. Nulla facilisi. Donec ultricies justo ut nibh volutpat ultrices. Fusce et sem eget felis rutrum sagittis. Mauris venenatis massa sit amet nunc feugiat elementum. Morbi nunc ligula, faucibus vitae feugiat elementum, faucibus at ipsum. Quisque pretium tellus lacinia ex volutpat semper eu et tellus. Ut vel eros ultricies, cursus nisl nec, luctus felis. Duis ac purus in arcu tempus fringilla eget ac magna. Pellentesque ante sem, sagittis ac nulla non, molestie tempus ipsum. Cras rhoncus dui ac velit lacinia efficitur. Etiam efficitur aliquam urna eu cursus. Proin placerat suscipit augue et lacinia. Phasellus molestie erat velit.
 

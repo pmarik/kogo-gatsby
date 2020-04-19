@@ -44,7 +44,7 @@ export default class Index extends React.Component {
                 <h1 className="cart-title">Your Cart</h1>
 
                 <div>
-                   <p>Your cart is currently empty, please <Link to="/products" className="continue-shop-link">continue shopping</Link></p>
+                   <p>Your cart is currently empty, please <Link to="/shop" className="continue-shop-link">continue shopping</Link></p>
                 </div>
             </div>
           </section>

@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ProductPageTemplate } from '../../templates/product-page'
+import { ProductTemplate } from '../../templates/product-post'
 
-const ProductPagePreview = ({ entry, getAsset }) => {
-  const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])
-  const blurbs = entryBlurbs ? entryBlurbs.toJS() : []
+const ProductPreview = ({ entry, widgetFor, getAsset }) => {
+  const tags = entry.getIn(['data', 'tags'])
+
+  // const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])
+  // const blurbs = entryBlurbs ? entryBlurbs.toJS() : []
 
   const entryTestimonials = entry.getIn(['data', 'testimonials'])
   const testimonials = entryTestimonials ? entryTestimonials.toJS() : []
@@ -13,12 +15,11 @@ const ProductPagePreview = ({ entry, getAsset }) => {
   const pricingPlans = entryPricingPlans ? entryPricingPlans.toJS() : []
 
   return (
-    <ProductPageTemplate
-      image={getAsset(entry.getIn(['data', 'image']))}
-      title={entry.getIn(['data', 'title'])}
-      price={entry.getIn(['data', 'price'])}
+    <ProductTemplate
+      content={widgetFor('body')}
       description={entry.getIn(['data', 'description'])}
-      intro={{ blurbs }}
+      tags={tags && tags.toJS()}
+      title={entry.getIn(['data', 'title'])}
       main={{
         heading: entry.getIn(['data', 'main', 'heading']),
         description: entry.getIn(['data', 'main', 'description']),
@@ -46,11 +47,12 @@ const ProductPagePreview = ({ entry, getAsset }) => {
   )
 }
 
-ProductPagePreview.propTypes = {
+ProductPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
+  widgetFor: PropTypes.func,
   getAsset: PropTypes.func,
 }
 
-export default ProductPagePreview
+export default ProductPreview
