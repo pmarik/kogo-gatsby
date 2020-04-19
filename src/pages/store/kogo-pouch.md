@@ -1,7 +1,7 @@
 ---
 templateKey: product-post
 title: Kogo Ground Coffee Cherries
-description: Whether you are tyring Kogo for the first time or a big fan, we have the right size bag for you.
+description: Experience the sustained focus of Kogo organic ground coffee cherries with our signature pouch. Whether you are tyring Kogo for the first time or a big fan, we have the right size bag for you.
 images:
     - image: /img/kogopackage.min.png
       alt: >
@@ -50,6 +50,23 @@ testimonials:
   - author: John Smith
     quote: >-
       Empowers farmers economically and tastes super denk.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+main:
+  heading: Great coffee with no compromises
+  description: >
+    We hold our coffee to the highest standards from the shrub to the cup.
+    That’s why we’re meticulous and transparent about each step of the coffee’s
+    journey. We personally visit each farm to make sure the conditions are
+    optimal for the plants, farmers and the local environment.
+  image1:
+    alt: Ground coffee
+    image: /img/products-grid3.jpg
+  image2:
+    alt: Coffee cherries and stem
+    image: /img/coffee-cherryClump.jpg
+  image3:
+    alt: Coffee plant field
+    image: /img/coffee-field.jpg
+full_image: /img/cherries-stretch.jpg
 tags:
   - Kogo
 ---
@@ -57,7 +74,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam porttito
 
 
 
-![Kogo Bag](/img/kogo-package-mockup-12.png "Kogo Bag")
+![Kogo Bag](/img/coffeeground.png "Kogo Grounds")
 
 Integer fringilla dolor vel scelerisque hendrerit. Proin sit amet ligula aliquam, molestie dui in, malesuada ex. Pellentesque leo urna, bibendum vel hendrerit ac, accumsan eu nibh. Nulla facilisi. Donec ultricies justo ut nibh volutpat ultrices. Fusce et sem eget felis rutrum sagittis. Mauris venenatis massa sit amet nunc feugiat elementum. Morbi nunc ligula, faucibus vitae feugiat elementum, faucibus at ipsum. Quisque pretium tellus lacinia ex volutpat semper eu et tellus. Ut vel eros ultricies, cursus nisl nec, luctus felis. Duis ac purus in arcu tempus fringilla eget ac magna. Pellentesque ante sem, sagittis ac nulla non, molestie tempus ipsum. Cras rhoncus dui ac velit lacinia efficitur. Etiam efficitur aliquam urna eu cursus. Proin placerat suscipit augue et lacinia. Phasellus molestie erat velit.
 

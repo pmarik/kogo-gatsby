@@ -1,14 +1,11 @@
 ---
 templateKey: product-post
-title: Product Post
-description: Whether you are tyring Kogo for the first time or a big fan, we have the right size bag for you.
+title: Kogo t-shirt
+description: Represent Kogo where ever you go
 images:
-    - image: /img/coffee.png
+    - image: "/img/kogo t-shirt.png"
       alt: >
-        coffee picture mane
-    - image: /img/coffee-gear.png
-      alt: >
-        another coffee picture
+        kogo t-shirt
 pricing:
   heading: Select Size
   description: >-
@@ -19,16 +16,23 @@ pricing:
         - 3 lbs of coffee per month
         - Green or roasted beans"
         - One or two varieties of beans"
-      option: 10oz
+      option: Small
       price: '9'
     - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
       items:
         - 6 lbs of coffee per month
         - Green or roasted beans
         - Up to 4 different varieties of beans
-      option: 16oz
+      option: Medium
       price: '15'
-featuredimage: /img/kogopackage.min.png
+    - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
+      items:
+        - 6 lbs of coffee per month
+        - Green or roasted beans
+        - Up to 4 different varieties of beans
+      option: Large
+      price: '15'  
+featuredimage: "/img/kogo t-shirt.png"
 blurbs:
     - image: /img/coffee.png
       text: >
@@ -49,7 +53,24 @@ testimonials:
       Kogo is dank my guy! Real talk its grrrreeeat!Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - author: John Smith
     quote: >-
-      Empowers farmers economically and tastes super denk.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+      Empowers farmers economically and tastes super denk.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+main:
+  heading: Great coffee with no compromises
+  description: >
+    We hold our coffee to the highest standards from the shrub to the cup.
+    That’s why we’re meticulous and transparent about each step of the coffee’s
+    journey. We personally visit each farm to make sure the conditions are
+    optimal for the plants, farmers and the local environment.
+  image1:
+    alt: Ground coffee
+    image: /img/products-grid3.jpg
+  image2:
+    alt: Coffee cherries and stem
+    image: /img/coffee-cherryClump.jpg
+  image3:
+    alt: Coffee plant field
+    image: /img/coffee-field.jpg 
+full_image: /img/cherries-stretch.jpg
 tags:
   - Kogo
 ---

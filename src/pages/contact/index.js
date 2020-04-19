@@ -38,8 +38,8 @@ export default class Index extends React.Component {
       <Layout>
         <main className="main-content">
           <section className="main-content-container">
-            <div className="content">
-              <h1 style={{fontSize: '2.75rem', lineHeight: '1'}}>Contact</h1>
+            <div>
+              <h1 style={{lineHeight: '1'}}>Contact</h1>
               <form
                 name="contact"
                 method="post"

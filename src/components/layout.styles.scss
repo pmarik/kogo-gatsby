@@ -11,6 +11,14 @@ body, html{
     background: pink;
 }
 
+h1, h2{
+    font-size: 2.25rem;
+
+    @media screen and (min-width: 678px){
+        font-size: 2.75rem;
+    }
+}
+
 h1, h2, .blog-roll-title {
     color: #FB604E !important;
     font-family: 'Montserrat', sans-serif;

@@ -31,7 +31,7 @@ export const AboutPageTemplate = ({ title, title2, missionContent, midImage, sto
 
               <section className="about-story">
                 <div className="top-about-nav-container">
-                  <h2 className="title about-title has-text-weight-bold is-bold-light">
+                  <h2 className="about-title has-text-weight-bold is-bold-light">
                     {title}
                   </h2>
 

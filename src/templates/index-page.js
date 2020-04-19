@@ -27,10 +27,7 @@ export const IndexPageTemplate = ({
       
         <section className="top-banner-grid">
 
-          <div className="landing-heading" 
-               data-sal="fade-in"
-               data-sal-delay="300"
-               data-sal-easing="ease">
+          <div className="landing-heading" >
             <h1>{heading}</h1>
           </div>
           

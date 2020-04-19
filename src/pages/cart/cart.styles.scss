@@ -3,9 +3,13 @@
     min-height: 25vh;
 
     .cart-title{
-        font-size: 2.75em;
+        font-size: 2.25em;
         line-height: 1;
         margin-bottom: 5%;
+
+        @media screen and (min-width: 678px){
+            font-size: 2.75rem;
+        }
     }
 
     .continue-shop-link{
