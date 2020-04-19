@@ -9,11 +9,14 @@
             box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.25);
             background: rgba(114, 140, 91, 0.1);
 
-        .blog-article-list{
+        .product-list{
             padding: 1.25rem 2.5rem 1.25rem 1.5rem;
             background: transparent;
+            display: flex;
+            flex-direction: column;
+          
 
-            .blog-header{
+            .product-header{
                 .featured-thumbnail{
                     @media screen and (max-width: 678px){
                         margin: 0 auto 20px auto;

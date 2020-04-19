@@ -10,7 +10,6 @@ export default class StoreIndexPage extends React.Component {
         <main className="main-content">
           <div className="main-content-container anim-start-0 fadeIn">
             <h1
-              className="has-text-weight-bold is-size-1"
               style={{marginBottom: '5%', lineHeight: '1'}}
             >
               Products

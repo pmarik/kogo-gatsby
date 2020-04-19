@@ -23,11 +23,11 @@ class ProductRoll extends React.Component {
               {({ isVisible }) => (
                 <div className={`blog-preview-wrap anim-start-0 ${isVisible ? 'fadeIn' : ''} `} key={post.id}>
                   <article
-                    className={`blog-list-item is-child notification blog-article-list ${
+                    className={`blog-list-item is-child notification product-list ${
                       post.frontmatter.featuredpost ? 'is-featured' : ''
                     }`}
                   >
-                    <header className="blog-header">
+                    <header className="product-header">
                       {post.frontmatter.featuredimage ? (
                         <div className="featured-thumbnail">
                           <PreviewCompatibleImage
@@ -51,11 +51,8 @@ class ProductRoll extends React.Component {
                       </p>
                     </header>
                     <p>
-                      {post.excerpt}
-                      <br />
-                      <br />
                       <Link className="button" to={post.fields.slug}>
-                        Keep Reading →
+                        View →
                       </Link>
                     </p>
                   </article>
@@ -86,7 +83,6 @@ export default () => (
         ) {
           edges {
             node {
-              excerpt(pruneLength: 200)
               id
               fields {
                 slug
