@@ -20,4 +20,28 @@
             color: #FB604E;
         }
     }
+
+    .cart-item-display{
+        border: 2px solid purple;
+        display: flex;
+        margin-bottom: 5%;
+
+        .product-info{
+            border: 2px solid yellow;
+            text-align: left;
+            width: 400px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .product-name{
+                font-size: 1.5rem;
+            }
+        }
+       
+    }
+
+    .product-image{
+        width: 250px;
+    }
 }

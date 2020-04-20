@@ -3,7 +3,7 @@ import PropTypes, { element } from 'prop-types'
 import './pricing.styles.scss';
 import { GlobalDispatchContext } from '../../context/GlobalContextProvider';
 
-const Pricing = ({ data }) => {
+const Pricing = ({ data, itemName, featuredImage }) => {
 
   const heading = data.heading;
   const description = data.description;
@@ -19,7 +19,9 @@ const Pricing = ({ data }) => {
     e.preventDefault();
 
     const itemToAdd = {
-      item: variantSelected,
+      itemName,
+      featuredImage,
+      variantSelected,
       quantity
     }
 
@@ -29,8 +31,6 @@ const Pricing = ({ data }) => {
     })
 
     console.log('itemToAdd', itemToAdd);
-    console.log("item chosen: ", variantSelected)
-    console.log("quantity: ", quantity);
   };
 
 

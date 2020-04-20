@@ -25,7 +25,8 @@ export const ProductTemplate = ({
   testimonials,
   main,
   fullImage,
-  blurbs
+  blurbs,
+  featuredImage
 }) => {
   const PostContent = contentComponent || Content
 
@@ -46,7 +47,7 @@ export const ProductTemplate = ({
 
               <p className="product-post-description">{description}</p>
 
-              <Pricing data={pricing} />
+              <Pricing data={pricing} itemName={title} featuredImage={featuredImage}/>
 
             </section>
              
@@ -172,6 +173,7 @@ const ProductPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         blurbs={post.frontmatter.blurbs}
+        featuredImage={post.frontmatter.featuredimage}
       />
     </Layout>
   )
@@ -211,6 +213,13 @@ export const pageQuery = graphql`
             items
             option
             price
+          }
+        }
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 250, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
         testimonials {
