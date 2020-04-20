@@ -102,7 +102,7 @@ export const ProductTemplate = ({
               </div>
             </div>
 
-            <div className="blog-post-body">
+            <div className="product-post-body">
               <PostContent content={content} />
             </div>
             {tags && tags.length ? (

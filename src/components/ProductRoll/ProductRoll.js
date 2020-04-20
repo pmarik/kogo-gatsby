@@ -12,7 +12,7 @@ class ProductRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <div className="blog-roll-wrapper">
+      <div className="product-roll-wrapper">
         {posts &&
           posts.map(({ node: post }) => (
             <VisibilitySensor 
@@ -21,41 +21,43 @@ class ProductRoll extends React.Component {
               minTopValue="25"
             > 
               {({ isVisible }) => (
-                <div className={`blog-preview-wrap anim-start-0 ${isVisible ? 'fadeIn' : ''} `} key={post.id}>
-                  <article
-                    className={`blog-list-item is-child notification product-list ${
+                <div className={`product-preview-wrap anim-start-0 ${isVisible ? 'fadeIn' : ''} `} key={post.id}>
+                  <div
+                    className={`blog-list-item is-child  product-list ${
                       post.frontmatter.featuredpost ? 'is-featured' : ''
                     }`}
                   >
-                    <header className="product-header">
-                      {post.frontmatter.featuredimage ? (
-                        <div className="featured-thumbnail">
+
+               
+                
+                    {post.frontmatter.featuredimage ? (
+                        <Link to={post.fields.slug} className="featured-thumbnail">
                           <PreviewCompatibleImage
                             imageInfo={{
                               image: post.frontmatter.featuredimage,
                               alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                             }}
                           />
-                        </div>
+                        </Link>
                       ) : null}
+
+                    <header className="product-header">
                       <p className="post-meta">
                         <Link
-                          className="title has-text-primary is-size-4"
+                          className="product-title is-size-4"
                           to={post.fields.slug}
                         >
                           {post.frontmatter.title}
                         </Link>
-                        <span className="subtitle is-size-6 is-block">
+                        
+                        <span className="product-price">
                           {post.frontmatter.price}
                         </span>
                       </p>
                     </header>
-                    <p>
-                      <Link className="button" to={post.fields.slug}>
-                        View →
-                      </Link>
-                    </p>
-                  </article>
+                  
+                    <br/>
+                  </div>
                 </div>
               )}
             </VisibilitySensor>
@@ -93,7 +95,7 @@ export default () => (
                 templateKey
                 featuredimage {
                   childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
+                    fluid(maxWidth: 250, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }

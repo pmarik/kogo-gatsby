@@ -55,12 +55,14 @@ const Pricing = ({ data }) => {
         <h2>${variantSelected.price}</h2>
     </div>
 
-    <form onSubmit={e => handleAddToCart(e)} className="item-quantity">
-      <label>Quantity</label>
-      <input type="number" onChange={event => setQuantity(event.target.value)} placeholder={quantity} min="1"/>
+    <form onSubmit={e => handleAddToCart(e)} className="add-product-form">
+      <div className="item-quantity">
+        <label>Quantity</label>
+        <input type="number" onChange={event => setQuantity(event.target.value)} placeholder={quantity} min="1"/>
+      </div>
 
       <button type="submit">
-        <span>add to cart</span>
+        <span className="btn-txt">ADD TO CART</span>
       </button>
     </form>
 

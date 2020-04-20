@@ -22,8 +22,10 @@
                 .post-meta{
                     display: flex;
                     flex-direction: column;
-                    .title{
+                    .blog-title{
                         color: #FB604E !important;
+                        line-height: 1;
+                        margin-bottom: 5px;
 
                         &:hover{
                             color: #8A120F !important;
