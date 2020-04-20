@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'gatsby'
-import cart from '../../img/cartWhite.svg';
+import NavCart from './NavCart';
 import logo from '../../img/kogoWhiteSimp.svg'
 import './navbar.styles.scss';
 
@@ -91,14 +91,7 @@ const Navbar = class extends React.Component {
               </Link>
             </div>
 
-            <div className="nav-cart">
-                <Link className="navbar-item nav-your-cart" to="/cart">
-                  <span className="icon">
-                    <img src={cart} alt="Cart" />
-                    <span className="your-cart-text">Your Cart</span>
-                  </span>
-                </Link>
-            </div>
+            <NavCart />
       
         </div>
       </nav>
@@ -106,4 +99,8 @@ const Navbar = class extends React.Component {
   }
 }
 
+
+
 export default Navbar
+
+

@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import PropTypes, { element } from 'prop-types'
 import './pricing.styles.scss';
+import { GlobalDispatchContext } from '../../context/GlobalContextProvider';
 
 const Pricing = ({ data }) => {
 
@@ -12,13 +13,24 @@ const Pricing = ({ data }) => {
   const [variantSelected, setVariantSelected] = useState(variants[0]);
   const [selectedVariantIndx, setSelectedVariantIndx] = useState(0);
 
+  const dispatch = useContext(GlobalDispatchContext);
+
   const handleAddToCart = (e) => {
     e.preventDefault();
 
+    const itemToAdd = {
+      item: variantSelected,
+      quantity
+    }
 
+    dispatch({
+      type: 'ADD_TO_CART', 
+      payload: itemToAdd
+    })
+
+    console.log('itemToAdd', itemToAdd);
     console.log("item chosen: ", variantSelected)
     console.log("quantity: ", quantity);
-    console.log('index of is: ', selectedVariantIndx);
   };
 
 
