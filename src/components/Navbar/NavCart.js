@@ -5,7 +5,7 @@ import { GlobalStateContext } from '../../context/GlobalContextProvider';
 
 const NavCart = () => {
 
-    const state = useContext(GlobalStateContext);
+    const state = useContext(GlobalStateContext) || { cartArray: [] };
 
     return (
         <div className="nav-cart">
