@@ -1,5 +1,6 @@
 import React, {useState, useContext} from 'react'
 import PropTypes, { element } from 'prop-types'
+import { Link } from 'gatsby';
 import './pricing.styles.scss';
 import { GlobalDispatchContext } from '../../context/GlobalContextProvider';
 
@@ -12,6 +13,7 @@ const Pricing = ({ data, itemName, featuredImage }) => {
   const [quantity, setQuantity] = useState(1);
   const [variantSelected, setVariantSelected] = useState(variants[0]);
   const [selectedVariantIndx, setSelectedVariantIndx] = useState(0);
+  const [cartItemAdded, setCartItemAdded] = useState(0);
 
   const dispatch = useContext(GlobalDispatchContext);
 
@@ -29,6 +31,8 @@ const Pricing = ({ data, itemName, featuredImage }) => {
       type: 'ADD_TO_CART', 
       payload: itemToAdd
     })
+
+    setCartItemAdded(1);
 
     console.log('itemToAdd', itemToAdd);
   };
@@ -76,6 +80,15 @@ const Pricing = ({ data, itemName, featuredImage }) => {
       <button type="submit">
         <span className="btn-txt">ADD TO CART</span>
       </button>
+
+      {
+        cartItemAdded === 1 ? 
+          (<div className="add-to-cart-success">
+              <p>Added to cart! Feel free to <Link to="/shop">continue shopping</Link> or <Link to="cart">check out</Link></p>
+          </div>)
+          : null
+      }
+      
     </form>
 
   </div>

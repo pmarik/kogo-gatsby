@@ -11,8 +11,10 @@ const NavCart = () => {
         <div className="nav-cart">
             <Link className="navbar-item nav-your-cart" to="/cart">
                 <span className="icon">
-                    {state.cartArray.length}       
-                    <img src={cart} alt="Cart" />
+                    <span className="cart-icon-num">
+                        <img src={cart} alt="Cart" />
+                        <span className="cart-num">{state.cartArray.length}</span>       
+                    </span>
                     <span className="your-cart-text">Your Cart</span>
                 </span>
             </Link>

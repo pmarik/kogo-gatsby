@@ -21,27 +21,70 @@
         }
     }
 
-    .cart-item-display{
-        border: 2px solid purple;
-        display: flex;
-        margin-bottom: 5%;
+    .has-cart-item{
+        border-top: 1px solid #8A120F;
 
-        .product-info{
-            border: 2px solid yellow;
-            text-align: left;
-            width: 400px;
-
+        .cart-item-display{
+            min-height: 250px;
+            border-bottom: 1px solid #8A120F;
             display: flex;
+            margin-bottom: 5%;
             flex-direction: column;
             justify-content: space-between;
-            .product-name{
-                font-size: 1.5rem;
+            align-items: center;
+    
+            @media screen and (min-width: 678px){
+                flex-direction: row;
+            }
+    
+            .product-name-pic{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+    
+                @media screen and (min-width: 678px){
+                    flex-direction: row-reverse;
+                }
+    
+                .product-name{
+                    font-size: 2rem ;
+        
+                    @media screen and (max-width: 980px){
+                        font-size: 1.5rem;
+                    }
+                }
+                .product-image{
+                    width: 250px;
+                }
+            }
+          
+    
+            .product-info{
+                text-align: left;
+                width: 50%;
+                display: flex;
+                justify-content: space-evenly;
+    
+                @media screen and (max-width: 678px){
+                    justify-content: space-between;
+                }
+            }
+           
+        }
+
+        .cart-total{
+            text-align: right;
+
+            @media screen and (max-width: 678px){
+                text-align: center;
+            }
+            p{
+                font-size: 1.75rem !important;
             }
         }
-       
     }
+    
 
-    .product-image{
-        width: 250px;
-    }
+
 }

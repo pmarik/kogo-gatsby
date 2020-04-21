@@ -55,6 +55,7 @@
     }
 
     .add-product-form{
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -93,8 +94,17 @@
                     -webkit-appearance: none;
                 }
             }
+        }
 
-
+        .add-to-cart-success{
+            position: absolute;
+            top: 80%;
+                a {
+                    color: #FB604E;
+                    &:hover{
+                        color: #8A120F;
+                    }
+                }
         }
 
         button{
