@@ -23,12 +23,13 @@
 
     .has-cart-item{
         border-top: 1px solid #8A120F;
+        padding-top: 2%;
 
         .cart-item-display{
-            min-height: 250px;
+            height: 250px;
             border-bottom: 1px solid #8A120F;
             display: flex;
-            margin-bottom: 5%;
+            margin-bottom: 2%;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
@@ -64,7 +65,11 @@
                 text-align: left;
                 width: 50%;
                 display: flex;
-                justify-content: space-evenly;
+                justify-content: flex-end;
+
+                .product-quantity{
+                    margin-right: 4em;
+                }
     
                 @media screen and (max-width: 678px){
                     justify-content: space-between;

@@ -49,7 +49,7 @@ const Index = () => {
                             </div>
                            
                             <div className="product-info">
-                              <h3>Quantity: {item.quantity}</h3>
+                              <h3 className="product-quantity">Quantity: {item.quantity}</h3>
                               <h3>${item.variantSelected.price}</h3>
                             </div>
                           </div>
