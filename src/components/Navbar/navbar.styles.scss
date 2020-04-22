@@ -2,7 +2,7 @@
     min-height: 3.25rem;
     background-color: pink;
     position: relative;
-    z-index: 30;
+    z-index: 5;
     color: white;
     background: linear-gradient(92.59deg, #8A120F 0%, rgba(251, 96, 78, 0) 99.37%), #FB604E;
 
@@ -41,6 +41,7 @@
             }
 
             &.is-active .hamburger{
+
                 &::before{
                     opacity: 0;
                 }
@@ -172,6 +173,7 @@
             }
 
             &.is-active{
+                z-index: 5;
                 .navbar-links{
                     .navbar-item-link{
                         opacity: 0;
@@ -187,6 +189,7 @@
             }
 
             &.is-closed{
+                z-index: 0;
                 .navbar-links{
                     .navbar-item-link{
                         opacity: 1;
@@ -240,32 +243,34 @@
                 .icon{
                     margin: 0 auto;
                     height: 1.5rem;
-                    width: 6.5em;
+                    width: 7em;
                     display: flex;
                     justify-content: space-between;
                     color: white;
 
                     .cart-icon-num{
                         position: relative;
+                        top: 2px;
                         img{
-                            height: 1.2em;
+                            height: 1.4em;
                             display: block;
                             margin-left: 0;
+                            //margin-bottom: 3px;
                         }
 
                         .cart-num{
                             position: absolute;
-                            top: -8px;
-                            right: -8px;
-                            background: #728C5B;
+                            top: -7px;
+                            right: -5px;
+                             background: rgb(164, 255, 85);
                             border-radius: 50%;
                             width: 18px;
                             height: 18px;
                             display: flex;
                             justify-content: center;
-                            align-items: center;
-                            font-size: 0.9rem;
-                            color: white;
+                            //align-items: center;
+                            font-size: 0.8rem;
+                            color: #674B42;
                         }
                     }
 
@@ -280,7 +285,7 @@
                         }
 
                         .cart-num{
-                            left: 10px;
+                            left: 15px;
                         }
 
                         .your-cart-text{

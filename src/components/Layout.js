@@ -5,6 +5,7 @@ import './layout.styles.scss'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
 import useSiteMetadata from './SiteMetadata'
+import favicon from '../img/favicon.ico';
 import { withPrefix } from 'gatsby'
 
 const TemplateWrapper = ({ children }) => {
@@ -15,6 +16,12 @@ const TemplateWrapper = ({ children }) => {
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
+
+
+        <link 
+          rel="icon"
+          href={favicon}
+        />
 
         <link
           rel="apple-touch-icon"

@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import { Link } from 'gatsby';
-import cart from '../../img/cartWhite.svg';
+// import cart from '../../img/cartWhite.svg';
+import cart from '../../img/cart9.svg';
 import { GlobalStateContext } from '../../context/GlobalContextProvider';
 
 const NavCart = () => {
