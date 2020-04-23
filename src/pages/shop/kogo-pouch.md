@@ -15,14 +15,16 @@ pricing:
   description: >-
     Overall variants description placeholder text
   options:
-    - description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
+    - id: 844vdkjdfowasdfe84
+      description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
       items:
         - 3 lbs of coffee per month
         - Green or roasted beans"
         - One or two varieties of beans"
       option: 10oz
       price: '9'
-    - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
+    - id: 844vdkjdfowasdfe23
+      description: 'Great for avid drinkers, java-loving couples and bigger crowds'
       items:
         - 6 lbs of coffee per month
         - Green or roasted beans

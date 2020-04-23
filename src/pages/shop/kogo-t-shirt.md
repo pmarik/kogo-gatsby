@@ -12,21 +12,24 @@ pricing:
   description: >-
     Overall variants description placeholder text
   options:
-    - description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
+    - id: 844vdkjdfowasdfe24
+      description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
       items:
         - 3 lbs of coffee per month
         - Green or roasted beans"
         - One or two varieties of beans"
       option: Small
       price: '9'
-    - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
+    - id: 844vdkjdfowasdfe25
+      description: 'Great for avid drinkers, java-loving couples and bigger crowds'
       items:
         - 6 lbs of coffee per month
         - Green or roasted beans
         - Up to 4 different varieties of beans
       option: Medium
       price: '15'
-    - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
+    - id: 844vdkjdfowasdfe26
+      description: 'Great for avid drinkers, java-loving couples and bigger crowds'
       items:
         - 6 lbs of coffee per month
         - Green or roasted beans
