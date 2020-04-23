@@ -5,7 +5,7 @@ import idWidget from 'netlify-cms-widget-simple-uuid';
 
 import AboutPagePreview from './preview-templates/AboutPagePreview'
 import BlogPostPreview from './preview-templates/BlogPostPreview'
-import ProductPagePreview from './preview-templates/ProductPagePreview'
+//import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 import ProductPostPreview from './preview-templates/ProductPostPreview';
 
