@@ -8,6 +8,9 @@ const ProductPreview = ({ entry, widgetFor, getAsset }) => {
   const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])
   const blurbs = entryBlurbs ? entryBlurbs.toJS() : []
 
+  const entryImages = entry.getIn(['data', 'images'])
+  const images = entryImages ? entryImages.toJS() : []
+
   const entryTestimonials = entry.getIn(['data', 'testimonials'])
   const testimonials = entryTestimonials ? entryTestimonials.toJS() : []
 
@@ -43,6 +46,7 @@ const ProductPreview = ({ entry, widgetFor, getAsset }) => {
         description: entry.getIn(['data', 'pricing', 'description']),
         options: pricingPlans,
       }}
+      images={images}
       blurbs={blurbs}
     />
   )
