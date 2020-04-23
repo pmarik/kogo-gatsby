@@ -41,12 +41,16 @@ const TemplateWrapper = ({ children }) => {
           sizes="16x16"
         />
 
+        <link rel="manifest" href={`${withPrefix('/')}assets/site.webmanifest`} />
+
         <link
           rel="mask-icon"
           href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
           color="#ff4400"
         />
+
         <meta name="theme-color" content="#fff" />
+        <meta name="msapplication-TileColor" content="#00a300"></meta>
 
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
