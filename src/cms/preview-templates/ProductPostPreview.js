@@ -5,8 +5,8 @@ import { ProductTemplate } from '../../templates/product-post'
 const ProductPreview = ({ entry, widgetFor, getAsset }) => {
   const tags = entry.getIn(['data', 'tags'])
 
-  // const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])
-  // const blurbs = entryBlurbs ? entryBlurbs.toJS() : []
+  const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])
+  const blurbs = entryBlurbs ? entryBlurbs.toJS() : []
 
   const entryTestimonials = entry.getIn(['data', 'testimonials'])
   const testimonials = entryTestimonials ? entryTestimonials.toJS() : []
@@ -43,6 +43,7 @@ const ProductPreview = ({ entry, widgetFor, getAsset }) => {
         description: entry.getIn(['data', 'pricing', 'description']),
         options: pricingPlans,
       }}
+      blurbs={blurbs}
     />
   )
 }

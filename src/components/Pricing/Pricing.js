@@ -95,14 +95,26 @@ const Pricing = ({ data, itemName, featuredImage }) => {
 )}
 
 Pricing.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      option: PropTypes.string,
-      price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      description: PropTypes.string,
-      items: PropTypes.array,
-    })
-  ),
+  // data: PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     option: PropTypes.string,
+  //     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  //     description: PropTypes.string,
+  //     items: PropTypes.array,
+  //   })
+  // ),
+  data: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+    options: PropTypes.arrayOf(
+      PropTypes.shape({
+        option: PropTypes.string,
+        price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        description: PropTypes.string,
+        items: PropTypes.array,
+      })
+    )
+  })
 }
 
 export default Pricing

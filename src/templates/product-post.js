@@ -145,6 +145,7 @@ ProductTemplate.propTypes = {
   }),
   images: PropTypes.array,
   testimonials: PropTypes.array,
+  blurbs: PropTypes.array,
 }
 
 const ProductPost = ({ data }) => {
