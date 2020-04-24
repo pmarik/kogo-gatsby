@@ -35,7 +35,7 @@ const Index = () => {
                   <div className="has-cart-item">
                     {state.cartArray.map( item => {
                       return(
-                          <div className="cart-item-display">
+                          <div key={item.variantSelected.id} className="cart-item-display">
                             <div className="product-name-pic">
                               <h2 className="product-name">{item.itemName}</h2>
                               <div className="product-image">

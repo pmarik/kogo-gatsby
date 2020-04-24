@@ -15,9 +15,6 @@ media_folder: static/img
 public_folder: /img
 publish_mode: editorial_workflow
 
-uuid: &uuidsamp
-  uuID: "{{year}}-{{month}}-{{day}}-{{slug}}"
-
 collections:
   - name: "pages"
     label: "Pages"
@@ -54,7 +51,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Product Images", name: images, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}
-      - {label: "Pricing", name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Options, name: options, widget: list, fields: [{label: Option, name: option, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}, {label: ID, name: id, widget: ncw-id, prefix: variant, timestamp: true, hint: "This ID is automatically generated, please ignore" }]}]}
+      - {label: "Pricing", name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Options, name: options, widget: list, fields: [{label: Option, name: option, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}, {label: ID, name: id, widget: ncw-id, prefix: variant, timestamp: true, hint: "This ID is automatically generated, please ignore this field" }]}]}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}  
       - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}

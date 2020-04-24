@@ -24,7 +24,7 @@ const Pricing = ({ data, itemName, featuredImage }) => {
       itemName,
       featuredImage,
       variantSelected,
-      quantity
+      quantity: parseFloat(quantity),
     }
 
     dispatch({
@@ -50,19 +50,10 @@ const Pricing = ({ data, itemName, featuredImage }) => {
 
     <div className="variant-section">
       {variants.map((variant, indx) => (
-        <section key={variant.option} className="variant-option">
+        <section key={variant.id} className="variant-option">
             <button onClick={()=> handleVariantSelect(indx)} className={`${indx === selectedVariantIndx ? 'variant-selected' : null}`}>
                 <span className="variant-name">{variant.option}</span>
             </button>
-
-            {/* <p className="has-text-weight-semibold">{variant.description}</p>
-            <ul>
-              {variant.items.map(item => (
-                <li key={item} className="is-size-5">
-                  {item}
-                </li>
-              ))}
-            </ul> */}
         </section> 
       ))}
     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { addItemToCart } from './cart.utils';
 
 export const GlobalStateContext = React.createContext();
 export const GlobalDispatchContext = React.createContext();
@@ -11,7 +12,8 @@ function reducer(state, action){
     switch (action.type){
         case "ADD_TO_CART": {
             return {
-                cartArray: [...state.cartArray, action.payload]
+                // cartArray: [...state.cartArray, action.payload]
+                cartArray: addItemToCart(state.cartArray, action.payload)
             }
         }
         default:

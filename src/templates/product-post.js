@@ -214,6 +214,7 @@ export const pageQuery = graphql`
             items
             option
             price
+            id
           }
         }
         featuredimage {
