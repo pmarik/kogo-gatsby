@@ -12,8 +12,14 @@ function reducer(state, action){
     switch (action.type){
         case "ADD_TO_CART": {
             return {
-                // cartArray: [...state.cartArray, action.payload]
                 cartArray: addItemToCart(state.cartArray, action.payload)
+            }
+        }
+        case "REMOVE_ITEM": {
+            return {
+                cartArray: state.cartArray.filter(
+                    cartItem => cartItem.variantSelected.id !== action.payload.variantSelected.id
+                )
             }
         }
         default:

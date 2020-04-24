@@ -4,12 +4,14 @@ import Layout from '../../components/Layout'
 import "./cart.styles.scss";
 import PreviewCompatibleImage from '../../components/PreviewCompatibleImage';
 import { GlobalStateContext, GlobalDispatchContext } from '../../context/GlobalContextProvider';
-
+import ItemQuantity from '../../components/ItemQuantity/ItemQuantity';
 
 const Index = () => {
 
   const state = useContext(GlobalStateContext) || { cartArray: [] };
   const dispatch = useContext(GlobalDispatchContext);
+
+  console.log('cartArray: ', state);
 
   const calculatePrice = (cartArray) => {
     return (
@@ -17,6 +19,13 @@ const Index = () => {
         return (accumulator + (item.variantSelected.price * item.quantity))
       }, 0)
     )
+  }
+
+  const handleRemoveItem = (cartItem) => {
+    dispatch({
+      type: 'REMOVE_ITEM',
+      payload: cartItem
+    })
   }
 
     return (
@@ -50,7 +59,14 @@ const Index = () => {
                            
                             <div className="product-info">
                               <h3 className="product-quantity">Quantity: {item.quantity}</h3>
+                              <ItemQuantity cartItem={item}/>
                               <h3>${item.variantSelected.price}</h3>
+                            </div>
+
+                            <div>
+                              <button onClick={() => handleRemoveItem(item)}>
+                                  <span>X</span>
+                              </button>
                             </div>
                           </div>
                       )

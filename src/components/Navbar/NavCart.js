@@ -8,6 +8,10 @@ const NavCart = () => {
 
     const state = useContext(GlobalStateContext) || { cartArray: [] };
 
+    const getTotalNumItems = (cartArray) => {
+        return cartArray.reduce((accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity, 0)
+    }
+
     return (
         <div className="nav-cart">
             <Link className="navbar-item nav-your-cart" to="/cart">
@@ -15,7 +19,7 @@ const NavCart = () => {
                     <span className="cart-icon-num">
                         <img src={cart} alt="Cart" />
                         <span className="cart-num">
-                            {state.cartArray.length}
+                            {getTotalNumItems(state.cartArray)}
                         </span>       
                     </span>
                     <span className="your-cart-text">Your Cart</span>
