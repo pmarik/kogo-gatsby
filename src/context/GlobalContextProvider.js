@@ -1,5 +1,5 @@
 import React from 'react';
-import { addItemToCart } from './cart.utils';
+import { addItemToCart, decreaseItemFromCart, increaseItemFromCart } from './cart.utils';
 
 export const GlobalStateContext = React.createContext();
 export const GlobalDispatchContext = React.createContext();
@@ -20,6 +20,16 @@ function reducer(state, action){
                 cartArray: state.cartArray.filter(
                     cartItem => cartItem.variantSelected.id !== action.payload.variantSelected.id
                 )
+            }
+        }
+        case "INCREASE_QUANTITY": {
+            return {
+                cartArray: increaseItemFromCart(state.cartArray, action.payload)
+            }
+        }
+        case "DECREASE_QUANTITY": {
+            return {
+                cartArray: decreaseItemFromCart(state.cartArray, action.payload)
             }
         }
         default:

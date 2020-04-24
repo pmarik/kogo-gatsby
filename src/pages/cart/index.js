@@ -5,6 +5,8 @@ import "./cart.styles.scss";
 import PreviewCompatibleImage from '../../components/PreviewCompatibleImage';
 import { GlobalStateContext, GlobalDispatchContext } from '../../context/GlobalContextProvider';
 import ItemQuantity from '../../components/ItemQuantity/ItemQuantity';
+import removeBtn from '../../img/remove-btn.svg';
+
 
 const Index = () => {
 
@@ -42,6 +44,12 @@ const Index = () => {
                 :
                 (
                   <div className="has-cart-item">
+                    <div className="cart-items-heading">
+                      <h2 className="cart-items-heading-Item">Item</h2>
+                      <h2 className="cart-items-heading-Description">Description</h2>
+                      <h2 className="cart-items-heading-Quantity">Quantity</h2>
+                      <h2 className="cart-items-heading-Price">Price</h2>
+                    </div>
                     {state.cartArray.map( item => {
                       return(
                           <div key={item.variantSelected.id} className="cart-item-display">
@@ -57,17 +65,17 @@ const Index = () => {
                               </div>
                             </div>
                            
+                            <ItemQuantity cartItem={item}/>
+
                             <div className="product-info">
-                              <h3 className="product-quantity">Quantity: {item.quantity}</h3>
-                              <ItemQuantity cartItem={item}/>
                               <h3>${item.variantSelected.price}</h3>
                             </div>
 
-                            <div>
-                              <button onClick={() => handleRemoveItem(item)}>
-                                  <span>X</span>
+                            
+                              <button onClick={() => handleRemoveItem(item)} className="remove-btn">
+                                  <img src={removeBtn} alt="remove button" title="Remove Item" style={{width: '20px', height: 'auto'}}/>
                               </button>
-                            </div>
+                            
                           </div>
                       )
                     } )}

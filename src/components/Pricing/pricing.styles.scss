@@ -78,6 +78,7 @@
             }
     
             input[type="number"]{
+                color: #674B42;
                 height: 2rem;
                 width: 50px;
                 border-radius: 5px;
@@ -92,6 +93,25 @@
                 &::-webkit-inner-spin-button,
                 &::-webkit-outer-spin-button {
                     -webkit-appearance: none;
+                }
+
+                &::-webkit-input-placeholder { /* WebKit browsers */
+                    color:    #674B42;
+                     opacity: 1 !important;
+                }
+                
+                &:-moz-placeholder { /* Firefox 18- */
+                    color: #674B42;
+                    opacity: 1 !important;
+                }
+                
+                &::-moz-placeholder {  /* Firefox 19+ */
+                    color: #674B42;
+                    opacity: 1 !important;
+                }
+                
+                &:-ms-input-placeholder {  
+                   color: #674B42;
                 }
             }
         }
