@@ -15,22 +15,22 @@ pricing:
   description: >-
     Overall variants description placeholder text
   options:
-    - id: 844vdkjdfowasdfe84
-      description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
+    - description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
       items:
         - 3 lbs of coffee per month
         - Green or roasted beans"
         - One or two varieties of beans"
       option: 10oz
       price: '9'
-    - id: 844vdkjdfowasdfe23
-      description: 'Great for avid drinkers, java-loving couples and bigger crowds'
+      id: 844vdkjdfowasdfe84
+    - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
       items:
         - 6 lbs of coffee per month
         - Green or roasted beans
         - Up to 4 different varieties of beans
       option: 16oz
       price: '15'
+      id: 844vdkjdfowasdfe23
 featuredimage: /img/kogopackage.min.png
 blurbs:
     - image: /img/coffee.png
