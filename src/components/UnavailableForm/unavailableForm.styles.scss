@@ -1,0 +1,24 @@
+.unavailable-form-wrapper{
+    border: 2px solid blue;
+    width: 350px;
+
+
+    h3{
+        font-size: 2rem;
+        color: #FB604E !important;
+    }
+
+    form{
+        input{
+            height: 2rem;
+            border-radius: 5px;
+            padding: 5px;
+            margin-top: 20px;
+
+        }
+    }
+
+    .form-submit{
+        display: block;
+    }
+}

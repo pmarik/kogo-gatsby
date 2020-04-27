@@ -10,6 +10,7 @@ import ProductImages from '../components/ProductImages/ProductImages';
 import Testimonials from '../components/Testimonials';
 import Features from '../components/Features';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import UnavailableForm from '../components/UnavailableForm/UnavailableForm';
 
 import './product-post.styles.scss';
 
@@ -17,6 +18,7 @@ export const ProductTemplate = ({
   content,
   contentComponent,
   description,
+  availability,
   tags,
   title,
   helmet,
@@ -47,7 +49,12 @@ export const ProductTemplate = ({
 
               <p className="product-post-description">{description}</p>
 
-              <Pricing data={pricing} itemName={title} featuredImage={featuredImage}/>
+              {availability.available ? (
+                <Pricing data={pricing} itemName={title} featuredImage={featuredImage}/>
+              ) : (
+                <UnavailableForm unavailableText={availability.unavailableText} title={title}/>
+              )}
+              
 
             </section>
              
@@ -129,6 +136,10 @@ ProductTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
+  availability: PropTypes.shape({
+    available: PropTypes.bool,
+    unavailableText: PropTypes.string
+  }),
   title: PropTypes.string,
   helmet: PropTypes.object,
   pricing: PropTypes.shape({
@@ -157,6 +168,7 @@ const ProductPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
+        availability={post.frontmatter.availability}
         images={post.frontmatter.images}
         pricing={post.frontmatter.pricing}
         helmet={
@@ -196,6 +208,10 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        availability {
+          available
+          unavailableText
+        }
         images {
           image {
             childImageSharp {

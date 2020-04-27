@@ -1,20 +1,20 @@
 ---
 templateKey: product-post
-title: Kogo Ground Coffee Cherries
-description: Experience the sustained focus of Kogo organic ground coffee cherries with our signature pouch. Whether you are tyring Kogo for the first time or a big fan, we have the right size bag for you.
+title: Kogo
+description: Experience the sustained focus of Kogo organic ground coffee cherries with our signature pouch. Add it to water, a fresh smoothie, or get creative and add it to your favorite treat and get an extra boost of natural energy!
 availability:
-  available: true
-  unavailableText: 'isAvail'
+  available: false
+  unavailableText: 'Coming Soon!'
 price: $9
 images:
-    - image: /img/kogopackage.min.png
+    - image: /img/paperPouchMockup.png
       alt: >
         coffee picture mane
     - image: /img/coffeeground.png
       alt: >
         another coffee picture
 pricing:
-  heading: Select Size
+  heading: Size
   description: >-
     Overall variants description placeholder text
   options:
@@ -23,18 +23,10 @@ pricing:
         - 3 lbs of coffee per month
         - Green or roasted beans"
         - One or two varieties of beans"
-      option: 10oz
-      price: '9'
-      id: 844vdkjdfowasdfe84
-    - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
-      items:
-        - 6 lbs of coffee per month
-        - Green or roasted beans
-        - Up to 4 different varieties of beans
-      option: 16oz
-      price: '15'
-      id: 844vdkjdfowasdfe23
-featuredimage: /img/kogopackage.min.png
+      option: 50grams
+      price: '17'
+      id: 844vdkjdfow1587fe84
+featuredimage: /img/paperPouchMockup.png
 blurbs:
     - image: /img/coffee.png
       text: >

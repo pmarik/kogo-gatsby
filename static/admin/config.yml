@@ -50,6 +50,7 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
+      - {label: "Availablity", name: 'availability', widget: object, fields: [{label: "Available", name: "available", widget: "boolean", hint: 'If product is not yet available, unavailable text will show and form will generate to get sign-ups about product'}, {label: "Unavailable Text", name: 'unavailableText', widget: string}]} 
       - {label: "Product Images", name: images, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}
       - {label: "Pricing", name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Options, name: options, widget: list, fields: [{label: Option, name: option, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}, {label: ID, name: id, widget: ncw-id, prefix: variant, timestamp: true, hint: "This ID is automatically generated, please ignore this field" }]}]}
       - {label: "Featured Image", name: "featuredimage", widget: image}

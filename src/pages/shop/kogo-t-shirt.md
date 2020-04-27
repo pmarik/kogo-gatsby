@@ -2,6 +2,9 @@
 templateKey: product-post
 title: Kogo t-shirt
 description: Represent Kogo where ever you go
+availability:
+  available: true
+  unavailableText: 'isAvail'
 price: $15
 images:
     - image: "/img/kogo t-shirt.png"
