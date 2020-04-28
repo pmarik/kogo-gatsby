@@ -45,7 +45,6 @@ class UnavailableForm extends React.Component{
         this.setState({
             submitted: true
         })
-        console.log(this.state.submitted);
       }
 
     render(){

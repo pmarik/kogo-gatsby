@@ -8,7 +8,7 @@ class FooterForm extends React.Component{
     constructor(props){
         super(props)
         this.domRef = React.createRef()
-        this.state = { feedbackMsg: null }
+        this.state = { feedbackMsg: null, isDisabled: '' }
     }
 
     handleSubmit(event) {
@@ -16,6 +16,8 @@ class FooterForm extends React.Component{
         //console.log("uncomment in FooterForm for success");
         const formData = {}
         Object.keys(this.refs).map(key => (formData[key] = this.refs[key].value))
+
+  
    
         const axiosOptions = {
           url: window.location.href,
@@ -27,13 +29,15 @@ class FooterForm extends React.Component{
         axios(axiosOptions)
           .then(response => {
             this.setState({
-              feedbackMsg: "Form submitted successfully!",
+              feedbackMsg: "Success! We'll keep you updated.",
+              isDisabled: 'isDisabled'
             })
             this.domRef.current.reset()
           })
           .catch(err =>
             this.setState({
-              feedbackMsg: "Form could not be submitted.",
+              feedbackMsg: "Form could not be submitted. Please refresh and try again.",
+              isDisabled: 'isDisabled'
             })
           )
       }
@@ -43,16 +47,17 @@ class FooterForm extends React.Component{
             <div className="footer-form-wrapper">
                 <p>Sign Up For Our Newsletter</p>
 
-                {this.state.feedbackMsg && <p>{this.state.feedbackMsg}</p>}
-
                 <form ref={this.domRef} name="Newsletter Form" method="POST" data-netlify="true" onSubmit={event => this.handleSubmit(event)}>
                     <input ref="form-name" type="hidden" name="form-name" value="Newsletter Form" />
                         {/* <!-- ... --> */}
 
-                    <input ref="email" type="email" name="email" placeholder="Your Email Here" required className="email-input"/>
+                    <input ref="email" type="email" name="email" className={`${isDisabled}`} placeholder="Your Email Here" required className="email-input"/>
                         {/* <!-- ... --> */}
                     {/* <textarea ref="message" name="message" /> */}
                         {/* <!-- ... --> */}
+
+                    {this.state.feedbackMsg && <p style={{color: '#FB604E'}}>{this.state.feedbackMsg}</p>}
+
                 </form>
             </div>
         )

@@ -24,7 +24,6 @@ export default class Index extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-        //console.log("uncomment in FooterForm for success");
         const formData = {}
         Object.keys(this.refs).map(key => (formData[key] = this.refs[key].value))
    
@@ -42,13 +41,13 @@ export default class Index extends React.Component {
             })
             this.domRef.current.reset()
           })
-          .catch(err =>
+          .catch(err => {
             this.setState({
-              feedbackMsg: "Form could not be submitted.",
+              feedbackMsg: "Form could not be submitted. Please refresh and try again.",
             })
-          )
+            console.log(err)
+          })
 
-        console.log('message sent');
   }
 
   render() {
@@ -59,10 +58,10 @@ export default class Index extends React.Component {
             <div>
               <h1 style={{lineHeight: '1', marginBottom: '1rem'}}>Contact</h1>
              
-              <form ref={this.domRef} name={`${this.props.title} Contact Form`} method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={event => this.handleSubmit(event)}>
+              <form ref={this.domRef} name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={event => this.handleSubmit(event)}>
 
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="form-name" value="Contact Form" />
                 <div hidden>
                   <label>
                     Don’t fill this out:{' '}
@@ -118,8 +117,10 @@ export default class Index extends React.Component {
                     Send
                   </button>
                 </div>
-              </form>
 
+                {this.state.feedbackMsg && <p style={{color: '#FB604E'}}>{this.state.feedbackMsg}</p>}
+
+              </form>
 {/*              
                 Troubleshoot issues: This can be caused by the offline-plugin.
                 "https://github.com/gatsbyjs/gatsby/issues/7997#issuecomment-419749232"
