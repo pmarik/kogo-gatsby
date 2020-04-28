@@ -15,12 +15,9 @@ export default class Index extends React.Component {
   constructor(props) {
     super(props)
     this.domRef = React.createRef()
-    this.state = { isValidated: false, feedbackMsg: null }
+    this.state = { feedbackMsg: null }
   }
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value })
-  }
 
   handleSubmit = event => {
     event.preventDefault();
@@ -61,7 +58,7 @@ export default class Index extends React.Component {
               <form ref={this.domRef} name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={event => this.handleSubmit(event)}>
 
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                <input type="hidden" name="form-name" value="Contact Form" />
+                <input ref="form-name" type="hidden" name="form-name" value="Contact Form" />
                 <div hidden>
                   <label>
                     Don’t fill this out:{' '}
@@ -74,10 +71,10 @@ export default class Index extends React.Component {
                   </label>
                   <div className="control">
                     <input
+                      ref={`name`}
                       className="input"
                       type={'text'}
                       name={'name'}
-                      onChange={this.handleChange}
                       id={'name'}
                       required={true}
                     />
@@ -89,10 +86,10 @@ export default class Index extends React.Component {
                   </label>
                   <div className="control">
                     <input
+                      ref={`email`}
                       className="input"
                       type={'email'}
                       name={'email'}
-                      onChange={this.handleChange}
                       id={'email'}
                       required={true}
                     />
@@ -104,9 +101,9 @@ export default class Index extends React.Component {
                   </label>
                   <div className="control">
                     <textarea
+                      ref={`message`}
                       className="textarea"
                       name={'message'}
-                      onChange={this.handleChange}
                       id={'message'}
                       required={true}
                     />
