@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import NavCart from './NavCart';
 import logo from '../../img/kogoWhiteSimp.svg'
@@ -10,6 +10,7 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: '',
+      delayedDisplay: 'delayedDisplayHide'
     }
   }
 
@@ -23,14 +24,26 @@ const Navbar = class extends React.Component {
       () => {
         // set the class in state for the navbar accordingly
         this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
+          ? 
+            this.setState({
+             navBarActiveClass: 'is-active',
             })
           : this.setState({
               navBarActiveClass: 'is-closed',
             })
+
+        
+            if(this.state.active){
+              this.setState({
+                delayedDisplay: ''
+              })
+            } 
+              else {
+                setTimeout(() => {this.setState({ delayedDisplay: 'delayedDisplayHide' })}, 500)
+            }
       }
     )
+
   }
 
   render() {
@@ -55,7 +68,7 @@ const Navbar = class extends React.Component {
               id="navMenu"
               className={` ${this.state.navBarActiveClass}`}
             >
-              <div className="navbar-links">
+              <div className={`navbar-links ${this.state.delayedDisplay}`}>
 
                 <Link className="navbar-item-link" to="/" activeClassName="active">
                   <span className="nav-text">Home</span>

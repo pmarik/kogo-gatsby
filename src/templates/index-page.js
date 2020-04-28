@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import VisibilitySensor from '../components/VisibilitySensor';
@@ -61,7 +61,7 @@ export const IndexPageTemplate = ({
                 <VisibilitySensor 
                   once
                   partialVisibility
-                  minTopValue="25"
+                  //minTopValue="25"
                 > 
                   {({ isVisible }) => (
                       <div className={`content content-1 anim-start-0 ${isVisible ? "fadeInLeft" : ''}`}>

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Kogo',
+    title: 'KOGO | Organic Ground Coffee Cherries',
     description:
-      'Organic ground coffee cherries.',
+      'Smart fruit for a smarter world. Try KOGO organic ground coffee cherries and experience sustained focus, clean energy, and mental clarity.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

@@ -19,9 +19,10 @@ class ProductRoll extends React.Component {
               once
               partialVisibility
               minTopValue="25"
+              key={post.id}
             > 
               {({ isVisible }) => (
-                <div className={`product-preview-wrap anim-start-0 ${isVisible ? 'fadeIn' : ''} `} key={post.id}>
+                <div className={`product-preview-wrap anim-start-0 ${isVisible ? 'fadeIn' : ''} `} >
                   <div
                     className={`blog-list-item is-child  product-list ${
                       post.frontmatter.featuredpost ? 'is-featured' : ''

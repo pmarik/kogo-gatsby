@@ -19,9 +19,10 @@ class BlogRoll extends React.Component {
               once
               partialVisibility
               minTopValue="25"
+              key={post.id}
             > 
               {({ isVisible }) => (
-                <div className={`blog-preview-wrap anim-start-0 ${isVisible ? 'fadeIn' : ''} `} key={post.id}>
+                <div className={`blog-preview-wrap anim-start-0 ${isVisible ? 'fadeIn' : ''} `} >
                   <article
                     className={`blog-list-item is-child notification blog-article-list ${
                       post.frontmatter.featuredpost ? 'is-featured' : ''

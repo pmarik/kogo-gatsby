@@ -1,15 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import { Link } from 'gatsby';
 import * as qs from 'query-string';
-import { navigate } from 'gatsby-link'
 import Layout from '../../components/Layout'
-
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
 
 export default class Index extends React.Component {
   constructor(props) {
@@ -115,7 +107,7 @@ export default class Index extends React.Component {
                   </button>
                 </div>
 
-                {this.state.feedbackMsg && <p style={{color: '#FB604E'}}>{this.state.feedbackMsg}</p>}
+                {this.state.feedbackMsg && <p style={{color: '#FB604E !important'}}>{this.state.feedbackMsg}</p>}
 
               </form>
 {/*              

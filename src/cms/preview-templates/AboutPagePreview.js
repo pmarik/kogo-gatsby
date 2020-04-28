@@ -11,10 +11,13 @@ const AboutPagePreview = ({ entry, widgetFor }) => {
   return (
   <AboutPageTemplate
     title={data.about_section_1.title}
-    storyContent={data.about_section_1.content}
+    // storyContent={data.about_section_1.content}
+    storyContent={entry.getIn(['data', 'about_section_1', 'content'])}
     midImage={data.mid_image}
     title2={data.about_section_2.title}
-    missionContent={data.about_section_2.content}
+    // missionContent={data.about_section_2.content}
+    missionContent={entry.getIn(['data', 'about_section_2', 'content'])}
+
   />
 )}
 

@@ -90,6 +90,13 @@
             }
         }
 
+
+        .delayedDisplayHide {
+            display: none;
+            z-index: 0;
+            position: relative;
+        }
+
         #navMenu{
             position: absolute;
             left: 0;
@@ -108,6 +115,7 @@
             @media screen and (min-width: 1024px){
                 top: auto;
                 background: none;
+                display: block;
                 width: 28%;
                 clip-path: initial;
             }

@@ -23,6 +23,10 @@ const ProductPreview = ({ entry, widgetFor, getAsset }) => {
       description={entry.getIn(['data', 'description'])}
       tags={tags && tags.toJS()}
       title={entry.getIn(['data', 'title'])}
+      availability={{
+        available: entry.getIn(['data', 'availability', 'available']),
+        unavailableText: entry.getIn(['data', 'availability', 'unavailableText'])
+      }}
       main={{
         heading: entry.getIn(['data', 'main', 'heading']),
         description: entry.getIn(['data', 'main', 'description']),

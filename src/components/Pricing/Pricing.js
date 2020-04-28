@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react'
-import PropTypes, { element } from 'prop-types'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby';
 import './pricing.styles.scss';
 import { GlobalDispatchContext } from '../../context/GlobalContextProvider';
