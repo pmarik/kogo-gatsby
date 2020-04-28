@@ -51,7 +51,7 @@ class FooterForm extends React.Component{
                     <input ref="form-name" type="hidden" name="form-name" value="Newsletter Form" />
                         {/* <!-- ... --> */}
 
-                    <input ref="email" type="email" name="email" className={`${isDisabled}`} placeholder="Your Email Here" required className="email-input"/>
+                    <input ref="email" type="email" name="email" className={`${this.state.isDisabled}`} placeholder="Your Email Here" required className="email-input"/>
                         {/* <!-- ... --> */}
                     {/* <textarea ref="message" name="message" /> */}
                         {/* <!-- ... --> */}
