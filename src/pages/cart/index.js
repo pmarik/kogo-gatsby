@@ -54,7 +54,11 @@ const Index = () => {
                       return(
                           <div key={item.variantSelected.id} className="cart-item-display">
                             <div className="product-name-pic">
-                              <h2 className="product-name">{item.itemName}</h2>
+                              <div className="product-info">
+                                <h2>{item.itemName}</h2>
+                                <h4>{item.variantSelected.option}</h4>
+                              </div>
+
                               <div className="product-image">
                                 <PreviewCompatibleImage
                                   imageInfo={{
@@ -67,7 +71,7 @@ const Index = () => {
                            
                             <ItemQuantity cartItem={item}/>
 
-                            <div className="product-info">
+                            <div className="product-price">
                               <h3>${item.variantSelected.price}</h3>
                             </div>
 

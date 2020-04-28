@@ -1,4 +1,7 @@
 import React from 'react'
+import axios from 'axios'
+import { Link } from 'gatsby';
+import * as qs from 'query-string';
 import { navigate } from 'gatsby-link'
 import Layout from '../../components/Layout'
 
@@ -11,26 +14,41 @@ function encode(data) {
 export default class Index extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { isValidated: false }
+    this.domRef = React.createRef()
+    this.state = { isValidated: false, feedbackMsg: null }
   }
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  handleSubmit = e => {
-    e.preventDefault()
-    const form = e.target
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...this.state,
-      }),
-    })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch(error => alert(error))
+  handleSubmit = event => {
+    event.preventDefault();
+        //console.log("uncomment in FooterForm for success");
+        const formData = {}
+        Object.keys(this.refs).map(key => (formData[key] = this.refs[key].value))
+   
+        const axiosOptions = {
+          url: window.location.href,
+          method: "post",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          data: qs.stringify(formData),
+        }
+      
+        axios(axiosOptions)
+          .then(response => {
+            this.setState({
+              feedbackMsg: "Form submitted successfully!",
+            })
+            this.domRef.current.reset()
+          })
+          .catch(err =>
+            this.setState({
+              feedbackMsg: "Form could not be submitted.",
+            })
+          )
+
+        console.log('message sent');
   }
 
   render() {
@@ -39,15 +57,10 @@ export default class Index extends React.Component {
         <main className="main-content">
           <section className="main-content-container">
             <div>
-              <h1 style={{lineHeight: '1'}}>Contact</h1>
-              <form
-                name="contact"
-                method="post"
-                action="/contact/thanks/"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                onSubmit={this.handleSubmit}
-              >
+              <h1 style={{lineHeight: '1', marginBottom: '1rem'}}>Contact</h1>
+             
+              <form ref={this.domRef} name={`${this.props.title} Contact Form`} method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={event => this.handleSubmit(event)}>
+
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                 <input type="hidden" name="form-name" value="contact" />
                 <div hidden>
@@ -107,24 +120,14 @@ export default class Index extends React.Component {
                 </div>
               </form>
 
-              <h2>Troubleshooting</h2>
-              <h3>Forms stop working after upgrading to Gatsby v2</h3>
-              <p>
-                This can be caused by the offline-plugin.{' '}
-                <a href="https://github.com/gatsbyjs/gatsby/issues/7997#issuecomment-419749232">
+{/*              
+                Troubleshoot issues: This can be caused by the offline-plugin.
+                "https://github.com/gatsbyjs/gatsby/issues/7997#issuecomment-419749232"
                   Workaround
-                </a>{' '}
                 is to use <code>?no-cache=1</code> in the POST url to prevent
                 the service worker from handling form submissions
-              </p>
-              <h3>Adding reCAPTCHA</h3>
-              <p>
-                If you are planning to add reCAPTCHA please go to{' '}
-                <a href="https://github.com/imorente/gatsby-netlify-form-example">
-                  imorente/gatsby-netlify-form-example
-                </a>{' '}
-                for a working example.
-              </p>
+               */}
+              
             </div>
           </section>
         </main>

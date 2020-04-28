@@ -68,7 +68,7 @@ const Pricing = ({ data, itemName, featuredImage }) => {
         <input type="number" onChange={event => setQuantity(event.target.value)} placeholder={quantity} min="1"/>
       </div>
 
-      <button type="submit" disabled={cartItemAdded == 1 ? true : false}>
+      <button type="submit">
         <span className="btn-txt">ADD TO CART</span>
       </button>
 

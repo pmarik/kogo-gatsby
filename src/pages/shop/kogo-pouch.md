@@ -14,9 +14,9 @@ images:
       alt: >
         another coffee picture
 pricing:
-  heading: Select Size
+  heading: Size
   description: >-
-    Overall variants description placeholder text
+    Power up with Kogo with 20 Servings per bag
   options:
     - description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
       items:

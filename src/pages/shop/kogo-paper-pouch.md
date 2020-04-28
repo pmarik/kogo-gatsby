@@ -1,6 +1,6 @@
 ---
 templateKey: product-post
-title: Kogo
+title: 'Kogo'
 description: Experience the sustained focus of Kogo organic ground coffee cherries with our signature pouch. Add it to water, a fresh smoothie, or get creative and add it to your favorite treat and get an extra boost of natural energy!
 availability:
   available: false

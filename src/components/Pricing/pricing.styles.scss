@@ -1,6 +1,6 @@
 .pricing-container{
     padding: 0;
-    text-align: center;
+    text-align: center;    
 
     h2{
         font-size: 2em;
@@ -130,21 +130,6 @@
         button{
             span.btn-txt{
                 font-size: 1rem;
-            }
-
-            &:disabled, &[disabled]{
-                color: grey;
-                cursor: auto;
-                background: linear-gradient(100deg, #8A120F 0%, rgba(251, 96, 78, 0) 100%), #FB604E;
-                box-shadow: inset -4px -4px 4px rgba(0, 0, 0, 0.25);
-
-                &:hover{
-                    transition: none;
-                    color: grey;
-                    .span.btn-txt{
-                        color: grey;
-                    }
-                }
             }
         }
     }

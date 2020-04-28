@@ -1,7 +1,7 @@
 ---
 templateKey: product-post
 title: Kogo t-shirt
-description: Represent Kogo where ever you go
+description: Represent Kogo where ever you go. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam porttitor facilisis. Etiam condimentum nisl ac nisl posuere, in imperdiet quam viverra.
 availability:
   available: true
   unavailableText: 'isAvail'

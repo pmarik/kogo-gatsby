@@ -39,7 +39,7 @@ export const ProductTemplate = ({
         
           <div className="product-post">
             <section className="product-post-grid">
-              <h1 className="title has-text-weight-bold is-bold-light">
+              <h1 className="title ">
                 {title}
               </h1>
 
