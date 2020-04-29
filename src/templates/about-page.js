@@ -71,6 +71,9 @@ export const AboutPageTemplate = ({ title, title2, missionContent, midImage, sto
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
+  storyContent: PropTypes.string,
+  title2: PropTypes.string,
+  missionContent: PropTypes.string
 }
 
 const AboutPage = ({ data }) => {

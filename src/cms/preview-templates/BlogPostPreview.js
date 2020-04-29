@@ -21,4 +21,11 @@ BlogPostPreview.propTypes = {
   widgetFor: PropTypes.func,
 }
 
+BlogPostPreview.defaultProps = {
+  content: null,
+  description: null,
+  tags: '',
+  title: ''
+}
+
 export default BlogPostPreview

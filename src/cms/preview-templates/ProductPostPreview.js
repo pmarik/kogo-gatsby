@@ -19,39 +19,39 @@ const ProductPreview = ({ entry, widgetFor, getAsset }) => {
 
   return (
     <ProductTemplate
-      content={widgetFor('body')}
-      description={entry.getIn(['data', 'description'])}
-      tags={tags && tags.toJS()}
-      title={entry.getIn(['data', 'title'])}
+      content={widgetFor('body') || 'Body Content'}
+      description={entry.getIn(['data', 'description']) || 'Product Description'}
+      tags={tags ? tags.toJS() : 'Product Tags'}
+      title={entry.getIn(['data', 'title']) || 'Product Title'}
       availability={{
-        available: entry.getIn(['data', 'availability', 'available']),
-        unavailableText: entry.getIn(['data', 'availability', 'unavailableText'])
+        available: entry.getIn(['data', 'availability', 'available']) || false,
+        unavailableText: entry.getIn(['data', 'availability', 'unavailableText']) || "Unavailable Text (ex: 'Coming Soon')"
       }}
       main={{
-        heading: entry.getIn(['data', 'main', 'heading']),
-        description: entry.getIn(['data', 'main', 'description']),
+        heading: entry.getIn(['data', 'main', 'heading']) || "Main Heading",
+        description: entry.getIn(['data', 'main', 'description']) || "Additional Description",
         image1: {
-          image: getAsset(entry.getIn(['data', 'main', 'image1', 'image'])),
-          alt: entry.getIn(['data', 'main', 'image1', 'alt']),
+          image: getAsset(entry.getIn(['data', 'main', 'image1', 'image'])) || null,
+          alt: entry.getIn(['data', 'main', 'image1', 'alt']) || 'unavailable',
         },
         image2: {
-          image: getAsset(entry.getIn(['data', 'main', 'image2', 'image'])),
-          alt: entry.getIn(['data', 'main', 'image2', 'alt']),
+          image: getAsset(entry.getIn(['data', 'main', 'image2', 'image'])) || null,
+          alt: entry.getIn(['data', 'main', 'image2', 'alt']) || 'unavailable',
         },
         image3: {
-          image: getAsset(entry.getIn(['data', 'main', 'image3', 'image'])),
-          alt: entry.getIn(['data', 'main', 'image3', 'alt']),
+          image: getAsset(entry.getIn(['data', 'main', 'image3', 'image'])) || null,
+          alt: entry.getIn(['data', 'main', 'image3', 'alt']) || 'unavailable',
         },
       }}
-      fullImage={entry.getIn(['data', 'full_image'])}
-      testimonials={testimonials}
+      fullImage={entry.getIn(['data', 'full_image']) || null}
+      testimonials={testimonials || 'testimonial space'}
       pricing={{
-        heading: entry.getIn(['data', 'pricing', 'heading']),
-        description: entry.getIn(['data', 'pricing', 'description']),
-        options: pricingPlans,
+        heading: entry.getIn(['data', 'pricing', 'heading']) || "Pricing Heading (ex: 'Select Size')",
+        description: entry.getIn(['data', 'pricing', 'description']) || "Product Pricing Description",
+        options: pricingPlans || null,
       }}
-      images={images}
-      blurbs={blurbs}
+      images={images || []}
+      blurbs={blurbs || []}
     />
   )
 }
