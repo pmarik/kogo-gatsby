@@ -6,9 +6,12 @@
         font-size: 2.25em;
         line-height: 1;
         margin-bottom: 5%;
+        border-bottom: 1px solid #799850;
+        padding-bottom: 1rem;
 
         @media screen and (min-width: 678px){
             font-size: 2.75rem;
+            border-bottom: none;
         }
     }
 
@@ -27,7 +30,7 @@
             padding-bottom: 30px;
             border-bottom: 1px solid #8A120F;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
             grid-template-rows: 1fr;
 
             @media screen and (max-width: 678px){
@@ -42,16 +45,16 @@
 
             .cart-items-heading-Description{
                 grid-column: 2 / 3;
-                justify-self: left;
+                //justify-self: left;
             }
 
             .cart-items-heading-Quantity{
-                grid-column: 3 / 4;
+                grid-column: 4 / 5;
                 justify-self: right;
             }
 
             .cart-items-heading-Price{
-                grid-column: 4 / 5;
+                grid-column: 5 / 6;
             }
         }
 
@@ -67,6 +70,7 @@
             @media screen and (min-width: 678px){
                 grid-template-columns: 60% 1fr 1fr;
             }
+
     
             .product-name-pic{
                 display: flex;
@@ -81,19 +85,32 @@
                 }
     
                 .product-info{
+                    text-align: left;
+                    @media screen and (min-width: 678px){
+                        text-align: left;
+                    }
+
+
                     h2{
-                        font-size: 2rem ;
+                        font-size: 1.5rem ;
                         line-height: 1;
                         text-align: left;
+
+                        @media screen and (min-width: 980px){
+                            font-size: 2rem;
+                        }
                     }
                     h4{
                         color: #8A120F;
                         text-align: left;
+                        font-size: 1rem;
+
+                        @media screen and (min-width: 980px){
+                            font-size: 1.5em;
+                        }
                     }
         
-                    @media screen and (max-width: 980px){
-                        font-size: 1.5rem;
-                    }
+                   
                 }
                 .product-image{
                     width: 250px;
@@ -111,13 +128,14 @@
                 margin: 20px auto;
 
                 @media screen and (min-width: 678px){
-                    margin-right: 4em;
+                    margin-right: 0em;
                 }
 
 
                 .decrease-item{
                     border-right: 1px solid black;
                     width: 25px;
+                    height: 25px;
                     display: flex;
                     padding-left: 5px;
                     &:hover{
@@ -129,6 +147,7 @@
                     border-left: 1px solid black;
                     padding-right: 5px;
                     width: 25px;
+                    height: 25px;
                     display: flex;
                     justify-content: flex-end;
                     align-content: flex-start;

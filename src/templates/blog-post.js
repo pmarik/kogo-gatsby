@@ -23,7 +23,7 @@ export const BlogPostTemplate = ({
       <section className="main-content-container  anim-start-0 fadeIn">
         
           <div className="blog-post">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+            <h1 className="title">
               {title}
             </h1>
             <p>{description}</p>

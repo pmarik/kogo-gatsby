@@ -1,16 +1,32 @@
 .blog-post{
 
+    .title{
+        font-size: 2.25rem;
+
+        @media screen and (min-width: 678px){
+            font-size: 2.75rem;
+        }
+    }
+
     .blog-post-body{
         max-width: 800px;
 
         h1{
-            font-size: 2em;
+            font-size: 1.75em;
             margin-bottom: 0.5em;
+
+            @media screen and (min-wdith: 678px){
+                font-size: 2em;
+            }
         }
 
         h2 {
-            font-size: 1.5em;
+            font-size: 1.25em;
             margin-bottom: 0.5em;
+
+            @media screen and (min-width: 678px){
+                font-size: 1.5em;
+            }
         }
 
         p, ol, li{

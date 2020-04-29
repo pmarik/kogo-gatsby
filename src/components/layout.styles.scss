@@ -2,10 +2,15 @@
 @import './animate.styles.scss';
 
 body, html{
-    overscroll-behavior: none;
     overflow-x: hidden;
     scroll-behavior: smooth;
     line-height: 1.5;
+}
+
+body{
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+
 }
 
 

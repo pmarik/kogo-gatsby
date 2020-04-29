@@ -29,14 +29,14 @@ class FooterForm extends React.Component{
         axios(axiosOptions)
           .then(response => {
             this.setState({
-              feedbackMsg: "Success! We'll keep you updated.",
+              feedbackMsg: "Success! We'll keep you updated",
               isDisabled: 'isDisabled'
             })
             this.domRef.current.reset()
           })
           .catch(err =>
             this.setState({
-              feedbackMsg: "Form could not be submitted. Please refresh and try again.",
+              feedbackMsg: "Form could not be submitted. Please refresh and try again...",
               isDisabled: 'isDisabled'
             })
           )
@@ -56,7 +56,7 @@ class FooterForm extends React.Component{
                     {/* <textarea ref="message" name="message" /> */}
                         {/* <!-- ... --> */}
 
-                    {this.state.feedbackMsg && <p style={{color: '#FB604E'}}>{this.state.feedbackMsg}</p>}
+                    {this.state.feedbackMsg && <p style={{color: '#8A120F !important'}}>{this.state.feedbackMsg}</p>}
 
                 </form>
             </div>

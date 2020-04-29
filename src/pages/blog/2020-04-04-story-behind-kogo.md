@@ -4,7 +4,7 @@ title: The Birth of Kogo
 date: 2020-04-04T21:46:11.676Z
 description: Simon Roca
 featuredpost: true
-featuredimage: /img/blog-index.jpg
+featuredimage: /img/products-grid3.jpg
 tags:
   - Kogo
 ---

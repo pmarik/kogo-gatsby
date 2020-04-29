@@ -4,7 +4,7 @@ title: Health Benefits
 date: 2020-04-08T15:04:10.000Z
 description: 'Antioxidants, Immune System'
 featuredpost: false
-featuredimage: /img/flavor_wheel.jpg
+featuredimage: /img/coffee-cherry1.png
 tags:
   - flavor
   - health
