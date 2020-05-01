@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
@@ -21,39 +21,35 @@ const dispatch = useContext(GlobalDispatchContext);
 
 
 
-const handleDispatch = (output) => {
-  dispatch({
-    type: 'HYDRATE_TAGS',
-    payload: output
-  });
-}
-
 let newGroup = state.tagsArray;
 
-if (!state.tagsUpdated) {
-  let output = [];
 
-  group.forEach(item => {
-    let exisiting = output.filter((v, i) => {
-      return v.fieldValue.toUpperCase() == item.fieldValue.toUpperCase()
-    });
+useEffect(() => {
+  if (!state.tagsUpdated) {
+    let output = [];
   
-    if(exisiting.length){
-      let exisitingIndex = output.indexOf(exisiting[0]);
-      output[exisitingIndex].totalCount = output[exisitingIndex].totalCount + item.totalCount;
-    } else {
-      if (typeof item.value == 'string'){
-        item.totalCount = [item.totalCount];
+    group.forEach(item => {
+      let exisiting = output.filter((v, i) => {
+        return v.fieldValue.toUpperCase() == item.fieldValue.toUpperCase()
+      });
+    
+      if(exisiting.length){
+        let exisitingIndex = output.indexOf(exisiting[0]);
+        output[exisitingIndex].totalCount = output[exisitingIndex].totalCount + item.totalCount;
+      } else {
+        if (typeof item.value == 'string'){
+          item.totalCount = [item.totalCount];
+        }
+        output.push(item);
       }
-      output.push(item);
-    }
-  })
-  
-  handleDispatch(output);
-  // group = output;
-
-}
-
+    })
+    
+    dispatch({
+      type: 'HYDRATE_TAGS',
+      payload: output
+    });
+  }
+}, [])
 
 
 return (
