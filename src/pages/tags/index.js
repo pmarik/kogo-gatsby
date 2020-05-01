@@ -19,6 +19,15 @@ const TagsPage = ({
 const state = useContext(GlobalStateContext) || { tagsArray: [] };
 const dispatch = useContext(GlobalDispatchContext);
 
+
+
+const handleDispatch = (output) => {
+  dispatch({
+    type: 'HYDRATE_TAGS',
+    payload: output
+  });
+}
+
 let newGroup = state.tagsArray;
 
 if (!state.tagsUpdated) {
@@ -40,11 +49,9 @@ if (!state.tagsUpdated) {
     }
   })
   
+  handleDispatch(output);
   // group = output;
-  dispatch({
-    type: 'HYDRATE_TAGS',
-    payload: output
-  })
+
 }
 
 
