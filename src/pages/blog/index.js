@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Helmet from 'react-helmet'
 import Layout from '../../components/Layout'
 import BlogRoll from '../../components/BlogRoll/BlogRoll'
 
@@ -8,6 +8,8 @@ export default class BlogIndexPage extends React.Component {
     return (
       <Layout>
         <main className="main-content">
+          <Helmet title={`Blog | KOGO | Organic Ground Coffee Cherries`} />
+
           <div className="main-content-container anim-start-0 fadeIn">
             <h1
               className="has-text-weight-bold"
@@ -18,7 +20,7 @@ export default class BlogIndexPage extends React.Component {
           
             <section >
               <div className="container">
-                <div className="content">
+                <div>
                   <BlogRoll />
                 </div>
               </div>

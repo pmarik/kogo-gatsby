@@ -153,6 +153,22 @@
     margin: 5% 0;
 }
 
+
+.full-width-image-container {
+    width: 100vw;
+    height: 400px;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin: 2em -50vw;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .product-extra-info{
     display: flex;
     flex-direction: column;

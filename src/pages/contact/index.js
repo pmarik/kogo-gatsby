@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import * as qs from 'query-string';
 import Layout from '../../components/Layout'
+import Helmet from 'react-helmet';
 
 export default class Index extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ export default class Index extends React.Component {
     return (
       <Layout>
         <main className="main-content">
+          <Helmet title={`Contact | KOGO | Organic Ground Coffee Cherries`} />
           <section className="main-content-container">
             <div>
               <h1 style={{lineHeight: '1', marginBottom: '1rem'}}>Contact</h1>

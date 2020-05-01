@@ -15,7 +15,7 @@ const Footer = class extends React.Component {
   render() {
     return (
       <footer className="footer">
-        <div className="content has-text-centered">
+        <div className="logo">
           <img
             src={logo}
             alt="Kaldi"

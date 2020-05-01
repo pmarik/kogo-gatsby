@@ -4,27 +4,46 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import "./tags.styles.scss";
 
+const _ = require('lodash');
+
 class TagRoute extends React.Component {
+
+  
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
-    const postLinks = posts.map(post => (
+    const tag = _.kebabCase(this.props.pageContext.tag)
+    const title = this.props.data.site.siteMetadata.title
+
+    const myTags = posts.filter(item => {
+      let temp = false;
+      if (item.node.frontmatter.tags !== null){
+        item.node.frontmatter.tags.forEach(v => {
+          if (v.toLowerCase() === tag){
+            temp = true;
+          }
+        })
+        return temp
+      } else {
+        return false
+      }
+    })
+
+  const tagHeader = `${myTags.length} post${
+      myTags.length === 1 ? '' : 's'
+    } tagged with “${tag}”`
+
+    const postLinks = myTags.map(post => (
       <li key={post.node.fields.slug}>
         <Link to={post.node.fields.slug}>
           <h2 className="is-size-2 tag-link">{post.node.frontmatter.title}</h2>
         </Link>
       </li>
     ))
-    const tag = this.props.pageContext.tag
-    const title = this.props.data.site.siteMetadata.title
-    const totalCount = this.props.data.allMarkdownRemark.totalCount
-    const tagHeader = `${totalCount} post${
-      totalCount === 1 ? '' : 's'
-    } tagged with “${tag}”`
 
     return (
       <Layout>
         <section className="main-content">
-          <Helmet title={`${tag} | ${title}`} />
+          <Helmet title={`"${tag.toUpperCase()}" | ${title}`} />
           <div className="main-content-container  anim-start-0 fadeIn">
             <div className="columns">
               <div
@@ -48,7 +67,7 @@ class TagRoute extends React.Component {
 export default TagRoute
 
 export const tagPageQuery = graphql`
-  query TagPage($tag: String) {
+  query TagPage {
     site {
       siteMetadata {
         title
@@ -57,9 +76,7 @@ export const tagPageQuery = graphql`
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
-      totalCount
       edges {
         node {
           fields {
@@ -67,6 +84,7 @@ export const tagPageQuery = graphql`
           }
           frontmatter {
             title
+            tags
           }
         }
       }

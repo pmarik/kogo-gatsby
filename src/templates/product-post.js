@@ -172,7 +172,7 @@ const ProductPost = ({ data }) => {
         images={post.frontmatter.images}
         pricing={post.frontmatter.pricing}
         helmet={
-          <Helmet titleTemplate="%s | Blog">
+          <Helmet titleTemplate={`${post.frontmatter.title} | Shop | KOGO | Organic Ground Coffee Cherries`}>
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"

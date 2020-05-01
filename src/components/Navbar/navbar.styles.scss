@@ -82,10 +82,21 @@
             position: absolute;
             left: 50%;
             transform: translate(-50%);
+            align-items: stretch;
+            display: flex;
 
             .navbar-item{
+                display: flex;
+                align-items: center;
+                flex-grow: 0;
+                flex-shrink: 0;
+
                 img{
                     max-height: 4rem;
+                }
+
+                &.logo{
+                    padding: 0 1rem;
                 }
             }
         }
@@ -233,6 +244,7 @@
 
             .nav-your-cart{
                 margin: 0 auto;
+                padding: 0.5rem 0.75rem;
 
                 &:hover{
                     background: transparent !important;
@@ -255,6 +267,7 @@
                     display: flex;
                     justify-content: space-between;
                     color: white;
+                    align-items: center;
 
                     .cart-icon-num{
                         position: relative;

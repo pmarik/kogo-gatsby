@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import { Link } from 'gatsby';
 import Layout from '../../components/Layout'
 import "./cart.styles.scss";
@@ -6,14 +6,16 @@ import PreviewCompatibleImage from '../../components/PreviewCompatibleImage';
 import { GlobalStateContext, GlobalDispatchContext } from '../../context/GlobalContextProvider';
 import ItemQuantity from '../../components/ItemQuantity/ItemQuantity';
 import removeBtn from '../../img/remove-btn.svg';
-
+import Helmet from 'react-helmet';
 
 const Index = () => {
 
   const state = useContext(GlobalStateContext) || { cartArray: [] };
   const dispatch = useContext(GlobalDispatchContext);
 
-  console.log('cartArray: ', state);
+  const getTotalNumItems = (cartArray) => {
+    return cartArray.reduce((accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity, 0)
+  }
 
   const calculatePrice = (cartArray) => {
     return (
@@ -33,6 +35,7 @@ const Index = () => {
     return (
       <Layout>
         <main className="main-content">
+        <Helmet title={`${state.cartArray.length > 0 ? ("(" + getTotalNumItems(state.cartArray) + ")") : ('')} Cart | KOGO | Organic Ground Coffee Cherries`} />
           <section className="main-content-container anim-start-0 fadeIn">
             <div className="cart-main">
                 <h1 className="cart-title">Your Cart</h1>                

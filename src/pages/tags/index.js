@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import "../../templates/tags.styles.scss";
+import { GlobalStateContext, GlobalDispatchContext } from '../../context/GlobalContextProvider';
+
 
 const TagsPage = ({
   data: {
@@ -12,7 +14,42 @@ const TagsPage = ({
       siteMetadata: { title },
     },
   },
-}) => (
+}) => {
+
+const state = useContext(GlobalStateContext);
+const dispatch = useContext(GlobalDispatchContext);
+
+let newGroup = state.tagsArray;
+
+if (!state.tagsUpdated) {
+  let output = [];
+
+  group.forEach(item => {
+    let exisiting = output.filter((v, i) => {
+      return v.fieldValue.toUpperCase() == item.fieldValue.toUpperCase()
+    });
+  
+    if(exisiting.length){
+      let exisitingIndex = output.indexOf(exisiting[0]);
+      output[exisitingIndex].totalCount = output[exisitingIndex].totalCount + item.totalCount;
+    } else {
+      if (typeof item.value == 'string'){
+        item.totalCount = [item.totalCount];
+      }
+      output.push(item);
+    }
+  })
+  
+  // group = output;
+  dispatch({
+    type: 'HYDRATE_TAGS',
+    payload: output
+  })
+}
+
+
+
+return (
   <Layout>
     <section className="main-content">
       <Helmet title={`Tags | ${title}`} />
@@ -24,10 +61,10 @@ const TagsPage = ({
           >
             <h1 className="title is-size-2 is-bold-light">Tags</h1>
             <ul className="taglist">
-              {group.map(tag => (
+              {newGroup.map(tag => (
                 <li key={tag.fieldValue} className="tag-link">
                   <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} >
-                    {tag.fieldValue} ({tag.totalCount})
+                    {kebabCase(tag.fieldValue)} ({tag.totalCount})
                   </Link>
                 </li>
               ))}
@@ -37,7 +74,7 @@ const TagsPage = ({
       </div>
     </section>
   </Layout>
-)
+)}
 
 export default TagsPage
 
@@ -56,3 +93,4 @@ export const tagPageQuery = graphql`
     }
   }
 `
+

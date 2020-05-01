@@ -55,7 +55,11 @@ exports.createPages = ({ actions, graphql }) => {
       }
     })
     // Eliminate duplicate tags
+    tags = tags.map(ele => ele.toUpperCase())
     tags = _.uniq(tags)
+    tags = tags.map(ele => _.kebabCase(ele));
+
+    console.log(tags);
 
     // Make tag pages
     tags.forEach(tag => {

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet';
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
@@ -26,6 +27,7 @@ export const AboutPageTemplate = ({ title, title2, missionContent, midImage, sto
 
   return (
     <main className="main-content">
+      <Helmet title={`About | KOGO | Organic Ground Coffee Cherries`} />
       <div className="main-content-container anim-start-0 fadeIn">
               
 
