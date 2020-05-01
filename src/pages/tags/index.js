@@ -16,7 +16,7 @@ const TagsPage = ({
   },
 }) => {
 
-const state = useContext(GlobalStateContext);
+const state = useContext(GlobalStateContext) || { tagsArray: [] };
 const dispatch = useContext(GlobalDispatchContext);
 
 let newGroup = state.tagsArray;

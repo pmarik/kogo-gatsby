@@ -7,7 +7,7 @@ export const GlobalDispatchContext = React.createContext();
 const initialState = {
     cartArray: [],
     tagsArray: [],
-    tagsUpdated: false,
+    tagsUpdated: false, 
 }
 
 function reducer(state, action){

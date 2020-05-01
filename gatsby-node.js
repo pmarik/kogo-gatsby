@@ -59,7 +59,6 @@ exports.createPages = ({ actions, graphql }) => {
     tags = _.uniq(tags)
     tags = tags.map(ele => _.kebabCase(ele));
 
-    console.log(tags);
 
     // Make tag pages
     tags.forEach(tag => {
