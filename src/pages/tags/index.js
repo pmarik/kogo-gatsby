@@ -49,7 +49,7 @@ useEffect(() => {
       payload: output
     });
   }
-}, [])
+}, [state.tagsUpdated])
 
 
 return (

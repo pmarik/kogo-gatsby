@@ -7,11 +7,15 @@ import Navbar from '../components/Navbar/Navbar'
 import useSiteMetadata from './SiteMetadata'
 import favicon from '../img/favicon.ico';
 import { withPrefix } from 'gatsby'
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from '@stripe/react-stripe-js';
+
+const stripePromise = loadStripe('pk_test_wt88SmfJIv2fEihXzYmOEGVc00sIwkHG9m');
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
-    <>
+    <Elements stripe={stripePromise}>
       <Helmet>
         <html lang="en" />
         <title>{`${title}`}</title>
@@ -63,7 +67,7 @@ const TemplateWrapper = ({ children }) => {
       <Navbar />
       <div>{children}</div>
       <Footer />
-    </>
+    </Elements>
   )
 }
 

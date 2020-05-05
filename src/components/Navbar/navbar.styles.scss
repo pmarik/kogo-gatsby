@@ -85,6 +85,10 @@
             align-items: stretch;
             display: flex;
 
+            &:hover{
+                opacity: 0.7;
+            }
+
             .navbar-item{
                 display: flex;
                 align-items: center;
@@ -249,15 +253,15 @@
                 &:hover{
                     background: transparent !important;
                     .icon{
-                        transform: scale(1.04, 1.04);
-                        transition: transform ease-out 100ms;
+                        //transform: scale(1.04, 1.04);
+                        //transition: transform ease-out 100ms;
                         filter: opacity(0.7);
-
-
-                        img{
-                            transform: scale(1.04, 1.04);
-                        }
+                        
+                        // img{
+                        //     transform: scale(1.04, 1.04);
+                        // }
                     }
+
                 }
                 
                 .icon{

@@ -58,6 +58,11 @@
             .featured-thumbnail{
                 width: 100%; 
                 margin: 0;
+                transition: transform 300ms ease-out;
+
+                &:hover{
+                    transform: scale(0.92, 0.92);
+                }
                
 
             .button{

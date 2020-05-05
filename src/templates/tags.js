@@ -35,7 +35,7 @@ class TagRoute extends React.Component {
     const postLinks = myTags.map(post => (
       <li key={post.node.fields.slug}>
         <Link to={post.node.fields.slug}>
-          <h2 className="is-size-2 tag-link">{post.node.frontmatter.title}</h2>
+          <h2 className="tag-link">{post.node.frontmatter.title}</h2>
         </Link>
       </li>
     ))

@@ -53,7 +53,7 @@ export default class Index extends React.Component {
 
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                 <input ref="form-name" type="hidden" name="form-name" value="Contact Form" />
-                <div hidden>
+                <div hidden style={{display: 'none'}}>
                   <label>
                     Don’t fill this out:{' '}
                     <input name="bot-field" onChange={this.handleChange} />

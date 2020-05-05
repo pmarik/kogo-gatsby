@@ -119,7 +119,7 @@ export const ProductTemplate = ({
                 <ul className="taglist">
                   {tags.map(tag => (
                     <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`} className='tag-link'>{tag}</Link>
+                      <Link to={`/tags/${kebabCase(tag)}/`} className='tag-link' style={{fontSize: '1.25rem'}}>{tag}</Link>
                     </li>
                   ))}
                 </ul>

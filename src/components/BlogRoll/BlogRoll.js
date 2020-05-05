@@ -24,7 +24,7 @@ class BlogRoll extends React.Component {
               {({ isVisible }) => (
                 <div className={`blog-preview-wrap anim-start-0 ${isVisible ? 'fadeIn' : ''} `} >
                   <article
-                    className={`blog-list-item is-child notification blog-article-list ${
+                    className={`blog-list-item is-child blog-article-list ${
                       post.frontmatter.featuredpost ? 'is-featured' : ''
                     }`}
                   >
@@ -41,7 +41,7 @@ class BlogRoll extends React.Component {
                       ) : null}
                       <p className="post-meta">
                         <Link
-                          className="blog-title is-size-4"
+                          className="blog-title"
                           to={post.fields.slug}
                         >
                           {post.frontmatter.title}

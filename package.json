@@ -5,6 +5,8 @@
   "author": "Austin Green",
   "dependencies": {
     "@ncwidgets/id": "^0.7.0",
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.5.0",
     "bulma": "^0.8.0",
     "gatsby": "^2.13.31",
     "gatsby-image": "^2.0.23",
@@ -32,6 +34,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
+    "react-stripe-checkout": "^2.6.3",
     "react-visibility-sensor": "^5.1.1",
     "remark": "^12.0.0",
     "remark-html": "^11.0.1",

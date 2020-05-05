@@ -15,8 +15,6 @@ html{
     overflow-y: scroll;
     text-rendering: optimizeLegibility;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 
@@ -28,14 +26,17 @@ body, html{
     font-size: 1em;
     font-weight: 400;
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
 }
 
 body{
     overscroll-behavior-y: none;
     -webkit-overflow-scrolling: touch;
     font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+html, body, p, ol, ul, li, textarea, iframe, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -47,6 +48,8 @@ h1, h2{
     }
 }
 
+
+
 h1, h2, .blog-roll-title {
     color: #FB604E !important;
     font-family: 'Montserrat', sans-serif;
@@ -56,6 +59,8 @@ h1, h2, .blog-roll-title {
 p, h3{
     font-family: 'Roboto', sans-serif;
     color: #674B42 !important;
+    font-size: 100%;
+    font-weight: normal;
 }
 
 .navbar, .footer-menu-list{

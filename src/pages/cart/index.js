@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import { Link } from 'gatsby';
 import Layout from '../../components/Layout'
 import "./cart.styles.scss";
@@ -7,22 +7,31 @@ import { GlobalStateContext, GlobalDispatchContext } from '../../context/GlobalC
 import ItemQuantity from '../../components/ItemQuantity/ItemQuantity';
 import removeBtn from '../../img/remove-btn.svg';
 import Helmet from 'react-helmet';
+import Checkout from '../../components/checkout/Checkout.component';
+
+// import {loadStripe} from '@stripe/stripe-js';
+// import StripeCheckout from 'react-stripe-checkout';
+// import {Elements} from '@stripe/react-stripe-js';
+
+//const stripePromise = loadStripe('pk_test_wt88SmfJIv2fEihXzYmOEGVc00sIwkHG9m');
+
 
 const Index = () => {
 
   const state = useContext(GlobalStateContext) || { cartArray: [] };
   const dispatch = useContext(GlobalDispatchContext);
 
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [checkoutClicked, setCheckoutClicked] = useState(false);
+
+  useEffect(() => {
+    setTotalPrice(state.cartArray.reduce((accumulator, item) => {
+      return (accumulator + (item.variantSelected.price * item.quantity))
+    }, 0))
+  }, [state.cartArray])
+
   const getTotalNumItems = (cartArray) => {
     return cartArray.reduce((accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity, 0)
-  }
-
-  const calculatePrice = (cartArray) => {
-    return (
-      cartArray.reduce((accumulator, item) => {
-        return (accumulator + (item.variantSelected.price * item.quantity))
-      }, 0)
-    )
   }
 
   const handleRemoveItem = (cartItem) => {
@@ -30,6 +39,10 @@ const Index = () => {
       type: 'REMOVE_ITEM',
       payload: cartItem
     })
+  }
+
+  const handleCheckout = () => {
+    setCheckoutClicked(true);
   }
 
     return (
@@ -87,11 +100,12 @@ const Index = () => {
                       )
                     } )}
                      <div className="cart-total">
-                        <p>Your total is ${calculatePrice(state.cartArray)}</p>
-                        <button style={{width: '220px', fontSize: '1rem'}}>
+                        <p>Your total is ${totalPrice}</p>
+                        {/* <button style={{width: '220px', fontSize: '1rem'}} onClick={handleCheckout}>
                           CHECK OUT
-                        </button>
-                      </div>
+                        </button> */}
+                        <Checkout price={totalPrice} productArray={state.cartArray} />
+                     </div>
                   </div>
                 )
                }

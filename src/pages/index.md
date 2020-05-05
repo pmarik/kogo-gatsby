@@ -13,10 +13,10 @@ button_text_1: Power Up Now
 mainpitch:
   title: Sourced locally
   description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+    We sell organic coffee cherries that are sourced directly from independent farmers and farm cooperatives. We’re proud to offer a product grown with great care for the environment and local communities. 
   title_2: Healthy and natural
   description_2: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+    We offer a small, but carefully curated selection of organic ground coffee cherries that are naturally sourced. Harness the power of brain-derived neurotropic fact with Kogo and fall in love with its effects.
   button_text_2: ABOUT KOGO
   image1:
     alt: Kogo ground coffee cherries
