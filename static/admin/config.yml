@@ -40,6 +40,19 @@ collections:
           - {label: "About_Section_1", name: "about_section_1", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Content, name: content, widget: markdown}]}
           - {label: Mid_Image, name: mid_image, widget: image}
           - {label: "About_Section_2", name: "about_section_2", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Content, name: content, widget: markdown}]}
+      - file: "src/pages/privacy-policy/index.md"
+        label: "Privacy Policy"
+        name: "privacy-policy"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "privacy-page"}
+          - {label: Title, name: title, widget: string}
+      - file: "src/pages/terms-of-service/index.md"
+        label: "Terms of Service"
+        name: "terms-of-service"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "terms-page"}
+          - {label: Title, name: title, widget: string}
+        
 
   - name: "products"
     label: "Products"

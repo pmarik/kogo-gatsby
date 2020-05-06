@@ -154,8 +154,8 @@
             
                     &:hover{
                         .nav-text{
-                            transform: scale(1.04, 1.04);
-                            transition: transform ease-out 100ms;
+                            //transform: scale(1.04, 1.04);
+                            transition: opacity ease-out 100ms;
                             filter: opacity(0.7);
                         }
                     }

@@ -1,0 +1,27 @@
+.payment-form{
+    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    float: right;
+
+    label{
+        margin-bottom: 5px;
+        margin-top: 20px;
+
+        &:first-of-type{
+            margin-top: 0;
+        }
+    }
+
+    input{
+        width: 200px;
+        height: 2rem;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: none;
+        border: 1px solid rgba(0,0,0,0.15);
+    }
+}

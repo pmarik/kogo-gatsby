@@ -91,7 +91,16 @@ const Footer = class extends React.Component {
                   </ul>
                 </section>
 
-                <div className="copyright">© 2020 KOGO</div>
+                <div className="copyright">
+                  <span>
+                    <Link to="/terms-of-service">Terms of Service </Link>
+                    |
+                    <Link to="/privacy-policy"> Privacy Policy</Link> 
+                  </span>
+                  
+                  <span>© 2020 KOGO</span>
+                 
+                </div>
               </div>
         </div>
       </footer>

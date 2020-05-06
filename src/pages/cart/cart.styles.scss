@@ -196,9 +196,107 @@
             p{
                 font-size: 1.75rem !important;
             }
+
         }
     }
+}
+
+.modalHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #8A120F;
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .modalClose{
+        background-color: transparent;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
     
+        &:hover{
+            background: transparent;
+            box-shadow: none;
+        }
+    }
+}
+
+.payment-flex{
+    display: flex;
+
+    @media screen and (max-width: 678px){
+        flex-direction: column;
+    }
+
+    .order-summary-container, .payment-info {
+        h3{
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #8A120F !important;
+        }
+        width: 50%;
+        @media screen and (max-width: 678px){
+            width: 100%;
+        }
+    }
+
+    .order-summary{
+        margin-right: 80px;
+        @media screen and (max-width: 678px){
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    hr{
+        background: #8A120F;
+        height: 1px !important;
+        padding: 0; 
+        margin: 0;
+    }
+
+    p.total-tax {
+        color: #FB604E !important;
+    }
 
 
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+    transform: scale(0.8, 0.8);
+    opacity: 0;
+}
+
+
+.ReactModal__Content {
+    transform: scale(0.8, 0.8);
+    transition: transform 400ms ease-in;
+}
+
+.ReactModal__Content--after-open{
+    transform: scale(1, 1);
+}
+
+.ReactModal__Content--before-close{    
+    transform: scale(0.8, 0.8);
+}
+
+.modalSet{
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
 }

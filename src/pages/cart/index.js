@@ -8,13 +8,11 @@ import ItemQuantity from '../../components/ItemQuantity/ItemQuantity';
 import removeBtn from '../../img/remove-btn.svg';
 import Helmet from 'react-helmet';
 import Checkout from '../../components/checkout/Checkout.component';
+import Modal from 'react-modal';
 
-// import {loadStripe} from '@stripe/stripe-js';
-// import StripeCheckout from 'react-stripe-checkout';
-// import {Elements} from '@stripe/react-stripe-js';
+//import Modal from '../../components/modal/Modal.component';
 
-//const stripePromise = loadStripe('pk_test_wt88SmfJIv2fEihXzYmOEGVc00sIwkHG9m');
-
+Modal.setAppElement('#___gatsby')
 
 const Index = () => {
 
@@ -22,7 +20,7 @@ const Index = () => {
   const dispatch = useContext(GlobalDispatchContext);
 
   const [totalPrice, setTotalPrice] = useState(0);
-  const [checkoutClicked, setCheckoutClicked] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setTotalPrice(state.cartArray.reduce((accumulator, item) => {
@@ -41,9 +39,11 @@ const Index = () => {
     })
   }
 
-  const handleCheckout = () => {
-    setCheckoutClicked(true);
+  const toggleModal = () => {
+    setIsOpen(() => !isOpen);
   }
+  
+
 
     return (
       <Layout>
@@ -101,11 +101,12 @@ const Index = () => {
                     } )}
                      <div className="cart-total">
                         <p>Your total is ${totalPrice}</p>
-                        {/* <button style={{width: '220px', fontSize: '1rem'}} onClick={handleCheckout}>
+                        <button style={{width: '220px', fontSize: '1rem'}} onClick={toggleModal}>
                           CHECK OUT
-                        </button> */}
-                        <Checkout price={totalPrice} productArray={state.cartArray} />
+                        </button>
                      </div>
+
+                 
                   </div>
                 )
                }
@@ -113,6 +114,76 @@ const Index = () => {
             </div>
           </section>
         </main>
+        <Modal 
+          isOpen={isOpen} 
+          shouldCloseOnOverlayClick={false} 
+          onRequestClose={toggleModal}
+          className='modalSet'
+          style={{
+            overlay: {
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              zIndex: '101',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            },
+            content: {
+              minHeight: '400px',
+              position: 'relative',
+              width: '90%',
+              maxWidth: '800px',
+              margin: '0 auto'
+          
+            }
+          }}>
+            <div className="modalHeader">
+              <h2>Your Order</h2>
+              <button onClick={toggleModal} className="modalClose" >
+                <img src={removeBtn} alt="close button" title="Back To Cart" style={{width: '20px', height: 'auto'}}/>
+              </button>
+            </div>
+            <div className="payment-flex">
+              <section className="order-summary-container">
+                <h3>Order Summary</h3>
+                <div className="order-summary">
+                  <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                    <p>Items:</p>
+                    <p>${totalPrice}</p>
+                  </div>
+
+                  <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                    <p>Shipping & Handling</p>
+                    <p>$0</p>
+                  </div>
+
+                  <hr/>
+
+                  <div style={{display: 'flex', justifyContent: 'space-between', marginTop: '5px'}}>
+                    <p>Total before tax:</p>
+                    <p>${totalPrice}</p>
+                  </div>
+
+                  <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                    <p>Tax:</p>
+                    <p>$1.25</p>
+                  </div>
+
+                  <hr/>
+
+                  <div style={{display: 'flex', justifyContent: 'space-between', marginTop: '5px'}}>
+                    <p>Order Total</p>
+                    <p className="total-tax">${totalPrice + 1.25}</p>
+                  </div>
+                </div>
+               
+              </section>
+
+              <section className="payment-info">
+                <h3>Payment Info</h3>
+                <Checkout price={totalPrice} productArray={state.cartArray} />
+              </section>
+            </div>
+        </Modal>
       </Layout>
     )
 }

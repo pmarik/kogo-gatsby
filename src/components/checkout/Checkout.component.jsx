@@ -1,66 +1,91 @@
-import React from 'react';
-// import StripeCheckout from 'react-stripe-checkout';
+import React, {useState} from 'react';
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
-// import {loadStripe} from '@stripe/stripe-js';
-//import CheckoutForm from './CheckoutForm.component';
-// import StripeCheckout from 'react-stripe-checkout';
-// import './checkout.styles.scss';
-// import logo from '../../img/logo.svg';
-
-// Make sure to call `loadStripe` outside of a component’s render to avoid
-// recreating the `Stripe` object on every render.
-//const stripePromise = loadStripe('pk_test_wt88SmfJIv2fEihXzYmOEGVc00sIwkHG9m');
-
+import './checkout.styles.scss';
 
 const Checkout = ({ price, productArray }) => {
-
-    // const makePayment = (token) => {
-    //     console.log('payment made!')
-    //     const body = {
-    //         token,
-    //         productArray
-    //     }
-
-    //     const headers = {
-    //         "Content-Type": "application/json"
-    //     }
-    // }
 
     const stripe = useStripe();
     const elements = useElements();
 
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [shipping, setShipping] = useState('');
+    const [errorMessage, setErrorMessage] = useState(null);
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        if(!stripe || !elements) {
+            console.log('stripe or elements not loaded');
+            return;
+        }
+
        const { error , paymentMethod } = await stripe.createPaymentMethod({
            type: 'card',
-           card: elements.getElement(CardElement)
+           card: elements.getElement(CardElement),
+           billing_details: {
+               name,
+               address: shipping,
+               email
+           },
        });
 
-       if(!error){
-           console.log(paymentMethod)
+       if(error){
+        console.log('[error]', error);
+        setErrorMessage(error.message);
        }
        else{
-           console.log(error);
-           console.log('stripe not loading')
+           console.log('[PaymentMethod]', paymentMethod)
+           setErrorMessage(null)
        }
     }
 
     return (
-        // <StripeCheckout
-        //     stripeKey='pk_test_wt88SmfJIv2fEihXzYmOEGVc00sIwkHG9m'
-        //     token={makePayment}
-        //     name='Buy Now'
-        //     amount={price * 100}
-        // >
-        //     <button>
-        //         Buy da kogos
-        //     </button>
-        // </StripeCheckout>
-        <form onSubmit={handleSubmit}>
-            <CardElement />
-            <button  style={{width: '220px', fontSize: '1rem'}} type="submit" onClick={()=> console.log('stripe checkout')} disabled={!stripe}>
-                CHECK OUT
+        <form onSubmit={handleSubmit} className="payment-form">
+                <label htmlFor='emal'>Email</label>
+            <input
+                id="email"
+                required
+                placeholder="your email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+            />
+                 <CardElement options={{
+                    style: {
+                    base: {
+                        fontSize: '16px',
+                        color: '#674B42',
+                        '::placeholder': {
+                        color: 'rgb(153, 119, 107)',
+                        },
+                    },
+                    invalid: {
+                        color: '#9e2146',
+                    },
+                    },
+                }} />
+            <label htmlFor="name">Name on Card</label>
+            <input
+                id="name"
+                required
+                placeholder="First and Last"
+                value={name}
+                onChange={e => setName(e.target.value)}
+            />
+            <label htmlFor="shippingAddress">Shipping</label>
+                <input
+                    id="shippingAddress"
+                    required
+                    placeholder="12345"
+                    value={shipping}
+                    onChange={(e) => {
+                    setShipping(e.target.value);
+                    }}
+                />
+       
+            {errorMessage}
+            <button  style={{width: '10em', fontSize: '1rem'}} type="submit" onClick={()=> console.log('stripe checkout')} disabled={!stripe}>
+                PAY
             </button>
 
         </form>
