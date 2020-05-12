@@ -1,5 +1,4 @@
 .payment-form{
-    border: 1px solid green;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -23,5 +22,12 @@
         border-radius: 5px;
         box-shadow: none;
         border: 1px solid rgba(0,0,0,0.15);
+    }
+
+    .StripeElement{
+        width: 100%;
+        height: 35px;
+        border-bottom: 1px solid #8A120F;
+        margin-top: 20px;
     }
 }

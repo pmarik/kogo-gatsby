@@ -48,10 +48,11 @@ blurbs:
 testimonials:
   - author: Jane Doe
     quote: >-
-      Kogo is dank my guy! Real talk its grrrreeeat!Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      I didn't think it would be so different from normal ground coffe beans, but WOAH does the cherry pack a different punch. I love the fruity taste.
   - author: John Smith
     quote: >-
-      Empowers farmers economically and tastes super denk.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+      Great mission and great product. I personally love mine as a tea and it truly does 
+      give you sustained focus. 
 main:
   heading: Great coffee with no compromises
   description: >

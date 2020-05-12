@@ -46,12 +46,14 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "privacy-page"}
           - {label: Title, name: title, widget: string}
+          - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/terms-of-service/index.md"
         label: "Terms of Service"
         name: "terms-of-service"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "terms-page"}
           - {label: Title, name: title, widget: string}
+          - {label: "Body", name: "body", widget: "markdown"}
         
 
   - name: "products"

@@ -15,6 +15,8 @@ const Checkout = ({ price, productArray }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        console.log('payment submit')
+
         if(!stripe || !elements) {
             console.log('stripe or elements not loaded');
             return;
@@ -84,7 +86,7 @@ const Checkout = ({ price, productArray }) => {
                 />
        
             {errorMessage}
-            <button  style={{width: '10em', fontSize: '1rem'}} type="submit" onClick={()=> console.log('stripe checkout')} disabled={!stripe}>
+            <button  style={{width: '10em', fontSize: '1rem'}} type="submit" onClick={()=> console.log('pay btn  clicked')} disabled={!stripe}>
                 PAY
             </button>
 
