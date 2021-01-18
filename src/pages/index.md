@@ -2,8 +2,8 @@
 templateKey: index-page
 title: KOGO
 image: /img/kogopackage.min.png
-heading: Organic ground coffee cherries
-subheading: 'Get all-natural sustained energy, and help support independent growers'
+heading: Organic coffee cherries
+subheading: "Helping you, helping the world"
 button_text_1: Power Up Now
 # description: >-
 #   Kaldi is the ultimate spot for coffee lovers who want to learn about their
@@ -13,7 +13,7 @@ button_text_1: Power Up Now
 mainpitch:
   title: Sourced locally
   description: >
-    We sell organic coffee cherries that are sourced directly from independent farmers and farm cooperatives. We’re proud to offer a product grown with great care for the environment and local communities. 
+    We sell organic coffee cherries that are sourced directly from independent farmers and farm cooperatives. We’re proud to offer a product grown with great care for the environment and local communities.
   title_2: Healthy and natural
   description_2: >
     We offer a small, but carefully curated selection of organic ground coffee cherries that are naturally sourced. Harness the power of brain-derived neurotropic fact with Kogo and fall in love with its effects.
@@ -23,9 +23,9 @@ mainpitch:
     image: /img/coffeeground.png
 bottom_page_content:
   image1:
-      alt: coffee tree farm
-      image: /img/coffee-tree-stretch.png
+    alt: coffee tree farm
+    image: /img/coffee-tree-stretch.png
   heading: Reduce Waste
   description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ---
