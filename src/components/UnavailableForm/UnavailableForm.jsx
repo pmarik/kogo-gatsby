@@ -51,7 +51,7 @@ class UnavailableForm extends React.Component{
         return(
             <div className="unavailable-form-wrapper">
                 <h3>{this.props.unavailableText}</h3>
-                <p>Get notified when {this.props.title} is available. Sign up below and we will let you know!</p>
+                <p>Get notified when {this.props.title} is available. Sign up below for updates.</p>
 
                 {this.state.feedbackMsg && <p>{this.state.feedbackMsg}</p>}
 

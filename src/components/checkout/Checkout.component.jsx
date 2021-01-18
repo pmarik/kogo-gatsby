@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import './checkout.styles.scss';
 
 const Checkout = ({ price, productArray }) => {
+
 
     const stripe = useStripe();
     const elements = useElements();
@@ -86,7 +87,7 @@ const Checkout = ({ price, productArray }) => {
                 />
        
             {errorMessage}
-            <button  style={{width: '10em', fontSize: '1rem'}} type="submit" onClick={()=> console.log('pay btn  clicked')} disabled={!stripe}>
+            <button  style={{width: '10em', fontSize: '1rem'}} type="submit" disabled={!stripe}>
                 PAY
             </button>
 

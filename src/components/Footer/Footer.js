@@ -31,25 +31,25 @@ const Footer = class extends React.Component {
                   <div className="footer-social-links-container">
                     <p style={{textAlign: 'center'}}>Keep up with Kogo</p>
                     <div className="footer-social-links">
-                      <a title="facebook" href="https://facebook.com">
+                      <a title="kogo foods facebook" href="https://www.facebook.com/Kogofoods">
                         <img
                           src={facebook}
-                          alt="Facebook"
+                          alt="Kogo Foods Facebook"
                           style={{ width: '1em', height: '1em' }}
                         />
                       </a>
-                      <a title="twitter" href="https://twitter.com">
+                      {/* <a title="twitter" href="https://twitter.com">
                         <img
                           className="fas fa-lg"
                           src={twitter}
                           alt="Twitter"
                           style={{ width: '1em', height: '1em' }}
                         />
-                      </a>
-                      <a title="instagram" href="https://instagram.com">
+                      </a> */}
+                      <a title="kogo foods instagram" href="https://www.instagram.com/kogofoods/">
                         <img
                           src={instagram}
-                          alt="Instagram"
+                          alt="Kogo Foods Instagram"
                           style={{ width: '1em', height: '1em' }}
                         />
                       </a>
@@ -98,7 +98,7 @@ const Footer = class extends React.Component {
                     <Link to="/privacy-policy"> Privacy Policy</Link> 
                   </span>
                   
-                  <span>© 2020 KOGO</span>
+                  <span>© 2021 KOGO</span>
                  
                 </div>
               </div>

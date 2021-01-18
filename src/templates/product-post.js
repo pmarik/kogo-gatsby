@@ -200,103 +200,103 @@ ProductPost.propTypes = {
 
 export default ProductPost
 
-export const pageQuery = graphql`
-  query ProductPostByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      id
-      html
-      frontmatter {
-        title
-        description
-        availability {
-          available
-          unavailableText
-        }
-        images {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 675, quality: 64) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          alt
-        }
-        pricing {
-          heading
-          description
-          options {
-            description
-            items
-            option
-            price
-            id
-          }
-        }
-        featuredimage {
-          childImageSharp {
-            fluid(maxWidth: 250, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        testimonials {
-          author
-          quote
-        }
-        main {
-          heading
-          description
-          image1 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 526, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image2 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 526, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image3 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1075, quality: 72) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-        full_image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        blurbs {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 240, quality: 64) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          text
-        }
-        tags
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query ProductPostByID($id: String!) {
+//     markdownRemark(id: { eq: $id }) {
+//       id
+//       html
+//       frontmatter {
+//         title
+//         description
+//         availability {
+//           available
+//           unavailableText
+//         }
+//         images {
+//           image {
+//             childImageSharp {
+//               fluid(maxWidth: 675, quality: 64) {
+//                 ...GatsbyImageSharpFluid
+//               }
+//             }
+//           }
+//           alt
+//         }
+//         pricing {
+//           heading
+//           description
+//           options {
+//             description
+//             items
+//             option
+//             price
+//             id
+//           }
+//         }
+//         featuredimage {
+//           childImageSharp {
+//             fluid(maxWidth: 250, quality: 100) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//         testimonials {
+//           author
+//           quote
+//         }
+//         main {
+//           heading
+//           description
+//           image1 {
+//             alt
+//             image {
+//               childImageSharp {
+//                 fluid(maxWidth: 526, quality: 92) {
+//                   ...GatsbyImageSharpFluid
+//                 }
+//               }
+//             }
+//           }
+//           image2 {
+//             alt
+//             image {
+//               childImageSharp {
+//                 fluid(maxWidth: 526, quality: 92) {
+//                   ...GatsbyImageSharpFluid
+//                 }
+//               }
+//             }
+//           }
+//           image3 {
+//             alt
+//             image {
+//               childImageSharp {
+//                 fluid(maxWidth: 1075, quality: 72) {
+//                   ...GatsbyImageSharpFluid
+//                 }
+//               }
+//             }
+//           }
+//         }
+//         full_image {
+//           childImageSharp {
+//             fluid(maxWidth: 2048, quality: 100) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//         blurbs {
+//           image {
+//             childImageSharp {
+//               fluid(maxWidth: 240, quality: 64) {
+//                 ...GatsbyImageSharpFluid
+//               }
+//             }
+//           }
+//           text
+//         }
+//         tags
+//       }
+//     }
+//   }
+// `

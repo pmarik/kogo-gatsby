@@ -2,11 +2,11 @@ backend:
   name: git-gateway
   branch: master
   commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
-    update: 'Update {{collection}} “{{slug}}”'
-    delete: 'Delete {{collection}} “{{slug}}”'
-    uploadMedia: '[skip ci] Upload “{{path}}”'
-    deleteMedia: '[skip ci] Delete “{{path}}”'
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
 
 # local_backend:
 #   url: http://localhost:8081/api/v1
@@ -22,39 +22,117 @@ collections:
       - file: "src/pages/index.md"
         label: "Landing Page"
         name: "index"
-        fields: 
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Subheading, name: subheading, widget: string}
-          - {label: Button_Text_1, name: button_text_1, widget: string}
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - { label: Button_Text_1, name: button_text_1, widget: string }
           # - {label: Description, name: description, widget: string}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}, {label: Title_2, name: title_2, widget: string}, {label: Description_2, name: description_2, widget: text}, {label: Button_Text_2, name: button_text_2, widget: string},  {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Bottom_Page_Content, name: bottom_page_content, widget: object, fields: [{label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text} ]}
+          - {
+              label: Mainpitch,
+              name: mainpitch,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Description, name: description, widget: text },
+                  { label: Title_2, name: title_2, widget: string },
+                  { label: Description_2, name: description_2, widget: text },
+                  { label: Button_Text_2, name: button_text_2, widget: string },
+                  {
+                    label: Image1,
+                    name: image1,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Bottom_Page_Content,
+              name: bottom_page_content,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Image1,
+                    name: image1,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: text },
+                ],
+            }
       - file: "src/pages/about/index.md"
         label: "About Page"
         name: "about"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "About_Section_1", name: "about_section_1", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Content, name: content, widget: markdown}]}
-          - {label: Mid_Image, name: mid_image, widget: image}
-          - {label: "About_Section_2", name: "about_section_2", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Content, name: content, widget: markdown}]}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - {
+              label: "About_Section_1",
+              name: "about_section_1",
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Content, name: content, widget: markdown },
+                ],
+            }
+          - { label: Mid_Image, name: mid_image, widget: image }
+          - {
+              label: "About_Section_2",
+              name: "about_section_2",
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Content, name: content, widget: markdown },
+                ],
+            }
       - file: "src/pages/privacy-policy/index.md"
         label: "Privacy Policy"
         name: "privacy-policy"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "privacy-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "privacy-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/terms-of-service/index.md"
         label: "Terms of Service"
         name: "terms-of-service"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "terms-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: "Body", name: "body", widget: "markdown"}
-        
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "terms-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "products"
     label: "Products"
@@ -62,33 +140,158 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Availablity", name: 'availability', widget: object, fields: [{label: "Available", name: "available", widget: "boolean", hint: 'If product is not yet available, unavailable text will show and form will generate to get sign-ups about product'}, {label: "Unavailable Text", name: 'unavailableText', widget: string}]} 
-      - {label: "Product Images", name: images, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}
-      - {label: "Pricing", name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Options, name: options, widget: list, fields: [{label: Option, name: option, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}, {label: ID, name: id, widget: ncw-id, prefix: variant, timestamp: true, hint: "This ID is automatically generated, please ignore this field" }]}]}
-      - {label: "Featured Image", name: "featuredimage", widget: image, hint: Image thumbnail to show on shop page}
-      - {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}  
-      - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
-      - {label: Full_image, name: full_image, widget: image}
-      - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}  
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "product-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - {
+          label: "Availablity",
+          name: "availability",
+          widget: object,
+          fields:
+            [
+              {
+                label: "Available",
+                name: "available",
+                widget: "boolean",
+                hint: "If product is not yet available, unavailable text will show and form will generate to get sign-ups about product",
+              },
+              {
+                label: "Unavailable Text",
+                name: "unavailableText",
+                widget: string,
+              },
+            ],
+        }
+      - {
+          label: "Product Images",
+          name: images,
+          widget: list,
+          fields:
+            [
+              { label: Image, name: image, widget: image },
+              { label: Alt, name: alt, widget: text },
+            ],
+        }
+      - {
+          label: "Pricing",
+          name: pricing,
+          widget: object,
+          fields:
+            [
+              { label: Heading, name: heading, widget: string },
+              { label: Description, name: description, widget: string },
+              {
+                label: Options,
+                name: options,
+                widget: list,
+                fields:
+                  [
+                    { label: Option, name: option, widget: string },
+                    { label: Price, name: price, widget: string },
+                    { label: Description, name: description, widget: string },
+                    { label: Items, name: items, widget: list },
+                    {
+                      label: ID,
+                      name: id,
+                      widget: ncw-id,
+                      prefix: variant,
+                      timestamp: true,
+                      hint: "This ID is automatically generated, please ignore this field",
+                    },
+                  ],
+              },
+            ],
+        }
+      - {
+          label: "Featured Image",
+          name: "featuredimage",
+          widget: image,
+          hint: Image thumbnail to show on shop page,
+        }
+      - {
+          label: Blurbs,
+          name: blurbs,
+          widget: list,
+          fields:
+            [
+              { label: Image, name: image, widget: image },
+              { label: Text, name: text, widget: text },
+            ],
+        }
+      - {
+          label: Testimonials,
+          name: testimonials,
+          widget: list,
+          fields:
+            [
+              { label: Quote, name: quote, widget: string },
+              { label: Author, name: author, widget: string },
+            ],
+        }
+      - { label: Full_image, name: full_image, widget: image }
+      - {
+          label: Main,
+          name: main,
+          widget: object,
+          fields:
+            [
+              { label: Heading, name: heading, widget: string },
+              { label: Description, name: description, widget: text },
+              {
+                label: Image1,
+                name: image1,
+                widget: object,
+                fields:
+                  [
+                    { label: Image, name: image, widget: image },
+                    { label: Alt, name: alt, widget: string },
+                  ],
+              },
+              {
+                label: Image2,
+                name: image2,
+                widget: object,
+                fields:
+                  [
+                    { label: Image, name: image, widget: image },
+                    { label: Alt, name: alt, widget: string },
+                  ],
+              },
+              {
+                label: Image3,
+                name: image3,
+                widget: object,
+                fields:
+                  [
+                    { label: Image, name: image, widget: image },
+                    { label: Alt, name: alt, widget: string },
+                  ],
+              },
+            ],
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
 
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
-
-    
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }

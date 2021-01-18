@@ -46,7 +46,7 @@ export const IndexPageTemplate = ({
           </div>
 
           <button className="landing-btn">
-            <Link to="/shop/kogo-pouch">
+            <Link to="/about">
               {button_text_1}
             </Link>
           </button>

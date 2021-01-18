@@ -15,7 +15,7 @@ import CherryG3 from '../../assets/cherry-g3.min.svg';
 import CherryG4 from '../../assets/cherry-g4.min.svg';
 import CherryG5 from '../../assets/cherry-g5.min.svg';
 
-
+ 
 
 
 import './coffeestem.styles.scss';
