@@ -1,16 +1,16 @@
-import React from 'react'
-import Layout from '../components/Layout'
+import React from 'react';
 import { Link } from 'gatsby';
+import SEO from "../components/Seo.component"
+import Layout from '../components/layout/Layout.component'
 
 const NotFoundPage = () => (
   <Layout>
-    <div className="main-content">
-      <div className="main-content-container" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: '40vh'}} >
-        <h1>Oops!</h1>
-        <p>Unfortunatley, the page you are looking for could not be found. Please return to the <Link to="/" style={{color: '#FB604E'}}>Home Page</Link>, check out our <Link to="/shop" style={{color: '#FB604E'}}>products</Link>, or <Link to="/contact" style={{color: '#FB604E'}}>contact us.</Link></p>
-      </div>
-    </div>
+    <SEO title="404: Not found" />
+    <section style={{textAlign: 'center', marginTop: '4rem'}}>
+      <h1>Something got tangled...</h1>
+      <p style={{maxWidth: '60ch', margin: '0 auto'}}>Whoops! We could not find the page you were looking for. Go to our <Link to="/" className="accent" style={{textDecoration: 'underline'}}>homepage</Link> to get untangled, or <Link to="/contact" className="accent" style={{textDecoration: 'underline'}}>let us know</Link> about this error! </p>
+    </section>
   </Layout>
 )
 
-export default NotFoundPage
+export default NotFoundPage;

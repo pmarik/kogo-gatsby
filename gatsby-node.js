@@ -1,10 +1,60 @@
-const _ = require('lodash')
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
+const _ = require('lodash');
+const path = require(`path`)
+const { createFilePath } = require('gatsby-source-filesystem');
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
-exports.createPages = ({ actions, graphql }) => {
+function removeTrailingLeadingSlashes(string) {
+  return string.replace(/^\/*|\/*$/g, '');
+}
+
+exports.createPages = async ({ graphql, actions }, options) => {
   const { createPage } = actions
+
+  let { cartPagePath = 'cart', basePath = '' } = options;
+  basePath = removeTrailingLeadingSlashes(basePath);
+  cartPagePath = removeTrailingLeadingSlashes(cartPagePath);
+
+  const finalCartPagePath = `${basePath && `/${basePath}`}/${cartPagePath}`;
+
+  const result = await graphql(`
+    query {
+      allShopifyProduct(sort: { fields: [title] }) {
+        nodes {
+          id
+          handle
+        }
+      }
+      allShopifyShopPolicy(sort: { fields: [title] }) {
+        nodes {
+          id
+          type
+          title
+        }
+      }
+    }
+  `)
+
+  result.data.allShopifyProduct.nodes.forEach(node => {
+    createPage({
+      path: `/shop/${node.handle}/`,
+      component: path.resolve(`./src/templates/product.js`),
+      context: {
+        productId: node.id,
+      },
+    })
+  })
+
+  result.data.allShopifyShopPolicy.nodes.forEach(node => {
+    const shopHandle = node.title.replace(/\s+/g, '-').toLowerCase();
+
+    createPage({
+      path: `/${shopHandle}/`,
+      component: path.resolve(`./src/templates/policy.js`),
+      context: {
+        policyId: node.id,
+      }
+    })
+  })
 
   return graphql(`
     {
@@ -16,22 +66,21 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              tags
               templateKey
             }
           }
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()))
+      result.errors.forEach((e) => console.error(e.toString()))
       return Promise.reject(result.errors)
     }
 
     const posts = result.data.allMarkdownRemark.edges
 
-    posts.forEach(edge => {
+    posts.forEach((edge) => {
       const id = edge.node.id
       createPage({
         path: edge.node.fields.slug,
@@ -45,35 +94,9 @@ exports.createPages = ({ actions, graphql }) => {
         },
       })
     })
-
-    // Tag pages:
-    let tags = []
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags)
-      }
-    })
-    // Eliminate duplicate tags
-    tags = tags.map(ele => ele.toUpperCase())
-    tags = _.uniq(tags)
-    tags = tags.map(ele => _.kebabCase(ele));
-
-
-    // Make tag pages
-    tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
-
-      createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
-        context: {
-          tag,
-        },
-      })
-    })
-  })
+  }) 
 }
+
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions

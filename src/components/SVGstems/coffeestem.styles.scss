@@ -1,205 +1,22 @@
-.theOverlay {
-    stroke-dasharray: 850;
-    stroke-dashoffset: 850;
-    animation: draw 4s ease-in forwards;
-  }
 
-  @keyframes draw { 
-    to {
-      stroke-dashoffset: 0;
-      color: #728C5B;
-    }
-  }
-
-@keyframes leafgrow{  
-    0%{
-        transform: scaley(0);
-        opacity: 0;
-        visibility: hidden;
-        transform-origin: bottom left;
-    }
-    100%{
-        opacity: 1;
-        visibility: visible;
-        transform: scaley(1);
-    } 
-}
-
-@keyframes leafgrowHorizontal{  
-    0%{
-        transform: scalex(0);
-        opacity: 0;
-        visibility: hidden;
-    }
-    100%{
-        opacity: 1;
-        visibility: visible;
-        transform: scalex(1);
-    } 
-}  
-
-#stem2{
-    //position: relative;
-}
-
-.drawing2{
-    //border: 2px solid pink;
+.stemmy{
     position: absolute;
-    left: -50%;
-    bottom: -120px;
-    right: 50%;
-    transform: scale(0.3);
-
-    @media screen and (min-width: 525px){
-        transform: scale(0.5);
-        bottom: -140px;
-    }
-
-    @media screen and (min-width: 678px){
-        bottom: -160px;
-        left: -22%;
-        transform: scale(0.75);
-    }
-
-    @media screen and (min-width: 1024px){
-        transform: scale(0.9);
-    }
-
-    @media screen and (min-width: 1160px){
-        transform: scale(1.2);
-    }
-
-}
-
-.svgContain{
-    width: 600px !important;
-    height: auto;
-    background: transparent;
-    visibility: hidden;
-    //box-shadow: 0px 0px 4px blue;
-}
-
-
-.stem2_leaf{
-    visibility: hidden;
-}
-
-.leaf2_1, .leaf2_2, .leaf2_3, .leaf2_4, .leaf2_5, .leaf2_6, .leaf2_7, .leaf2_8, .leaf2_9, .leaf2_10, .leaf2_11, .leaf2_12, .leaf2_13, .leaf2_14{
-    width: 85px;
-    height: auto;
-    position: absolute;
-    left: 130px;
-    top: 30px;
-    transform-origin: 0% 100%;
-    animation: leafgrow 500ms;
-    animation-fill-mode: forwards;
-    animation-delay: 900ms;
+    bottom: -50px;
+    transform: scale(2) rotate(180deg);
+    right: 0;
     z-index: 0;
 }
 
-.leaf2_2{
-    width: 85px;
-    left: 200px;
-    top: 115px;
-    animation: leafgrowHorizontal 500ms forwards;
-    animation-delay: 1000ms;
+
+@media screen and (min-width: 578px){
+    .stemmy{
+        transform: scale(3.5);
+        right: auto;
+    }
 }
 
-.leaf2_3{
-    width: 60px;
-    left: 250px;
-    top: -30px;
-    animation: leafgrow 500ms forwards;
-    animation-delay: 1200ms;
-}
-
-.leaf2_4{
-    width: 90px;
-    left: 265px;
-    top: 68px;
-    animation: leafgrowHorizontal 500ms forwards;
-    animation-delay: 1400ms;
-}
-
- 
-.leaf2_5{
-    width: 70px;
-    left: 320px;
-    top: -14px;
-    animation: leafgrowHorizontal 500ms forwards;
-    animation-delay: 1600ms;
-}
-
-
-.leaf2_6{
-    width: 60px;
-    left: 390px;
-    top: 68px;
-    animation: leafgrowHorizontal 500ms forwards;
-    animation-delay: 1700ms;
-}
-
-.leaf2_7{
-    width: 45px;
-    left: 420px;
-    top: -24px;
-    animation: leafgrow 500ms forwards;
-    animation-delay: 1900ms;
-}
-
-.leaf2_8{
-    width: 55px;
-    left: 490px;
-    top: 20px;
-    animation: leafgrowHorizontal 500ms forwards;
-    animation-delay: 2000ms;
-}
-
-.leaf2_9{
-    width: 15px;
-    left: 530px;
-    top: -17px;
-    animation: leafgrow 500ms forwards;
-    animation-delay: 2100ms;
-}
-
-.leaf2_10{
-    width: 55px;
-    left: 125px;
-    top: 90px;
-    animation: leafgrowHorizontal 500ms forwards;
-    animation-delay: 800ms;
-}
-
-.leaf2_11{
-    width: 42px;
-    left: 235px;
-    top: 55px;
-    animation: leafgrowHorizontal 500ms forwards;
-    animation-delay: 1200ms;
-}
-
-.leaf2_12{
-    width: 38px;
-    left: 320px;
-    top: 55px;
-    animation: leafgrowHorizontal 500ms forwards;
-    animation-delay: 1500ms;
-}
-
-.leaf2_13{
-    width: 38px;
-    left: 400px;
-    top: 55px;
-    animation: leafgrowHorizontal 500ms forwards;
-    animation-delay: 1600ms;
-}
-
-
-.leaf2_14{
-    width: 20px;
-    left: 485px;
-    top: 18px;
-    animation: leafgrowHorizontal 500ms forwards;
-    animation-delay: 1800ms;
+@media screen and (min-width: 978px){
+    .stemmy{
+        transform: scale(5)
+    }
 }

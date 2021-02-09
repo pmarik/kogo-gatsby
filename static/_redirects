@@ -1,0 +1,8 @@
+https://myapplecore.netlify.app/* https://www.myapplecore.com/:splat 301!
+https://www.myapplecore.netlify.app/* https://www.myapplecore.com/:splat 301!
+https://myapplecores.com/* https://www.myapplecore.com/:splat 301!
+http://myapplecores.com/* https://www.myapplecore.com/:splat 301!
+http://myapplecore.netlify.app/* https://www.myapplecore.com/:splat 301!
+https://apple-cores.com/* https://www.myapplecore.com/:splat 301!
+http://apple-cores.com/* https://www.myapplecore.com/:splat 301!
+https://www.apple-cores.com/pages/* https://www.myapplecore.com/shop/ 301!

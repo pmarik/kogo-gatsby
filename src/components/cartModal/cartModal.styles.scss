@@ -1,0 +1,148 @@
+@keyframes added {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes added-inner {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.added-start {
+  display: none;
+}
+
+.added-to-cart {
+  display: block;
+  width: 100vw;
+  min-height: calc(100vh - 4em);
+  margin-top: 4em;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0.9;
+    z-index: -1;
+    animation: added 400ms forwards;
+  }
+
+  .cart-preview-inner {
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(100%);
+    overflow-y: scroll;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    float: right;
+    height: calc(100vh - 4em);
+    box-shadow: -5px 0px 15px 1px #c7c6c6;
+    padding: 3em 1em 5em 1em;
+    animation: added-inner 400ms forwards;
+  }
+}
+
+.added-to-cart-close {
+  background: #fff;
+  width: 50px;
+  height: 25px;
+  border: none;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.line-item-desc-list {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    p {
+      font-size: 0.8rem;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.added-top-flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+.added-msg {
+  font-size: 0.9rem;
+  padding-left: 2em;
+}
+
+.added-options {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 5em;
+}
+
+.remove-btn {
+  padding-left: 0;
+  margin: 1em 0;
+  background: transparent;
+  border: none;
+  color: #5f6e7d;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.cart-line-item.cart-line-item-modal {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 90px 2fr 1fr;
+  align-items: center;
+  margin: 1em 0;
+
+  .line-item-product-title {
+    font-size: 1rem;
+    color: #303030;
+  }
+}
+
+@media screen and (min-width: 355px) {
+  .cart-line-item.cart-line-item-modal {
+    grid-template-columns: 120px 2fr 1fr;
+
+    .line-item-product-title {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .added-to-cart {
+    .cart-preview-inner {
+      padding: 3em 4em 5em 4em;
+    }
+  }
+}

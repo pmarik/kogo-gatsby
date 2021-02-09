@@ -1,0 +1,104 @@
+.word-rotate{
+    position: relative;
+    margin: 10% 0;
+    &::after{
+        content: '';
+        margin: 0 auto;
+        background: #146495;
+        position: absolute;
+        display: inline-block;
+        width: 150vw;
+        left: 0;
+        overflow: hidden;
+        z-index: -1;
+        height: 220%;
+        left: calc(-60vw + 50%);
+        //transform: rotate(5deg);
+        top: -60%;
+    }  
+}
+
+.word-rotate-inner{
+    //background: green;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    //width: 600px;
+    width: 100%;
+    position: relative;
+    // left: 50%;
+    // transform: translate(-50%, 0);
+    h2{
+        color: #fafafa;
+        display: inline-block;
+        margin: 0;
+        //width: 50%;
+        //text-align: right;
+        z-index: 2;
+    }
+}
+
+.loop-wrap{
+    width: 55%;
+    position: relative;
+    &::before{
+      content: url('../../images/brush-text.svg');
+      position: absolute;
+      margin: 0 auto;
+      display: inline-block;
+      //left: calc(12% + 4.5em);
+      top: 50%;
+      //width: calc(50% + 3em);
+      width: 140vw;
+      min-width: 300px;
+      //transform: translate(-53%, -48%);
+      transform: translate(-20%, -65%);
+    }
+}
+
+
+.word-rotated{
+    color: #fafafa;
+    font-size: 1.8rem;
+    font-size: clamp(1.8rem, 2.2vw, 2.2rem);
+}
+
+p.word-rotated{
+    font-family: 'Merriweather', serif;
+}
+
+@media screen and (min-width: 470px){
+    .loop-wrap{
+        &::before{
+          left: calc(12% + 4.5em);
+          top: 50%;
+          width: calc(50% + 3em);
+          transform: translate(-53%, -48%);
+        }
+    }
+}
+
+
+@media screen and (min-width: 630px){
+    .word-rotate-inner{
+        flex-direction: row;
+        align-items: center;
+        h2{
+            width: 50%;
+            margin: 0 0.4em 0 0;
+            text-align: right;
+        }
+    }
+
+    .word-rotate{
+        &::after{
+            height: 320%;
+            top: -100%;
+        }
+    }
+
+    .loop-wrap{
+        width: 50%;
+        padding-left: 1em;
+    }
+}

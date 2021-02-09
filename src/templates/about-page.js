@@ -1,95 +1,65 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet';
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import Layout from '../components/layout/Layout.component'
 import Content, { HTMLContent } from '../components/Content'
-import './about-page.styles.scss';
+import SEO from '../components/Seo.component';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
-import remark from 'remark';
-import recommended from 'remark-preset-lint-recommended';
-import remarkHtml from 'remark-html';
+import Breadcrumbs from '../components/breadcrumbs/Breadcrumbs.component';
+import './about-page.styles.scss';
 
 
 
-export const AboutPageTemplate = ({ title, title2, missionContent, midImage, storyContent, contentComponent }) => {
+export const AboutPageTemplate = ({ 
+  title, 
+  content, 
+  contentComponent,
+  aboutImage,
+ }) => {
   const PageContent = contentComponent || Content
 
-  storyContent = remark()
-                  .use(recommended)
-                  .use(remarkHtml)
-                  .processSync(storyContent).toString();
-
-  missionContent = remark()
-                    .use(recommended)
-                    .use(remarkHtml)
-                    .processSync(missionContent).toString();
+  const description = "Learn about the story behind the best wire management tool and how Applecore's simple design came to be." 
 
   return (
-    <main className="main-content">
-      <Helmet title={`About | KOGO | Organic Ground Coffee Cherries`} />
-      <div className="main-content-container anim-start-0 fadeIn">
-              
-
-              <section className="about-story">
-                <div className="top-about-nav-container">
-                  <h2 className="about-title has-text-weight-bold is-bold-light">
-                    {title}
-                  </h2>
-
-                  <a href="#mission" className="mission-page-scroll">view mission</a>
-                </div>
-                
-                <div className="article-padding">
-                  <PageContent className="content" content={storyContent} />
-                </div>
-
-                <div className="about-mid-img">
-                  <PreviewCompatibleImage 
-                  imageInfo={{
-                      image: midImage,
-                      alt: title,
-                    }}
-                  />
-                </div>
-
-              </section>
-
-
-              <section id="mission" className="about-mission">
-                <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                  {title2}
-                </h2>
-                <div>
-                  <PageContent className="content" content={missionContent} />
-                </div>
-              </section>
-
+    <section className="section section--gradient" style={{paddingTop: '5%'}}>
+      <SEO 
+        title="About" 
+        description={description} 
+        thumbnailImage="/img/ogApplecoreAbout.png" 
+        addedKeywords="about applecore" 
+        url="https://www.myapplecore.com/about/"
+      />
+      <Breadcrumbs links={[`about`]} className="breadcrumb-alt"/>
+      <h1 className="about-title"><span>{title}</span></h1>
+      <PageContent className={`content about-content`} content={content} />
+      <div className="about-img">
+          <PreviewCompatibleImage 
+              imageInfo={{
+                  image: aboutImage,
+                  alt: 'Applecore wire wrap process',
+                }}
+          />
       </div>
-    </main>
+    </section>
   )
 }
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
+  content: PropTypes.string,
   contentComponent: PropTypes.func,
-  storyContent: PropTypes.string,
-  title2: PropTypes.string,
-  missionContent: PropTypes.string
 }
 
 const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data
-
+  
   return (
     <Layout>
       <AboutPageTemplate
         contentComponent={HTMLContent}
-        title={post.frontmatter.about_section_1.title}
-        storyContent={post.frontmatter.about_section_1.content}
-        midImage={post.frontmatter.mid_image}
-        title2={post.frontmatter.about_section_2.title}
-        missionContent={post.frontmatter.about_section_2.content}
+        title={post.frontmatter.title}
+        aboutImage={post.frontmatter.aboutImage}
+        content={post.html}
       />
     </Layout>
   )
@@ -102,23 +72,17 @@ AboutPage.propTypes = {
 export default AboutPage
 
 export const aboutPageQuery = graphql`
-  query aboutPage($id: String!) {
+  query AboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
+      html
       frontmatter {
-        about_section_1 {
-          title
-          content
-        }
-        mid_image {
+        title
+        aboutImage {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+            fluid(maxWidth: 2000, quality: 80) {
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
-        }
-        about_section_2 {
-          title
-          content
         }
       }
     }

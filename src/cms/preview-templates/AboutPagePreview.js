@@ -2,24 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { AboutPageTemplate } from '../../templates/about-page'
 
-
-const AboutPagePreview = ({ entry, widgetFor }) => {
-
-  const data = entry.getIn(['data']).toJS();
-
-
-  return (
+const AboutPagePreview = ({ entry, widgetFor }) => (
   <AboutPageTemplate
-    title={data.about_section_1.title}
-    // storyContent={data.about_section_1.content}
-    storyContent={entry.getIn(['data', 'about_section_1', 'content'])}
-    midImage={data.mid_image}
-    title2={data.about_section_2.title}
-    // missionContent={data.about_section_2.content}
-    missionContent={entry.getIn(['data', 'about_section_2', 'content'])}
-
+    title={entry.getIn(['data', 'title'])}
+    content={widgetFor('body')}
   />
-)}
+)
 
 AboutPagePreview.propTypes = {
   entry: PropTypes.shape({

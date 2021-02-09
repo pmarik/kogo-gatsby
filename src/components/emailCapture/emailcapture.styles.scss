@@ -1,0 +1,49 @@
+@mixin shrinkLabel {
+  top: -18px;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.email-capture {
+  .group {
+    position: relative;
+    margin: 1em 0;
+
+    .form-input {
+      background: none;
+      background-color: #ffffff;
+      color: #425466;
+      font-size: 18px;
+      padding: 10px 10px 10px 10px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      border: 1px solid grey;
+      margin: 25px 0;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:focus ~ .form-input-label {
+        @include shrinkLabel();
+      }
+    }
+
+    .form-input-label {
+      color: #e8114d;
+      font-size: 16px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 10px;
+      top: 10px;
+      transition: 300ms ease all;
+
+      &.shrink {
+        @include shrinkLabel();
+      }
+    }
+  }
+}

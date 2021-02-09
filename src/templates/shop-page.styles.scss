@@ -1,0 +1,76 @@
+.shop-header {
+  padding-top: 6%;
+  padding-bottom: 4%;
+  min-height: 155px;
+  text-align: center;
+  margin: 5% auto;
+  position: relative;
+  p {
+    max-width: 35ch;
+    margin: 0 auto;
+    color: #fafafa;
+  }
+  .text-wrap{
+    max-width: 500px;
+    margin: 0 auto;
+    background: #FB604E;
+    padding: 4%;
+  }
+
+  .background-shop-img {
+    background: url("../../static/img/treebackground.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    width: 100vw;
+    left: calc(-50vw + 50%);
+    position: absolute;
+  }
+}
+
+.shop-grid {
+  margin: 5% 0 15% 0;
+  width: 100%;
+  flex-wrap: wrap;
+  display: grid;
+  //grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  grid-gap: 20px;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 481px) {
+  .shop-header {
+    padding-top: 4%;
+    p {
+      max-width: 40ch;
+    }
+  }
+}
+
+@media screen and (min-width: 585px) {
+  .shop-header {
+    .background-shop-img {
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      top: 0;
+      z-index: -1;
+      width: 100vw;
+      left: calc(-50vw + 50%);
+      position: absolute;
+    }
+  }
+
+  .shop-grid {
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  }
+}
+
+@media screen and (min-width: 978px) {
+  .shop-grid {
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  }
+}

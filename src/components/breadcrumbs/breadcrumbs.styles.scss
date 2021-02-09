@@ -1,0 +1,44 @@
+.breadcrumbs{
+    display: flex;
+    display: inline-block;
+    position: relative;
+    top: 1em;
+    opacity: 0.6;
+    margin-bottom: 1em;
+}
+
+a.breadcrumb{
+    font-size: 0.8rem;
+}
+
+.breadcrumb::after{
+    content: " > ";
+    position: relative;
+    margin: 0 1em;
+}
+
+.breadcrumb:last-of-type::after{
+    content: '';
+}
+
+.breadcrumb-alt{
+    margin-bottom: 1.5em;
+}
+
+@media screen and (min-width: 769px){
+    .breadcrumbs{
+        top: 2em;
+        margin-bottom: 0;
+    }
+
+    a.breadcrumb{
+        font-size: 0.9rem;
+    }
+
+    .breadcrumb-alt{
+        top: -1em;
+    }
+}
+
+
+

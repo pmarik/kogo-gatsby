@@ -1,0 +1,127 @@
+.alice-carousel__stage {
+  padding: 2% 0 !important;
+}
+
+.alice-carousel__prev-btn-item,
+.alice-carousel__next-btn-item {
+  position: absolute;
+  //bottom: 55%;
+  bottom: calc(6em + 37%);
+  &::after {
+    content: url("../../images/arrow-left.svg");
+    display: inline-block;
+    width: 40px;
+    //margin-right: 20px;
+    position: absolute;
+    //left: -50px;
+  }
+
+  span {
+    display: none;
+  }
+}
+
+.__inactive {
+  display: none;
+}
+
+.alice-carousel__next-btn-item {
+  &::after {
+    content: url("../../images/arrow-right.svg");
+    //left: 11px;
+    left: -45px;
+  }
+}
+
+.alice-carousel__next-btn-wrapper {
+  float: right;
+}
+
+.alice-carousel__prev-btn-wrapper {
+  text-align: left;
+}
+
+.color-options-wrap {
+  margin: 2% 0 2em 0;
+  width: 100vw;
+  position: relative;
+  .alice-carousel__prev-btn-item,
+  .alice-carousel__next-btn-item {
+    bottom: 55%;
+    &::after {
+      left: 10px;
+    }
+  }
+  .alice-carousel {
+    z-index: 2;
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 100vw;
+      left: calc(-50vw + 50%);
+      height: 60%;
+      position: absolute;
+      top: 38%;
+      z-index: -1;
+      background: #ffffff;
+    }
+  }
+
+  .alice-carousel__next-btn-wrapper {
+    float: none;
+    margin-left: 50%;
+  }
+  .alice-carousel__next-btn-item {
+    &::after {
+      transform: translate(-15%);
+    }
+  }
+}
+
+.pic-carousel {
+  width: 100%;
+  .alice-carousel__wrapper {
+    border-radius: 20px;
+  }
+  .alice-carousel__stage {
+    padding: 0 !important;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .alice-carousel__next-btn-item {
+    &::after {
+      content: url("../../images/arrow-right.svg");
+      left: 11px;
+    }
+  }
+  .alice-carousel__prev-btn-item {
+    &::after {
+      left: -50px;
+    }
+  }
+  .alice-carousel__prev-btn-item,
+  .alice-carousel__next-btn-item {
+    bottom: 57%;
+  }
+}
+
+@media screen and (min-width: 978px) {
+  .alice-carousel > div {
+    padding: 0 8%;
+  }
+
+  .color-options-wrap {
+    .alice-carousel__prev-btn,
+    .alice-carousel__next-btn {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 2048px) {
+  .alice-carousel__wrapper {
+    max-width: 2048px;
+    margin: 0 auto;
+  }
+}
