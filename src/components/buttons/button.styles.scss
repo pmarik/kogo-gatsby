@@ -2,7 +2,7 @@
     //background: #0A4270;
     background: #E8114D;
     padding: 1em 2em;
-    border-radius: 2em;
+    //border-radius: 2em;
     color: white;
     text-transform: uppercase;
 }
@@ -12,7 +12,6 @@
     font-size: clamp(0.9rem, 1.2vw, 1.1rem);
     &:hover{
         cursor: pointer;
-        opacity: 0.6;
     }
     &.disabled{
         opacity: 0.6;

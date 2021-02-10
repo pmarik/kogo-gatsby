@@ -30,7 +30,7 @@ export const AboutPageTemplate = ({
         url="https://www.myapplecore.com/about/"
       />
       <Breadcrumbs links={[`about`]} className="breadcrumb-alt"/>
-      <h1 className="about-title"><span>{title}</span></h1>
+      <h1 className="about-title about-content"><span>{title}</span></h1>
       <PageContent className={`content about-content`} content={content} />
       <div className="about-img">
           <PreviewCompatibleImage 
@@ -40,6 +40,13 @@ export const AboutPageTemplate = ({
                 }}
           />
       </div>
+      
+      <div className="about-content">
+        <h2>Misson and Vision</h2>
+        <p>KOGO was founded with the purpose of iproving the lives of small scale farmers in developing countries, improving the environment, and improving the health of people around the globe in a sustainable manner.</p>
+        <p>Through upycling a waste stream, KOGO reduces green house gas emissions and has a positie economic impact on small communities in developing countries. KOGO strives to provide consumers with a product that improves brain function, bodily health, and energy. Using sustainable direct trade sourcing methods, KOGO stands on the front line of superfoods as a product that is super-good for everyone involved.</p>
+      </div>
+    
     </section>
   )
 }

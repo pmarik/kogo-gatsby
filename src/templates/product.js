@@ -326,26 +326,15 @@ const ProductPage = ({ data: { shopifyProduct: product, markdownRemark } }) => {
         />  
       </div>
 
-      <section className="section-container product-desc-container product-cta">
-                <div className="render-img-wrap">
-                    <div className="render-img">
-                      <Img fluid={productDesc3.childImageSharp.fluid} />
-                    </div> 
-                </div>
-                <div className="product-cta-grid">
-                  <div className="cta-copy">
-                    <h2>Cable management simplified</h2>
-                    <p>Keep your wires accessible and organized wherever you need them. Gone are the days of cluttered desks and messy cables.</p>
-                    {/* <ButtonLink toLink={`/shop/${product.handle}`} className={`cta-btn fadeInUpDelay init0`} >
-                      <span>Buy Now</span>
-                    </ButtonLink>   */}
-                    <div className={`cta-btn`}>
-                      <span ><a className="button classic-btn" href="#productTop" style={{color: '#FBFBFB'}}>Buy Now</a></span>
-                    </div>
-                    
-                  </div>  
-                </div>
+      <section className="section-container ">
+
       </section>
+
+      <section className={`section-container section-quotes`}>
+                  <q className="home-quote"><span>My cords are now manageable!</span><br/> It's like a whole new world underneath my desk.  I could find all kinds of uses for these such as lamps, kitchen appliances, radios, and TVs” - Nancy</q>
+                  <q className="home-quote"><span>I love my Applecore!</span><br/>We use them for headphones, phone cords, computer mouse and keyboard cords, and appliances in the kitchen. My kitchen counter is so tidy and I don't have to constantly try to shove the cord behind an appliance” - Akedy</q>
+      </section>
+
 
       <SocialImgs
         socialHeader={socialHeader}

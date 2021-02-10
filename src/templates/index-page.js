@@ -11,6 +11,7 @@ import { CarouselProducts } from '../components/carousel/Carousel.component';
 import SocialImgs from '../components/socialImgs/SocialImgs.component';
 import SectionIcons from '../components/sectionIcons/SectionIcons.component';
 import CoffeeStem from '../components/SVGstems/CoffeeStem'
+import BlogRoll from '../components/BlogRoll/BlogRoll'
 import './index-page.styles.scss';
 
 export const IndexPageTemplate = ({
@@ -138,7 +139,7 @@ export const IndexPageTemplate = ({
 
 
               <div className="landing-subheading" >
-                  <h3>{subheading}</h3>
+                  <p>{subheading}</p>
               </div>
 
               <button className="landing-btn" style={{zIndex: '10'}}>
@@ -191,7 +192,7 @@ export const IndexPageTemplate = ({
                   <h3 className="blog-roll-title">
                     Latest stories
                   </h3>
-                  {/* <BlogRoll /> */}
+                  <BlogRoll />
                   <div className="blog-link">
                     <Link className="btn" to="/blog">
                       Read more from the blog
@@ -222,10 +223,6 @@ export const IndexPageTemplate = ({
 
             <SectionIcons />
 
-            <section className={`section-container section-quotes`}>
-                  <q className="home-quote"><span>My cords are now manageable!</span><br/> It's like a whole new world underneath my desk.  I could find all kinds of uses for these such as lamps, kitchen appliances, radios, and TVs” - Nancy</q>
-                  <q className="home-quote" style={{marginTop: '8%'}}><span>I love my Applecore!</span><br/>We use them for headphones, phone cords, computer mouse and keyboard cords, and appliances in the kitchen. My kitchen counter is so tidy and I don't have to constantly try to shove the cord behind an appliance” - Akedy</q>
-            </section>
 
             <SocialImgs
               socialHeader={socialHeader}

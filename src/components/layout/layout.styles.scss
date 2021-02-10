@@ -100,7 +100,7 @@ label {
   font-family: "Montserrat", serif;
   font-weight: 700;
   //color: #0A4270;
-  color: #303030;
+  color: #fb604e;
   line-height: 1.25;
 }
 
@@ -114,7 +114,7 @@ q,
   // font-family: 'Nunito', sans-serif !important;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
-  color: #425466;
+  color: #303030;
   font-size: 0.9rem;
   font-size: clamp(0.9rem, 1.2vw, 1.1rem);
 }
@@ -130,7 +130,7 @@ q {
 
 a {
   text-decoration: none;
-  color: #354762;
+  color: #303030;
 }
 
 input,
@@ -311,7 +311,7 @@ div.anchor {
   q,
   .jump-txt {
     //font-family: 'Merriweather', serif;
-    color: #425466;
+    color: #303030;
     //font-size: 1.17rem;
   }
 
@@ -396,7 +396,7 @@ div.anchor {
 //laptops, small screens
 @media screen and (min-width: 769px) {
   .main-content {
-    margin: 1rem 12% 0 12%;
+    margin: 1rem 14% 0 14%;
   }
 }
 
@@ -514,6 +514,7 @@ button{
       display: inline;
       padding: 20px 50px;
       text-transform: uppercase;
+      font-weight: bold;
       &:hover{
           color: white;
       }

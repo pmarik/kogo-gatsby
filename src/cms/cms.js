@@ -4,6 +4,7 @@ import cloudinary from 'netlify-cms-media-library-cloudinary'
 
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 import AboutPagePreview from './preview-templates/AboutPagePreview'
+import BlogPostPreview from './preview-templates/BlogPostPreview'
 import ShopPagePreview from './preview-templates/ShopPagePreview'
 import ContactPagePreview from './preview-templates/ContactPagePreview'
 import WholesalePagePreview from './preview-templates/WholesalePagePreview'
@@ -18,4 +19,5 @@ CMS.registerPreviewTemplate('shop', ShopPagePreview)
 CMS.registerPreviewTemplate('contact', ContactPagePreview)
 CMS.registerPreviewTemplate('wholesale', WholesalePagePreview)
 CMS.registerPreviewTemplate('shipping-policy', ShippingPolicyPreview)
+CMS.registerPreviewTemplate('blog', BlogPostPreview)
 
