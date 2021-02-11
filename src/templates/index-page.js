@@ -120,7 +120,7 @@ export const IndexPageTemplate = ({
         <div>
             <SEO 
               title="Home"
-              url="https://www.myapplecore.com/"
+              url="https://www.kogofoods.com/"
             />
             
             <section className="top-banner-grid">

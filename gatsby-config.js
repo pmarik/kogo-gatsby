@@ -104,7 +104,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://www.myapplecore.com`
+        siteUrl: `https://www.kogofoods.com`
       }
     },
     {
