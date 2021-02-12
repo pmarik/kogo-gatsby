@@ -2,7 +2,7 @@ import React from 'react';
 import PreviewCompatibleImage from '../PreviewCompatibleImage';
 import './socialImgs.styles.scss';
 
-const SocialImgs = ({ socialHeader, socialText, socialData }) => {
+const SocialImgs = ({ socialText, socialData }) => {
     return(
             <section className={`section-container social-imgs`}>
                  <div>
@@ -18,7 +18,7 @@ const SocialImgs = ({ socialHeader, socialText, socialData }) => {
                                   alt: socialData[0].alt,
                               }}
                           />
-                          <a href={`${socialData[0].link}`} target='_blank' rel="noreferrer" aria-label="View Instagram picture in new tab"><span className="social-text">Instagram Picture @my.applecore</span></a>
+                          <a href={`${socialData[0].link}`} target='_blank' rel="noreferrer" aria-label="View Instagram picture in new tab"><span className="social-text">Instagram Picture @kogofoods</span></a>
                       </div>
                       <div className="social-img">
                           <PreviewCompatibleImage 
@@ -27,7 +27,7 @@ const SocialImgs = ({ socialHeader, socialText, socialData }) => {
                                 alt: socialData[1].alt,
                               }}
                           />
-                         <a href={`${socialData[1].link}`} target='_blank' rel="noreferrer" aria-label="View Instagram picture in new tab"><span className="social-text">Instagram Picture @my.applecore</span></a>
+                         <a href={`${socialData[1].link}`} target='_blank' rel="noreferrer" aria-label="View Instagram picture in new tab"><span className="social-text">Instagram Picture @kogofoods</span></a>
                       </div>
                    </div>
                    <div>
@@ -38,7 +38,7 @@ const SocialImgs = ({ socialHeader, socialText, socialData }) => {
                                 alt: socialData[2].alt,
                               }}
                           />
-                         <a href={`${socialData[2].link}`} target='_blank' rel="noreferrer" aria-label="View Instagram picture in new tab"><span className="social-text">Instagram Picture @my.applecore</span></a>
+                         <a href={`${socialData[2].link}`} target='_blank' rel="noreferrer" aria-label="View Instagram picture in new tab"><span className="social-text">Instagram Picture @kogofoods</span></a>
                       </div>
                       <div className="social-img">
                           <PreviewCompatibleImage 
@@ -47,7 +47,7 @@ const SocialImgs = ({ socialHeader, socialText, socialData }) => {
                                 alt: socialData[3].alt,
                               }}
                           />
-                          <a href={`${socialData[3].link}`} target='_blank' rel="noreferrer" aria-label="View Instagram picture in new tab"><span className="social-text">Instagram Picture @my.applecore</span></a>
+                          <a href={`${socialData[3].link}`} target='_blank' rel="noreferrer" aria-label="View Instagram picture in new tab"><span className="social-text">Instagram Picture @kogofoods</span></a>
                       </div>
                    </div>  
                  </div>

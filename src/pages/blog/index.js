@@ -1,33 +1,40 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import Layout from '../../components/layout/Layout.component'
 import BlogRoll from '../../components/BlogRoll/BlogRoll'
+import SEO from '../../components/Seo.component'
 
-export default class BlogIndexPage extends React.Component {
-  render() {
-    return (
-      <Layout>
-        <main className="main-content">
-          <Helmet title={`Blog | KOGO | Organic Ground Coffee Cherries`} />
+const BlogIndexPage = () => {
+  const description = "Keep up to date with the latest stories and articles from Kogo Foods."
+  return (
+<Layout>
+         <SEO 
+           title="Blog" 
+           description={description} 
+           thumbnailImage="/img/ogKogoBlog.jpg" 
+           addedKeywords="shop blog" 
+           url="https://www.kogofoods.com/blog/"
+         />
 
-          <div className="main-content-container anim-start-0 fadeIn">
-            <h1
-              className="has-text-weight-bold"
-              style={{marginBottom: '5%', lineHeight: '1'}}
-            >
-              Latest Articles
-            </h1>
+         <main className="main-content">
+           <div className="main-content-container anim-start-0 fadeIn">
+             <h1
+               className="has-text-weight-bold"
+               style={{marginBottom: '5%', lineHeight: '1'}}
+             >
+               Latest Articles
+             </h1>
           
-            <section >
-              <div className="container">
-                <div>
-                  <BlogRoll />
-                </div>
-              </div>
-            </section>
-          </div>
-        </main>
-      </Layout>
-    )
-  }
+             <section >
+               <div className="container">
+                 <div>
+                   <BlogRoll />
+                 </div>
+               </div>
+             </section>
+           </div>
+         </main>
+       </Layout>
+  )
 }
+
+export default BlogIndexPage

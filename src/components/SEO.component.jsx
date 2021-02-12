@@ -37,7 +37,7 @@ function SEO({ description, lang, title, meta, thumbnailImage, addedKeywords = '
       htmlAttributes={{
         lang,
       }}
-      title={`${title} | Kogo Coffee Cherries`}
+      title={`${title} | KOGO Coffee Cherries`}
       // titleTemplate={`%s | ${site.siteMetadata.title}`}
       keywords={keywords}
       meta={[
@@ -47,7 +47,7 @@ function SEO({ description, lang, title, meta, thumbnailImage, addedKeywords = '
         },
         {
           property: `og:title`,
-          content: `${title} | Kogo Coffee Cherries`,
+          content: `${title} | KOGO Coffee Cherries`,
         },
         {
           property: `og:description`,
@@ -75,7 +75,7 @@ function SEO({ description, lang, title, meta, thumbnailImage, addedKeywords = '
         },
         {
           name: `twitter:title`,
-          content: `${title} | Kogo Coffee Cherries`,
+          content: `${title} | KOGO Coffee Cherries`,
         },
         {
           name: `twitter:description`,

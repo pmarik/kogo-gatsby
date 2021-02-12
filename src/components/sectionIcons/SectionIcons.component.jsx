@@ -1,8 +1,4 @@
 import React from 'react'
-import HappyIcon from '../../images/happy-wires-icon.inline.svg';
-import WireTypesIcon from '../../images/wire-types-icon.inline.svg';
-// import HandIcon from '../../images/hand-icon.inline.svg';
-import SizesIcon from '../../images/threeSizes.inline.svg';
 import './sectionIcons.styles.scss';
 
 import Cherries from '../../images/cherries.inline.svg';
@@ -13,7 +9,6 @@ const SectionIcons = () => {
     return (
         <section className={`section-container`}>
                   <div className="section-icons">
-                   
                     <div className="section-icon-wrap">
                       <div className="icon-div">
                         <Cherries className="section-icon"/>
@@ -27,7 +22,7 @@ const SectionIcons = () => {
                         <Globe className="section-icon"/>
                       </div>
                       <h3>Feel Good</h3>
-                      <p>Helps support sustainability</p>
+                      <p>Help support the world</p>
                     </div>
 
                     <div className="section-icon-wrap sizes-icon">

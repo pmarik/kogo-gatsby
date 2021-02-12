@@ -1,13 +1,9 @@
-import React, { useContext } from 'react'
-import { graphql, navigate, Link } from "gatsby"
-import { GlobalDispatchContext } from '../context/GlobalContextProvider';
+import React from 'react'
+import { graphql, Link } from "gatsby"
 import SEO from '../components/Seo.component'
 import Layout from '../components/layout/Layout.component'
 // import { InView } from 'react-intersection-observer';
-import ComparisonSection from '../components/comparisonSection/ComparisonSection.component';
-import { ButtonLink } from '../components/buttons/Button.component';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
-import { CarouselProducts } from '../components/carousel/Carousel.component';
 import SocialImgs from '../components/socialImgs/SocialImgs.component';
 import SectionIcons from '../components/sectionIcons/SectionIcons.component';
 import CoffeeStem from '../components/SVGstems/CoffeeStem'
@@ -15,104 +11,42 @@ import BlogRoll from '../components/BlogRoll/BlogRoll'
 import './index-page.styles.scss';
 
 export const IndexPageTemplate = ({
-    title,
     heroImage,
-    backgroundHero,
+    kogobanner,
     heading,
     subheading,
     mainpitch,
     mainpitchdesc,
     mainpitchImage,
-    products,
-    optionImg1,
-    optionImg2,
-    optionImg3,
-    optionImg4,
-    optionImg5,
-    collectionImg_1_1,
-    collectionImg_1_2,
-    collectionImg_2_1,
-    collectionImg_2_2,
-    showCase1,
-    showCase2,
-    showCase3,
     socialImg1,
     socialImg2,
     socialImg3,
     socialImg4,
 }) => {
 
-  const dispatch = useContext(GlobalDispatchContext);
-
-  // Handle corresponding selection from option picker to navigate to correct variant on product page
-  async function handleColorSelect(color, location){
-    await dispatch({
-      type: 'COLOR_SELECT',
-      payload: color
-    })
-    navigate(`${location}`);
-  }
- 
-  async function inlineHandleColorSelect(color){
-    await dispatch({
-      type: 'COLOR_SELECT',
-      payload: color
-    })
-  }
-
-  async function handleKeyUp(ev, color, location){
-    if(ev.key === 'Enter'){
-      await dispatch({
-        type: 'COLOR_SELECT',
-        payload: color
-      })
-      navigate(`${location}`);
-    }
-  }
-
-  async function handleKeyUpInline(ev, color){
-    if(ev.key === 'Enter'){
-      await dispatch({
-        type: 'COLOR_SELECT',
-        payload: color
-      })
-    }
-  }
-
-
-  // Data to be passed to the OptionPicker component
-  const optionsData = [
-    {img: optionImg5, color: 'Red Delicious', alt: 'Red Delicious Applecore 3 Pack'},
-    {img: optionImg2, color: 'Black Jazz', alt: 'Black Jazz Applecore 3 Pack'}, 
-    {img: optionImg1, color: 'Granny Smith', alt: 'Granny Smith Applecore 3 Pack'}, 
-    {img: optionImg4, color: 'Fuji White', alt: 'Fuji White Applecore 3 Pack'}, 
-    {img: optionImg3, color: 'Blue Pearmain', alt: 'Blue Pearmain Applecore 3 Pack'}, 
-  ]
-
 
   // Data to be passed to the SocialImg component
-  const socialHeader = `Show us your Applecores`;
-  const socialText = (<p>Tag us in your photos using <a href="https://www.instagram.com/explore/tags/applecore/" className="accent" target="_blank" rel="noreferrer">#applecore</a> and <a href="https://www.instagram.com/explore/tags/nomoretangles/" className="accent" target="_blank" rel="noreferrer">#nomoretangles</a> to be featured</p>);
+  const socialText = (<p>Tag us in your photos using <a href="https://www.instagram.com/explore/tags/kogo/" className="accent" target="_blank" rel="noreferrer">#kogo</a> to be featured</p>);
   const socialData = [
     { 
       socialImg: socialImg1,
-      alt: `Applecore Instagram picture 1`,
-      link: `https://www.instagram.com/p/CJY2PlZMEMn/`
+      alt: `Kogo Instagram picture 1`,
+      link: `https://www.instagram.com/p/CLJykrrnV-m/`
     },
     {
       socialImg: socialImg2,
-      alt: `Applecore Instagram picture 2`,
-      link: `https://www.instagram.com/p/CIybZpFsgG7/`
+      alt: `Kogo Instagram picture 2`,
+      link: 'https://www.instagram.com/p/CK_tkd9nfWg/'
     },
     {
       socialImg: socialImg3,
-      alt: `Applecore Instagram picture 3`,
-      link: `https://www.instagram.com/p/CIyZNc4skqx/`
+      alt: `Kogo Instagram picture 3`,
+      link: `https://www.instagram.com/p/CK6SzgOHKeM/`
     },
     {
       socialImg: socialImg4,
-      alt: `Applecore Instagram picture 4`,
-      link: `https://www.instagram.com/p/CIwyyTxMbmV/`
+      alt: `Kogo Instagram picture 4`,
+      link: `https://www.instagram.com/p/CKgid5oHUpr/`
     }
   ];
 
@@ -143,7 +77,7 @@ export const IndexPageTemplate = ({
               </div>
 
               <button className="landing-btn" style={{zIndex: '10'}}>
-                <Link to="/shop/">
+                <Link to="/shop/kogo-coffee-cherries">
                   Power Up Now
                 </Link>
               </button>
@@ -152,12 +86,12 @@ export const IndexPageTemplate = ({
             </section>
 
             <section className="section-home-container">
-              <div className="content">
+              <div className="content" style={{overflow: 'hidden'}}>
                 <div className="mid-section-grid">
               
                       <div className={`content content-1 anim-start-0 fadeInLeft`}>
                           <div className="tile">
-                            <h2 className="title">{mainpitch}</h2>
+                            <h2 className="title" style={{position: 'relative', zIndex: '10'}}>{mainpitch}</h2>
                           </div>
                           <div className="tile">
                             <p className="subtitle">{mainpitchdesc}</p>
@@ -180,11 +114,14 @@ export const IndexPageTemplate = ({
                               </div>
                             </div>
 
-                      <button>
+                      <div className="btn-about-home">
+                      <button >
                         <Link to="/about">
                           About Kogo
                         </Link>
                       </button>
+                      </div>
+                    
                   </div>
               </div>
                   
@@ -200,32 +137,26 @@ export const IndexPageTemplate = ({
                   </div>
               </div>
 
-              {/* <section className="bottom-content">
-                  <div className="bottom-section-img">
-                        <h2 className="bottom-section-header">{bottom_page_content.heading}</h2>
-                        <PreviewCompatibleImage  
-                          imageInfo={{
-                            image: bottom_page_content.image1.image,
-                            alt: bottom_page_content.image1.alt,
-                          }}
-                        />
-                  </div>
-
-                  <div className="bottom-section-description">
-                    <p>{bottom_page_content.description}</p>
-                  </div>
-
-              </section> */}
-
           </div>               
         </section>
 
 
             <SectionIcons />
 
+            <div className="about-img" style={{marginTop: 'calc(2rem + 10%)'}}>
+        <PreviewCompatibleImage 
+                                imageInfo={{
+                                    image: kogobanner,
+                                    alt: "kogo coffee cherries",
+                                }}
+                            />
+
+          <h3 style={{marginTop: '2rem', textAlign: 'center'}}>Reduce Waste</h3>
+          <p style={{margin: '1rem auto', maxWidth: '85ch', textAlign: 'center'}}>Over 20 million tons of coffee fruit waste is generated each year. If the coffee cherries are left to rot in the fields they can generate more than 15 million tons of CO2e (carbon dioxide equivalent). In addition, there is potential for the coffee fruit to leach dangerous mycotoxins into water ways and the soil.  <span style={{fontWeight: 'bold'}} className="accent">Upcycling the coffee fruit reduces this impact and improves the environment in a sustainable way.</span></p>
+        </div>
+
 
             <SocialImgs
-              socialHeader={socialHeader}
               socialText={socialText}
               socialData={socialData}
             />
@@ -241,26 +172,14 @@ const IndexPage = ({ data }) => {
     return (
         <Layout>
             <IndexPageTemplate
-                products={products}
                 title={frontmatter.title}
                 heroImage={frontmatter.heroImage}
-                backgroundHero={frontmatter.backgroundHero}
+               kogobanner={frontmatter.kogobanner}
                 heading={frontmatter.heading}
                 subheading={frontmatter.subheading}
                 mainpitch={frontmatter.mainpitch}
                 mainpitchdesc={frontmatter.mainpitchdesc}
                 mainpitchImage={frontmatter.mainpitchImage}
-                optionImg2={frontmatter.optionImg2}
-                optionImg3={frontmatter.optionImg3}
-                optionImg4={frontmatter.optionImg4}
-                optionImg5={frontmatter.optionImg5}
-                collectionImg_1_1={frontmatter.collectionImg_1_1}
-                collectionImg_1_2={frontmatter.collectionImg_1_2}
-                collectionImg_2_1={frontmatter.collectionImg_2_1}
-                collectionImg_2_2={frontmatter.collectionImg_2_2}
-                showCase1={frontmatter.showCase1}
-                showCase2={frontmatter.showCase2}
-                showCase3={frontmatter.showCase3}
                 socialImg1={frontmatter.socialImg1}
                 socialImg2={frontmatter.socialImg2}
                 socialImg3={frontmatter.socialImg3}
@@ -284,7 +203,7 @@ export const IndexPageQuery = graphql`
                 }
               }
             }
-            backgroundHero {
+            kogobanner {
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 75) {
                   ...GatsbyImageSharpFluid_tracedSVG
@@ -298,83 +217,6 @@ export const IndexPageQuery = graphql`
             mainpitchImage {
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 75) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            optionImg2 {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 75) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            optionImg3 {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 75) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            optionImg4 {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 75) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            optionImg5 {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 75) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            collectionImg_1_1 {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 75) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            collectionImg_1_2 {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 75) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            collectionImg_2_1 {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 75) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            collectionImg_2_2 {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 75) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            showCase1 {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 75) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            showCase2 {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 75) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            showCase3 {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 75) {
                   ...GatsbyImageSharpFluid
                 }
               }

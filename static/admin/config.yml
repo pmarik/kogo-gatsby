@@ -29,7 +29,7 @@ collections:
           - { label: HeroImage, name: heroImage, widget: image }
           - {
               label: "hero background Image",
-              name: backgroundHero,
+              name: kogobanner,
               widget: image,
             }
           - { label: Heading, name: heading, widget: string }
@@ -85,6 +85,7 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
           - { label: "About Image", name: aboutImage, widget: image }
+          - { label: "about image bottom", name: aboutImageBottom, widget: image}
       - file: "src/pages/shop/index.md"
         label: "Shop"
         name: "shop"
@@ -104,7 +105,7 @@ collections:
           - { label: "Carousel Pic 5", name: carouselPic5, widget: image }
           - { label: "Product Desc Img 3", name: productDesc3, widget: image }
           - { label: "Product Desc Img 4", name: productDesc4, widget: image }
-          - { label: "Select img 1", name: selectCore1, widget: image }
+          - { label: "Select img 1", name: kogobanner, widget: image }
           - { label: "Social Img 1", name: socialImg1, widget: image }
           - { label: "Social Img 2", name: socialImg2, widget: image }
           - { label: "Social Img 3", name: socialImg3, widget: image }
@@ -122,22 +123,6 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Contact Text", name: "contactText", widget: "string" }
           - { label: "Contact Image", name: contactImg, widget: image }
-      - file: "src/pages/wholesale/index.md"
-        label: "Wholesale"
-        name: "wholesale"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "wholesale-page",
-            }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Subheading", name: "subheading", widget: "string" }
-          - { label: "Contact Title", name: bulkContactTitle, widget: string }
-          - { label: "Wholesale Text", name: "wholesaleText", widget: "string" }
-          - { label: "Business Text", name: "businessText", widget: "string" }
-          - { label: "Bulk Image", name: bulkImg, widget: image }
       - file: "src/pages/shipping-policy/index.md"
         label: "Shipping Policy"
         name: "shipping-policy"
@@ -159,6 +144,7 @@ collections:
               - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
+              - {label: "OG Desc", name: 'ogdescription', widget: "string"}
               - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
               - {label: "Featured Image", name: "featuredimage", widget: image}
               - {label: "Body", name: "body", widget: "markdown"}

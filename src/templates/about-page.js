@@ -15,19 +15,20 @@ export const AboutPageTemplate = ({
   content, 
   contentComponent,
   aboutImage,
+  aboutImageBottom
  }) => {
   const PageContent = contentComponent || Content
 
-  const description = "Learn about the story behind the best wire management tool and how Applecore's simple design came to be." 
+  const description = "Learn about the story behind the Kogo Coffee Cherries and what drives our sustainability movement." 
 
   return (
     <section className="section section--gradient" style={{paddingTop: '5%'}}>
       <SEO 
         title="About" 
         description={description} 
-        thumbnailImage="/img/ogApplecoreAbout.png" 
-        addedKeywords="about applecore" 
-        url="https://www.myapplecore.com/about/"
+        thumbnailImage="/img/ogKogoAbout.jpg" 
+        addedKeywords="about kogo" 
+        url="https://www.kogofoods.com/about/"
       />
       <Breadcrumbs links={[`about`]} className="breadcrumb-alt"/>
       <h1 className="about-title about-content"><span>{title}</span></h1>
@@ -36,15 +37,24 @@ export const AboutPageTemplate = ({
           <PreviewCompatibleImage 
               imageInfo={{
                   image: aboutImage,
-                  alt: 'Applecore wire wrap process',
+                  alt: 'Kogo Coffee Cherries',
                 }}
           />
       </div>
       
       <div className="about-content">
         <h2>Misson and Vision</h2>
-        <p>KOGO was founded with the purpose of iproving the lives of small scale farmers in developing countries, improving the environment, and improving the health of people around the globe in a sustainable manner.</p>
-        <p>Through upycling a waste stream, KOGO reduces green house gas emissions and has a positie economic impact on small communities in developing countries. KOGO strives to provide consumers with a product that improves brain function, bodily health, and energy. Using sustainable direct trade sourcing methods, KOGO stands on the front line of superfoods as a product that is super-good for everyone involved.</p>
+        <p>KOGO was founded with the purpose of improving the lives of small scale farmers in developing countries, improving the environment, and improving the health of people around the globe in a sustainable manner.</p>
+        <p>Through upycling a waste stream, KOGO reduces green house gas emissions and has a positive economic impact on small communities in developing countries. KOGO strives to provide consumers with a product that improves brain function, bodily health, and energy. Using sustainable direct trade sourcing methods, KOGO stands on the front line of superfoods as a product that is super-good for everyone involved.</p>
+      </div>
+
+      <div className="about-img">
+          <PreviewCompatibleImage 
+              imageInfo={{
+                  image: aboutImageBottom,
+                  alt: 'Coffee Farm',
+                }}
+          />
       </div>
     
     </section>
@@ -66,6 +76,7 @@ const AboutPage = ({ data }) => {
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         aboutImage={post.frontmatter.aboutImage}
+        aboutImageBottom={post.frontmatter.aboutImageBottom}
         content={post.html}
       />
     </Layout>
@@ -85,6 +96,13 @@ export const aboutPageQuery = graphql`
       frontmatter {
         title
         aboutImage {
+          childImageSharp {
+            fluid(maxWidth: 2000, quality: 80) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
+        aboutImageBottom {
           childImageSharp {
             fluid(maxWidth: 2000, quality: 80) {
               ...GatsbyImageSharpFluid_noBase64

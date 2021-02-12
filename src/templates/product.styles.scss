@@ -240,51 +240,6 @@
   }
 }
 
-.product-desc4 {
-  display: flex;
-  flex-direction: column;
-  //align-items: center;
-  width: 100%;
-  position: relative;
-  margin-bottom: 6em;
-  .other-select-product-img {
-    width: 100%;
-    // height: auto;
-    // display: grid;
-    // grid-template-columns: repeat(6, 1fr);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: relative;
-    .other-img {
-      width: 100%;
-    }
-    &::before {
-      content: url("../images/brush-function.svg");
-      position: absolute;
-      margin: 0 auto;
-      display: inline-block;
-      width: 110%;
-      //z-index: 1;
-      transform: translate(0, 8%);
-    }
-  }
-  &::after {
-    content: "";
-    background: #146495;
-    position: absolute;
-    margin: 0 auto;
-    display: inline-block;
-    width: 120vw;
-    overflow: hidden;
-    z-index: -1;
-    //height: 80%;
-    height: 110%;
-    left: calc(-50vw + 50%);
-    //transform: rotate(5deg);
-    top: 0;
-  }
-}
 
 .other-select-option {
   display: flex;

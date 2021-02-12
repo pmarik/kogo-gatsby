@@ -12,16 +12,16 @@ export const ShopPageTemplate = ({ title, subheading, products }) => {
   // Used to add additional text info to product thumbnail pics
   const imgText = ['x3', 'x10', 'x30', '']
 
-  const description = "Select your wire organizer with various packs and collections. Applecore comes in different colored packs of 3, 10, and 30, with matching collections."
+  const description = "Pick from our family of products that focus on sustainability and clean energy."
 
   return (
     <section>
         <SEO 
           title="Shop" 
           description={description} 
-          thumbnailImage="/img/ogApplecoreShop.png" 
-          addedKeywords="shop applecore" 
-          url="https://www.myapplecore.com/shop/"
+          thumbnailImage="/img/ogKogoShop.jpg" 
+          addedKeywords="shop kogo" 
+          url="https://www.kogofoods.com/shop/"
         />
  
         <Breadcrumbs links={[`shop`]} />

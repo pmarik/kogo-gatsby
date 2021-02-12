@@ -28,19 +28,10 @@
   margin: calc(4rem + 32px) 5% 0 5% !important;
 }
 
-.brush-fit-about::before {
-  top: 155px !important;
-}
 
 @media screen and (min-width: 375px) {
   .banner-info {
     display: inline-block;
-  }
-}
-
-@media screen and (min-width: 390px) {
-  .brush-fit-about::before {
-    top: 50% !important;
   }
 }
 

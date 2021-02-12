@@ -1,6 +1,6 @@
 footer{
     min-height: 200px;
-    background: #728C5B;
+    background: rgba(114, 140, 91, 0.1);
     //background: #146495;
     width: 100%;
     padding: 3rem 5%;
@@ -60,7 +60,7 @@ footer{
     }
     a{
         grid-row: 2/3;
-        margin-right: 1em;
+        margin: 0.5em;
         &:last-of-type{
             margin-right: 0;
         }
@@ -85,18 +85,7 @@ footer{
 .footer-aside{
     display: grid;
     place-items: center;
-    .made-in{
-        grid-row: 1/2;
-        justify-self: center;
-        position: relative;
-        margin-left: 5em;
-        &::before{
-            content: url('../../images/usa-flag.svg');
-            width: 1em;
-            position: absolute;
-            left: -70px;
-        }
-    }
+   
 
     .terms{
         grid-row: 2/3;
@@ -131,7 +120,8 @@ footer{
         }
         .footer-nav{
             grid-column: 1/5;
-            justify-self: center;
+            //justify-self: center;
+            justify-self: flex-start;
         }
     }
 }
@@ -141,10 +131,10 @@ footer{
         grid-template-columns: repeat(3, 1fr);
 
         .footer-email-capture{
-            grid-column: 1/2;
+            grid-column: 2/3;
             justify-self: flex-start;
-            text-align: left;
-            
+            //text-align: left;
+            justify-self: center;
         }
         
         .social-links{
@@ -154,7 +144,7 @@ footer{
         }
 
         .footer-nav{
-            grid-column: 2/3;
+            grid-column: 1/2;
             grid-row: 1/2;
             li > a{
                 font-size: 0.9rem;

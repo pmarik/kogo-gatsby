@@ -80,7 +80,7 @@ Tile.propTypes = {
 }
 
 Tile.defaultProps = {
-  title: "Applecore",
+  title: "Kogo",
 }
 
 export default Tile

@@ -6,7 +6,7 @@ const AnnouncementBanner = () => {
 
     return (
         <aside className="announcement-banner">
-            <p>FREE additional Applecore with every order!</p>
+            <p>FREE additional kogo with every order!</p>
         </aside>
     )
 }

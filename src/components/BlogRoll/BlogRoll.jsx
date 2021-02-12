@@ -44,7 +44,7 @@ class BlogRoll extends React.Component {
                       {post.excerpt}
                       <br />
                       <br />
-                      <Link className="button" to={post.fields.slug}>
+                      <Link className="button" to={post.fields.slug} style={{padding: '1em 2em 1em 0'}}>
                         Keep Reading →
                       </Link>
                     </p>

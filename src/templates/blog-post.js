@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import SEO from '../components/Seo.component'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout/Layout.component'
 import Content, { HTMLContent } from '../components/Content'
@@ -10,14 +10,35 @@ export const BlogPostTemplate = ({
   content,
   contentComponent,
   description,
+  ogdescription,
   title,
-  helmet,
+
 }) => {
   const PostContent = contentComponent || Content
 
+  let coverImg
+  switch(title){
+    case "The Birth of Kogo":
+      coverImg = "/img/ogKogoBlogNewNormal.jpg"
+      break;
+    case "The New Normal":
+      coverImg = "/img/ogKogoBlogBirth.jpg"
+      break;
+    default:
+      coverImg = undefined;
+      break;
+  }
+
   return (
     <main className="main-content">
-      {helmet || ''}
+       <SEO 
+           title={`${title} | Blog`}
+           description={ogdescription} 
+           thumbnailImage={coverImg}
+           addedKeywords={`blog, ${title}`}
+           url={`https://www.kogofoods.com/blog/`}
+         />
+
       <section className="main-content-container  anim-start-0 fadeIn">
         
           <div className="blog-post">
@@ -52,15 +73,7 @@ const BlogPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate="%s | Blog | KOGO | Organic Ground Coffee Cherries">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
+        ogdescription={post.frontmatter.ogdescription}
         title={post.frontmatter.title}
       />
     </Layout>
@@ -83,6 +96,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        ogdescription
       }
     }
   }

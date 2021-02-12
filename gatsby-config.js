@@ -8,21 +8,13 @@ module.exports = {
     description: `Smart fruit for a smarter world. Try KOGO organic ground coffee cherries and experience sustained focus, clean energy, and mental clarity.`,
     siteUrl: "https://www.kogofoods.com/",
     keywords: "coffee cherries, kogo, superfood, coffeefruit, natural energy, caffeine alternative, sustainable coffee, organic coffee, sustainability, waste reduction",
-    defaultImage: "/img/ogApplecoreHome.png"
+    defaultImage: "/img/ogKogoHome.jpg"
   },
   flags: {
     DEV_SSR: false,
     FAST_REFRESH: true,
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: "UA-185572901-1",
-        head: true,
-        anonymize: true,
-      }
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {

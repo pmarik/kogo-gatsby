@@ -54,23 +54,23 @@ export const ContactPageTemplate = ({
       })
   }
 
-  const description = "Contact Applecore with questions or concerns."
+  const description = "Contact Kogo with questions or concerns."
 
   return (
     <section style={{paddingTop: '5%'}}>
       <SEO 
         title="Contact" 
         description={description} 
-        thumbnailImage="/img/ogApplecoreContact.png" 
-        addedKeywords="contact applecore"
-        url="https://www.myapplecore.com/contact/"
+        thumbnailImage="/img/ogKogoContact.jpg" 
+        addedKeywords="contact kogo"
+        url="https://www.kogofoods.com/contact/"
       />
       <Breadcrumbs links={[`contact`]} className="breadcrumb-alt"/>
 
       <div className="form-img-flex">
           <div className="contact-container">
-              <h1 style={{color: '#fff', marginTop: '1em'}}><span className={`brush-fit-mid`}>{title}</span></h1>
-              <p>{contactText} <Link to={`/wholesale/`} className="accent" style={{textDecoration: 'underline'}}>bulk orders page</Link>.</p>
+              <h1>{title}</h1>
+              <p>{contactText}</p>
 
               <form ref={formRef} name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={event => handleSubmit(event)}>
                   {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
@@ -126,11 +126,11 @@ export const ContactPageTemplate = ({
                     </div>
                   </div>
                   <div className="field">
-                    <Button
+                    <button
                       type={`submit`}
                       >
-                      <span>Send Message</span>
-                    </Button>
+                      <span style={{margin: '1em 2em'}}>Send Message</span>
+                    </button>
                   </div>
 
                   {feedbackMsg && <p style={{color: '#FB604E !important', marginTop: '1.5em', textAlign: 'right'}}>{feedbackMsg}</p>}
@@ -138,7 +138,7 @@ export const ContactPageTemplate = ({
               </form>
           </div> 
           <div className="form-img-wrap contact-img">
-            <Img className="form-img" fluid={contactImg.childImageSharp.fluid} alt={`Applecore Colors Contact Image`}/> 
+            <Img className="form-img" fluid={contactImg.childImageSharp.fluid} alt={`Kogo Contact Image`}/> 
           </div>
       </div>
     

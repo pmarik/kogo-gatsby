@@ -3,7 +3,9 @@
 .about-content{
     width: 100%;
     //max-width: 120ch;
-    margin: 0 auto;
+    //margin: 0 auto;
+    max-width: 90ch;
+
 
     p{
         margin: 1em 0;
@@ -18,39 +20,3 @@
 
 
 
-
-.brush-fit-about{
-    &::before{
-      content: url('../images/brush-fit-screen.svg');
-      position: absolute;
-      margin: 0 auto;
-      display: inline-block;
-      min-width: 270px;
-      top: 125px;
-      left: 0;
-      z-index: -1;
-      width: 100vw;
-      height: 150px;
-    }
-  }
-
-  @media screen and (min-width: 390px){
-    .brush-fit-about{
-        position: relative;
-        &::before{
-          content: url('../images/brush-text.svg');
-          left: 50%;
-          top: 50%;
-          width: 140%;
-          transform: translate(-53%, -42%);
-        }
-      }
-  }
-
-  @media screen and (min-width: 815px){
-    .brush-fit-about{
-      &::before{
-        transform: translate(-53%, -54%);
-      }
-    }
-  }

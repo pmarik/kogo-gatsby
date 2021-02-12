@@ -6,14 +6,14 @@ import './policy.styles.scss';
 
 const PolicyPage = ({ data: { shopifyShopPolicy: policy } }) => {
 
-    const description = `Learn more about Applecore's ${policy.title}.`
+    const description = `Learn more about Kogo's ${policy.title}.`
 
     return (
         <Layout>
             <SEO 
               title={policy.title} 
               description={description}
-              url={`https://www.myapplecore.com/${policy.handle}/`}
+              url={`https://www.kogofoods.com/${policy.handle}/`}
             />
             <section className="policy-page">
                 <h1>{policy.title}</h1>

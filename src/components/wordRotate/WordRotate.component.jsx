@@ -11,7 +11,7 @@ const WordRotate = ({ wordList, interval }) => {
     return (
         <section className="word-rotate">
             <div className="word-rotate-inner">
-                <h2>Wire Organizer for...</h2>
+                <h2>Kogo for...</h2>
                 <div className="loop-wrap">
                     <TextLoop
                         interval={interval}

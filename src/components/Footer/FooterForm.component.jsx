@@ -85,12 +85,12 @@ const FooterForm = () => {
                   </div>
 
                   <div className="field">
-                    <Button
+                    <button
                       type={`submit`}
-                      style={{minWidth: '134px'}}
+                      style={{minWidth: '134px', marginTop: '0'}}
                       >
                       <span>{loader ? <Loader style={{margin: '0 auto'}}/> : btnMessage}</span>
-                    </Button>
+                    </button>
                   </div>
 
                   {feedbackMsg && <p style={{color: '#FB604E !important', marginTop: '1.5em', textAlign: 'right'}}>{feedbackMsg}</p>}

@@ -5,6 +5,7 @@ import CartModal from '../components/cartModal/CartModal.component'
 import Layout from '../components/layout/Layout.component';
 // import { ColorOptionPicker } from "./components/"
 import { Thumbnail, OptionPicker, OptionPickerDark } from "./components"
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 import { graphql } from "gatsby"
 import { prepareVariantsWithOptions, prepareVariantsImages } from "./utilities"
 import { useAddItemToCart } from "gatsby-theme-shopify-manager"
@@ -23,24 +24,20 @@ import './product.styles.scss';
 //custom global state test
 import { GlobalStateContext } from '../context/GlobalContextProvider';
 
-const ProductPage = ({ data: { shopifyProduct: product, markdownRemark } }) => {
+const ProductPage = ({ data: { shopifyProduct: product, markdownRemark }, location }) => {
 
   const state = useContext(GlobalStateContext) || { variantColor: '' };
   const { frontmatter } = markdownRemark;
-  const productDesc3 = frontmatter.productDesc3;
-  const productDesc4 = frontmatter.productDesc4;
-  const selectCore1 = frontmatter.selectCore1;
+  const kogobanner = frontmatter.kogobanner;
   const socialImg1 = frontmatter.socialImg1;
   const socialImg2 = frontmatter.socialImg2;
   const socialImg3 = frontmatter.socialImg3;
   const socialImg4 = frontmatter.socialImg4;
-
-
   const carouselData = [
-    {img: frontmatter.carouselPic1.childImageSharp.fluid, alt: 'Applecore with headphones'},
-    {img: frontmatter.carouselPic2.childImageSharp.fluid, alt: 'Applecore travel'},
-    {img: frontmatter.carouselPic3.childImageSharp.fluid, alt: 'Applecore travel'},
-    {img: frontmatter.carouselPic4.childImageSharp.fluid, alt: 'Applecore travel'},
+    {img: frontmatter.carouselPic1.childImageSharp.fluid, alt: 'Kogo coffee cherries'},
+    {img: frontmatter.carouselPic2.childImageSharp.fluid, alt: 'coffee cherries'},
+    {img: frontmatter.carouselPic3.childImageSharp.fluid, alt: 'coffee cherries'},
+    {img: frontmatter.carouselPic4.childImageSharp.fluid, alt: 'farmer coffee cherries'},
   ]
 
   const [quantity, setQuantity] = useState(1);
@@ -165,54 +162,41 @@ const ProductPage = ({ data: { shopifyProduct: product, markdownRemark } }) => {
   }
 
     // Data to be passed to SocialImg component
-    const socialHeader = `Applecore in Action`;
-    const socialText = (<p>Follow us using <a href="https://www.instagram.com/explore/tags/applecore/" className="accent" target="_blank" rel="noreferrer">#applecore</a> and <a href="https://www.instagram.com/explore/tags/nomoretangles/" className="accent" target="_blank" rel="noreferrer">#nomoretangles</a> to see the many uses.</p>);
+    const socialText = (<p>Follow us using <a href="https://www.instagram.com/explore/tags/kogo/" className="accent" target="_blank" rel="noreferrer">#kogo</a>  to see the many uses.</p>);
     const socialData = [
       { 
         socialImg: socialImg1,
-        alt: `Applecore Instagram picture 1`,
-        link: `https://www.instagram.com/p/CJY2PlZMEMn/`
+        alt: `Kogo Instagram picture 1`,
+        link: `https://www.instagram.com/p/CLJykrrnV-m/`
       },
       {
         socialImg: socialImg2,
-        alt: `Applecore Instagram picture 2`,
-        link: `https://www.instagram.com/p/CIybZpFsgG7/`
+        alt: `Kogo Instagram picture 2`,
+        link: 'https://www.instagram.com/p/CK_tkd9nfWg/'
       },
       {
         socialImg: socialImg3,
-        alt: `Applecore Instagram picture 3`,
-        link: `https://www.instagram.com/p/CIyZNc4skqx/`
+        alt: `Kogo Instagram picture 3`,
+        link: `https://www.instagram.com/p/CK6SzgOHKeM/`
       },
       {
         socialImg: socialImg4,
-        alt: `Applecore Instagram picture 4`,
-        link: `https://www.instagram.com/p/CIwyyTxMbmV/`
+        alt: `Kogo Instagram picture 4`,
+        link: `https://www.instagram.com/p/CKgid5oHUpr/`
       }
     ];
 
     let coverImg;
     switch(product.handle){
-      case "applecore-3-pack":
-        coverImg = "/img/ogApplecore3pack.png"
-        break;
-      case "applecore-10-pack":
-        coverImg = "/img/ogApplecore10pack.png"
-        break;
-      case "applecore-30-pack":
-        coverImg = "/img/ogApplecore30pack.png"
-        break;
-      case "collections":
-        coverImg = "/img/ogApplecoreCollections.png"
-        break;
-      case "applecore-pop-box":
-        coverImg = "/img/ogApplecorePopBox.png"
+      case "kogo-coffee-cherries":
+        coverImg = "/img/ogKogoCherries.jpg"
         break;
       default:
         coverImg = undefined;
         break;
     }
 
-    const description = `Organize your wires with the ${product.title}. Comes in various colors and sizes to manage your cords and reduce clutter.`
+    const description = `Power up with ${product.title}. Helping you, helping the world.`
 
   return (
     <Layout>
@@ -221,7 +205,7 @@ const ProductPage = ({ data: { shopifyProduct: product, markdownRemark } }) => {
         description={description} 
         thumbnailImage={coverImg} 
         addedKeywords={`${product.title}`}
-        url={`https://www.myapplecore.com/shop/${product.handle}/`}
+        url={`https://www.kogofoods.com/shop/${product.handle}/`}
       />
       <div className="anchor" id="productTop" tabIndex="-1" aria-hidden="true"></div>
       <Breadcrumbs links={[`shop`, `shop/${product.handle}`]} />
@@ -297,17 +281,6 @@ const ProductPage = ({ data: { shopifyProduct: product, markdownRemark } }) => {
               </>
             )}
 
-         
-
-          <div className="product-points" style={{marginBottom: '6em'}}>
-            <ul>
-              <li><p>Small: 1" in diameter, 1.5" tall</p></li>
-              <li><p>Medium: 1.5" in diameter, 2" tall</p></li>
-              <li><p>Large: 2" in diameter, 2.75" tall</p></li>
-              <li><p>Recyclable, soft rubber material</p></li>
-              <li><p>Electical cord management for everyday use</p></li>
-            </ul>
-          </div>
 
         </div>
       </div>
@@ -330,14 +303,28 @@ const ProductPage = ({ data: { shopifyProduct: product, markdownRemark } }) => {
 
       </section>
 
-      <section className={`section-container section-quotes`}>
-                  <q className="home-quote"><span>My cords are now manageable!</span><br/> It's like a whole new world underneath my desk.  I could find all kinds of uses for these such as lamps, kitchen appliances, radios, and TVs” - Nancy</q>
-                  <q className="home-quote"><span>I love my Applecore!</span><br/>We use them for headphones, phone cords, computer mouse and keyboard cords, and appliances in the kitchen. My kitchen counter is so tidy and I don't have to constantly try to shove the cord behind an appliance” - Akedy</q>
+      <div style={{marginTop: 'calc(2rem + 10%)', textAlign: 'center'}}>
+        <h2>See what others are saying</h2>
+      </div>
+      <section className={`section-quotes`}>
+                  <q className="home-quote">I didn't think it would be so different from normal ground coffee beans, but WOAH does the cherry pack a different punch. I love the fruity taste.” - James Ren</q>
+                  <q className="home-quote"> Great mission and great product. I personally love mine as a tea and it truly does give you sustained focus.” - Katie Strane</q>
       </section>
+
+      <div className="about-img" style={{marginTop: 'calc(2rem + 10%)'}}>
+        <PreviewCompatibleImage 
+                                imageInfo={{
+                                    image: kogobanner,
+                                    alt: "kogo coffee cherries",
+                                }}
+                            />
+
+          <h3 style={{marginTop: '2rem', textAlign: 'center'}}>Reduce Waste</h3>
+          <p style={{margin: '1rem auto', maxWidth: '85ch', textAlign: 'center'}}>Over 20 million tons of coffee fruit waste is generated each year. If the coffee cherries are left to rot in the fields they can generate more than 15 million tons of CO2e (carbon dioxide equivalent). In addition, there is potential for the coffee fruit to leach dangerous mycotoxins into water ways and the soil.  <span className="accent" style={{fontWeight: 'bold'}}>Upcycling the coffee fruit reduces this impact and improves the environment in a sustainable way.</span></p>
+        </div>
 
 
       <SocialImgs
-        socialHeader={socialHeader}
         socialText={socialText}
         socialData={socialData}
       />
@@ -409,21 +396,7 @@ export const ProductPageQuery = graphql`
             }
           }
         }
-        productDesc3 {
-          childImageSharp {
-            fluid(maxWidth: 1000, quality: 80) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        productDesc4 {
-          childImageSharp {
-            fluid(maxWidth: 1000, quality: 80) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        selectCore1 {
+        kogobanner {
           childImageSharp {
             fluid(maxWidth: 1000, quality: 80) {
               ...GatsbyImageSharpFluid
@@ -470,86 +443,3 @@ export const ProductPageQuery = graphql`
 //   shopifyId
 //   price
 //   sku
-
-/** Use if figure out individual product
- * 
- *  {(() => {
-        switch(product.handle){
-          case "applecore-3-pack":
-            return <Applecore3Pack
-                      title={product.title} 
-                      addedToCartMessage={addedToCartMessage}
-                      setAddedToCartMessage={setAddedToCartMessage}
-                      variant={variant}
-                      gallery={gallery}
-                      product={product}
-                      colors={colors}
-                      color={color}
-                      setColor={setColor}
-                      quantity={quantity}
-                      setQuantity={setQuantity}
-                      handleAddToCart={handleAddToCart}
-                  />;
-          case "applecore-10-pack":
-            return <Applecore10Pack 
-                      title={product.title} 
-                      addedToCartMessage={addedToCartMessage}
-                      setAddedToCartMessage={setAddedToCartMessage}
-                      variant={variant}
-                      gallery={gallery}
-                      product={product}
-                      colors={colors}
-                      color={color}
-                      setColor={setColor}
-                      quantity={quantity}
-                      setQuantity={setQuantity}
-                      handleAddToCart={handleAddToCart}
-                  />;
-          case "applecore-30-pack":
-            return <Applecore30Pack 
-                      title={product.title} 
-                      addedToCartMessage={addedToCartMessage}
-                      setAddedToCartMessage={setAddedToCartMessage}
-                      variant={variant}
-                      gallery={gallery}
-                      product={product}
-                      colors={colors}
-                      color={color}
-                      setColor={setColor}
-                      quantity={quantity}
-                      setQuantity={setQuantity}
-                      handleAddToCart={handleAddToCart}
-                  />;
-          case "collections":
-            return <Collections 
-                      title={product.title} 
-                      addedToCartMessage={addedToCartMessage}
-                      setAddedToCartMessage={setAddedToCartMessage}
-                      variant={variant}
-                      gallery={gallery}
-                      product={product}
-                      colors={colors}
-                      color={color}
-                      setColor={setColor}
-                      quantity={quantity}
-                      setQuantity={setQuantity}
-                      handleAddToCart={handleAddToCart}
-                  />;
-          default:
-            return <DefaultProduct
-                      title={product.title} 
-                      addedToCartMessage={addedToCartMessage}
-                      setAddedToCartMessage={setAddedToCartMessage}
-                      variant={variant}
-                      gallery={gallery}
-                      product={product}
-                      colors={colors}
-                      color={color}
-                      setColor={setColor}
-                      quantity={quantity}
-                      setQuantity={setQuantity}
-                      handleAddToCart={handleAddToCart}
-                  />;
-        }
-      })()}
- */

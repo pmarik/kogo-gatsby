@@ -266,7 +266,7 @@ div.anchor {
 }
 
 .accent {
-  color: #e8114d;
+  color: #8a120f;
 }
 
 .page-container {
@@ -444,49 +444,6 @@ div.anchor {
 .gatsby-image-wrapper {
   border-radius: 0px;
 }
-
-.brush-fit,
-.brush-wide,
-.brush-fit-mid {
-  position: relative;
-  &::before {
-    content: url("../../images/brush-text.svg");
-    position: absolute;
-    margin: 0 auto;
-    display: inline-block;
-    width: 250%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-  }
-}
-
-.brush-fit::before {
-  width: 125%;
-  transform: translate(-55%, -50%);
-}
-
-.brush-fit-mid::before {
-  width: 140%;
-  transform: translate(-53%, -48%);
-}
-
-// .brush-fit-mid-dark{
-//   position: relative;
-//   &::before{
-//     content: url('../../images/brush-text-dark.svg');
-//     position: absolute;
-//     margin: 0 auto;
-//     display: inline-block;
-//     width: 140%;
-//     transform: translate(-53%, -48%);
-//     left: 50%;
-//     top: 50%;
-//     z-index: -1;
-//   }
-// }
-
 button{
   display: inline;
   border: none;

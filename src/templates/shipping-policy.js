@@ -15,16 +15,16 @@ export const ShippingPolicyTemplate = ({
  }) => {
   const PageContent = contentComponent || Content
 
-  const description = "Applecore shipping policy" 
+  const description = "Kogo shipping policy" 
 
   return (
     <section className="section section--gradient" style={{paddingTop: '5%'}}>
       <SEO 
         title="About" 
         description={description} 
-        thumbnailImage="/img/ogApplecoreAbout.png" 
-        addedKeywords="about applecore"
-        url="https://www.myapplecore.com/shipping-policy/"
+        thumbnailImage="/img/ogKogoAbout.jpg" 
+        addedKeywords="shipping policy"
+        url="https://www.kogofoods.com/shipping-policy/"
       />
       <Breadcrumbs links={[`shipping-policy`]} className="breadcrumb-alt"/>
       <h1><span>{title}</span></h1>

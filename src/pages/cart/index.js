@@ -176,7 +176,7 @@ const CartPage = () => {
     <Layout>
       <SEO 
         title={`Cart`}
-        url="https://www.myapplecore.com/cart"
+        url="https://www.kogofoods.com/cart"
       />
       <section className="cart-wrap cart-empty">
         <h1>Cart</h1>

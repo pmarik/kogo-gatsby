@@ -6,6 +6,7 @@ import { useCartCount } from "gatsby-theme-shopify-manager"
 import logo from '../../images/kogoWhiteSimp.svg';
 
 
+
 const Header = () => {
   const count = useCartCount()
   const [active, setActive] = useState(false);
@@ -63,7 +64,7 @@ const Header = () => {
                   <span className="nav-text">Blog</span>
                 </Link>
 
-                <Link className="navbar-item-link" to="/shop" activeClassName="active" getProps={({ isPartiallyCurrent }) => isPartiallyCurrent ? { className: "navbar-item-link active" } : null } >
+                <Link className="navbar-item-link" to="/shop/kogo-coffee-cherries" activeClassName="active" getProps={({ isPartiallyCurrent }) => isPartiallyCurrent ? { className: "navbar-item-link active" } : null } >
                   <span className="nav-text">Shop</span>
                 </Link>
 
