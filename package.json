@@ -30,7 +30,7 @@
     "gatsby-source-filesystem": "^2.6.0",
     "gatsby-source-shopify": "^3.5.0",
     "gatsby-theme-shopify-manager": "^0.1.8",
-    "gatsby-transformer-remark": "^2.11.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.7.0",
     "lodash": "^4.17.20",
     "lodash-webpack-plugin": "^0.11.5",
